@@ -1,0 +1,31 @@
+{
+    "name": "immerge-html",
+    "version": "1.0.0",
+    "description": "Immerge Tech core HTML build",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "webpack-dev-server --open --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/polyfill": "^7.2.5",
+        "@babel/preset-env": "^7.2.3",
+        "@babel/register": "^7.0.0",
+        "babel-loader": "^8.0.5",
+        "css-loader": "^1.0.0",
+        "mini-css-extract-plugin": "^0.4.5",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^6.0.7",
+        "webpack": "^4.28.3",
+        "webpack-cli": "^3.2.1",
+        "webpack-dev-server": "^3.1.14",
+        "webpack-merge": "^4.2.1"
+    },
+    "dependencies": {
+        "express": "^4.16.3",
+        "helmet": "^3.13.0",
+        "leaflet": "^1.4.0",
+        "npm": "^6.5.0"
+    }
+}

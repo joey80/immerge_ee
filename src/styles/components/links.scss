@@ -1,0 +1,94 @@
+// ===========================================
+// Links
+// ===========================================
+
+
+a.main:link {
+    color: #1f7f79;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: all 0.3s ease-in-out;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #2db9af;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+
+    }
+}
+
+a.main:visited {
+    color: #1f7f79;
+}
+
+a.main:active {
+    color: #1f7f79;
+}
+
+a.main:hover {
+    transition: all 0.3s ease-in-out;
+
+    &:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+}
+
+a.none:link {
+    color: initial;
+    text-decoration: none;
+    background-image: none;
+}
+
+a.none:visited {
+    color: initial;
+    text-decoration: none;
+    background-image: none;
+}
+
+a.none:active {
+    color: initial;
+    text-decoration: none;
+    background-image: none;
+}
+
+a.none:hover {
+    color: initial;
+    text-decoration: none;
+    background-image: none;
+}
+
+a:link {
+    text-decoration: none;
+    color: #2c3030;
+    font-weight: 600;
+    background-image: linear-gradient(180deg, transparent 70%, rgba(0, 188, 212, 0.4) 0);
+    transition: all 0.3s ease-in-out;
+}
+
+a:visited {
+    color: #2c3030;
+    font-weight: 600;
+    background-image: linear-gradient(180deg, transparent 70%, rgba(0, 188, 212, 0.4) 0);
+}
+
+a:active {
+    color: #2c3030;
+    font-weight: 600;
+    background-image: linear-gradient(180deg, transparent 70%, rgba(0, 188, 212, 0.4) 0);
+}
+
+a:hover {
+    color: #2c3030;
+    font-weight: 600;
+    background-image: linear-gradient(180deg, transparent 70%, rgba(0, 188, 212, 0.2) 0);
+    transition: all 0.3s ease-in-out;
+}
