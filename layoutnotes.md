@@ -1,5 +1,10 @@
 SITEWIDE
     - Nav bar that scales logo on scroll
+        - Logo is an image on the left
+        - Nav item sub-menu appear under the nav div
+        - Nav items are all uppercase
+        - Nav active items are purple
+        - Hover items are light grey
     - Hero (fullwidth bg image with text on the left side with an opaque bg)
     - Company info w/contact form
     - Footer with Year | Privacy with social links on the right (facebook, twitter, linkedin)
@@ -53,3 +58,13 @@ BLOG
 CONTACT
     - Text intro
     - Contact info on the left with a google map on the right
+
+
+COLORS
+    - Purple #36226a
+    - Body text #8b8b8b
+    - Footer BG #444444
+    - Lime Green #76c043
+
+FONTS
+    - Body Arial
