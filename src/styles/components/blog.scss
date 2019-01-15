@@ -1,0 +1,56 @@
+// ===========================================
+// Blog
+// ===========================================
+
+.blog {
+
+    &__card {
+        max-width: 400px;
+        border-radius: 7px;
+        background-color: #f6f6f6;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+
+        &__content {
+            padding: 1.5rem 1rem;
+
+            & h2 {
+                color: $primary-color-light;
+                font-size: 1.563rem;
+            }
+
+            &__meta {
+                color: $primary-color;
+                letter-spacing: 0.09rem;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+
+            & button {
+                margin: 0.7rem 0 0.7rem 0;
+            }
+        }
+
+        &__header {
+            overflow: hidden;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &__image {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            background-image: url('http://www.placecage.com/400/300');
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover .blog__card__image {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
