@@ -8,6 +8,7 @@
     border: 1px solid transparent;
     margin: 0 auto 6rem auto;
     width: 90%;
+    transition: all 0.3s ease-in-out;
 
     &:nth-of-type(odd) .team__container {
         flex-direction: row-reverse;
@@ -21,7 +22,6 @@
         display: flex;
         flex-direction: row;
         padding: 2rem;
-        transition: all 0.3s ease-in-out;
     }
 
     &__content {
@@ -62,10 +62,6 @@
         font-size: 0.9rem;
         padding: 2.5rem;
         color: rgb(194, 181, 223);
-
-        & p {
-            
-        }
 
         & ul {
             line-height: 2.5;
