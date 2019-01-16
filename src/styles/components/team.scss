@@ -7,25 +7,53 @@
     &__container {
         display: flex;
         flex-direction: row;
-        margin: 0 auto 4rem auto;
+        margin: 0 auto 3rem auto;
         padding: 2rem;
         width: 90%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid transparent;
+        background-color: $container-bg;
 
-        &:nth-child(odd) {
+        &:nth-of-type(odd) {
             flex-direction: row-reverse;
+        }
+
+        &:nth-of-type(odd) .team__content {
+            padding-right: 2.5rem;
+        }
+
+        &:hover {
+            border: 1px solid rgba(124, 124, 124, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
     }
 
     &__content {
-        background-color: blue;
+        padding-top: 1rem;
+        padding-left: 2.5rem;
+
+        & h4 {
+            font-size: 1.953rem;
+            line-height: 0.5;
+            color: $primary-color-dark;
+        }
+
+        & h5 {
+            font-size: 1rem;
+            color: $secondary-color-dark;
+            letter-spacing: 0.04rem;
+        }
 
         & hr {
-
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         & p {
-
+            padding-top: 1rem;
         }
 
     }
@@ -36,6 +64,7 @@
         transition: all 0.2s ease-out;
         transform-style: preserve-3d;
         position: relative;
+        margin: 1rem;
 
         &__container {
             perspective: 1000px;
