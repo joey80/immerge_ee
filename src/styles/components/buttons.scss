@@ -1,0 +1,19 @@
+// ===========================================
+// Buttons
+// ===========================================
+
+button {
+    border-radius: 6px;
+    border: 0;
+    background-color: $primary-color-light;
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.8rem;
+
+    &:hover {
+        background-color: $primary-color;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+}
