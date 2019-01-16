@@ -269,7 +269,7 @@ button {
   padding: 0.4rem 0.8rem;
   color: #fff;
   transition: all 0.2s ease-in-out;
-  font-size: 0.8rem; }
+  font-size: 0.9rem; }
   button:hover {
     background-color: #36226a;
     transition: all 0.2s ease-in-out;
@@ -347,7 +347,7 @@ button {
     padding-top: 1rem;
     padding-left: 2.5rem; }
     .team__content h4 {
-      font-size: 1.953rem;
+      font-size: 2.441rem;
       line-height: 0.5;
       color: #28194d; }
     .team__content h5 {
@@ -427,6 +427,64 @@ button {
   .team:hover {
     border: 1px solid rgba(124, 124, 124, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+
+.portfolio__container {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: all 0.3s ease-in-out; }
+
+.portfolio__item {
+  display: flex;
+  flex-direction: wrap;
+  position: relative;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  width: 45%;
+  height: 280px;
+  background-color: #f6f6f6;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease-in-out; }
+  .portfolio__item button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem; }
+  .portfolio__item__content {
+    width: 55%;
+    padding: 1rem; }
+    .portfolio__item__content h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #28194d; }
+    .portfolio__item__content hr {
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .portfolio__item__content p {
+      font-size: 0.8rem; }
+  .portfolio__item__image {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2018/03/lura-page-listing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    width: 45%;
+    height: 170px;
+    transition: all 0.3s ease-in-out; }
+  .portfolio__item__meta {
+    font-size: 0.8rem;
+    color: #488b18;
+    letter-spacing: 0.04rem; }
+  .portfolio__item:hover {
+    border: 1px solid rgba(124, 124, 124, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; }
 
 
 /*# sourceMappingURL=main.css.map*/
