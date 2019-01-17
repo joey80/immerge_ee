@@ -1,0 +1,69 @@
+// ===========================================
+// Footer
+// ===========================================
+
+.footer {
+    background-color: #302b3b;
+    margin-top: 8rem;
+    width: 100%;
+
+    &__section {
+        width: 45%;
+        color: #bcb5c9;
+
+        & a:link {
+            text-decoration: none;
+            color: rgb(155, 136, 195);
+            font-weight: 600;
+            background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        & a:visited {
+            color: rgb(155, 136, 195);
+            font-weight: 600;
+            background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0);
+        }
+        
+        & a:active {
+            color: rgb(155, 136, 195);
+            font-weight: 600;
+            background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0);
+        }
+        
+        & a:hover {
+            color: #fff;
+            font-weight: 600;
+            background-image: linear-gradient(180deg, transparent 60%, rgba(155, 136, 195, 0.4) 0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            width: 90%;
+            padding: 2.5rem 1rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        &__image {
+            width: 250px;
+            height: 250px;
+            background-image: url('https://www.immergetech.com/wp-content/uploads/2016/11/McClungLogoBlk2685RevFnl-1.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__sponsors {
+        width: 100%;
+        padding: 4rem;
+        background-color: $container-bg;
+        border-bottom: 4px solid $secondary-color;
+        box-shadow: 0 40px 20px -20px rgba(34, 29, 37, 0.829);
+    }
+}

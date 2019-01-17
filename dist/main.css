@@ -219,6 +219,9 @@ h4 {
 small {
   font-size: 0.8rem; }
 
+.no-padding {
+  padding: 0; }
+
 a.none:link {
   color: initial;
   text-decoration: none;
@@ -277,13 +280,12 @@ button {
 
 .blog__card {
   position: relative;
-  max-width: 400px;
+  width: 40%;
   height: 550px;
   border-radius: 7px;
   background-color: #f6f6f6;
   transition: all 0.3s ease-in-out;
-  border: 1px solid transparent;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+  border: 1px solid rgba(124, 124, 124, 0.2); }
   .blog__card__container {
     display: flex;
     margin: 0 auto;
@@ -322,10 +324,11 @@ button {
     transform: scale(1);
     transition: all 0.4s ease-in-out; }
   .blog__card:hover {
-    border: 1px solid rgba(124, 124, 124, 0.2); }
+    border: 1px solid rgba(124, 124, 124, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
   .blog__card:hover .blog__card__header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 20px -20px rgba(84, 79, 87, 0.63);
     transition: all 0.3s ease-in-out; }
 
 .team {
@@ -333,7 +336,8 @@ button {
   border-radius: 7px;
   border: 1px solid transparent;
   margin: 0 auto 6rem auto;
-  width: 90%; }
+  width: 90%;
+  transition: all 0.3s ease-in-out; }
   .team:nth-of-type(odd) .team__container {
     flex-direction: row-reverse; }
   .team:nth-of-type(odd) .team__content {
@@ -341,8 +345,7 @@ button {
   .team__container {
     display: flex;
     flex-direction: row;
-    padding: 2rem;
-    transition: all 0.3s ease-in-out; }
+    padding: 2rem; }
   .team__content {
     padding-top: 1rem;
     padding-left: 2.5rem; }
@@ -474,9 +477,15 @@ button {
     background-position: center;
     border-top-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    width: 45%;
-    height: 170px;
+    width: 100%;
+    height: 100%;
     transition: all 0.3s ease-in-out; }
+    .portfolio__item__image__container {
+      width: 45%;
+      height: 170px;
+      border-top-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      overflow: hidden; }
   .portfolio__item__meta {
     font-size: 0.8rem;
     color: #488b18;
@@ -485,6 +494,58 @@ button {
     border: 1px solid rgba(124, 124, 124, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out; }
+  .portfolio__item:hover .portfolio__item__image {
+    transform: scale(1.1) rotate(2deg);
+    transition: all 0.3s ease-in-out; }
+
+.footer {
+  background-color: #302b3b;
+  margin-top: 8rem;
+  width: 100%; }
+  .footer__section {
+    width: 45%;
+    color: #bcb5c9; }
+    .footer__section a:link {
+      text-decoration: none;
+      color: #9b88c3;
+      font-weight: 600;
+      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0);
+      transition: all 0.3s ease-in-out; }
+    .footer__section a:visited {
+      color: #9b88c3;
+      font-weight: 600;
+      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0); }
+    .footer__section a:active {
+      color: #9b88c3;
+      font-weight: 600;
+      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0); }
+    .footer__section a:hover {
+      color: #fff;
+      font-weight: 600;
+      background-image: linear-gradient(180deg, transparent 60%, rgba(155, 136, 195, 0.4) 0);
+      transition: all 0.3s ease-in-out; }
+    .footer__section__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      width: 90%;
+      padding: 2.5rem 1rem;
+      margin: 0 auto;
+      line-height: 1.8; }
+    .footer__section__image {
+      width: 250px;
+      height: 250px;
+      background-image: url("https://www.immergetech.com/wp-content/uploads/2016/11/McClungLogoBlk2685RevFnl-1.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .footer__sponsors {
+    width: 100%;
+    padding: 4rem;
+    background-color: #f6f6f6;
+    border-bottom: 4px solid #76c043;
+    box-shadow: 0 40px 20px -20px rgba(34, 29, 37, 0.829); }
 
 
 /*# sourceMappingURL=main.css.map*/

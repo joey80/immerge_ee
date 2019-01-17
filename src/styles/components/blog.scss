@@ -6,13 +6,12 @@
 
     &__card {
         position: relative;
-        max-width: 400px;
+        width: 40%;
         height: 550px;
         border-radius: 7px;
         background-color: $container-bg;
         transition: all 0.3s ease-in-out;
-        border: 1px solid transparent;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(124, 124, 124, 0.2);
 
         &__container {
             display: flex;
@@ -67,11 +66,12 @@
 
         &:hover {
             border: 1px solid rgba(124, 124, 124, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         &:hover .blog__card__header {
             border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-	        box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0 20px 20px -20px rgba(84, 79, 87, 0.63);
             transition: all 0.3s ease-in-out;
         }
     }
