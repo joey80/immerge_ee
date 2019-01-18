@@ -3,13 +3,14 @@
 // ===========================================
 
 form {
-    //width: 50%;
-    //padding: .5rem;
-    //margin: 0 auto;
+    position: relative;
 }
 label {
     display: inline-block;
-    margin-bottom: .5rem;
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    z-index: 2;
 }
 .form-control {
     display: block;
@@ -22,17 +23,22 @@ label {
     background-color: rgba(255, 255, 255, 0);
     background-clip: padding-box;
     border: 0;
-    background-image: linear-gradient(180deg, transparent 96%, rgba(188, 181, 201, 0.5) 0);
-    //border-bottom: 1px solid #ced4da;
-    //border-radius: 7px;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border: 1px solid rgba(247, 247, 247, 0.1);
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+        transition: all 0.3s ease-in-out;
+        border: 1px solid rgba(247, 247, 247, 0.5);
+        box-shadow: 0 0 20px rgba(26, 3, 27, 0.2);
+    }
 }
-form-control::placeholder {
+.form-control::placeholder {
     color: #fff;
     opacity: 1;
 }
 .form-group {
-    margin-bottom: 1rem;
+    position: relative;
+    margin-bottom: 2rem;
 }
 .form-group-grid {
     display: flex;
@@ -56,32 +62,22 @@ form-control::placeholder {
     margin-bottom: 0;
 }
 .text-muted {
-    color: #6c757d;
+    color: #bcb5c9;
 }
 input[type="checkbox"], input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
+    margin: 0 0.8rem 0.8rem 0;
 }
-form-text {
+.form-text {
     display: block;
     margin-top: .25rem;
 }
-.small, small {
-    font-size: 80%;
-    font-weight: 400;
-}
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: all .15s ease-in-out;
+.form-default {
+    position: static !important;
+    background-color: none !important;
+    padding: inherit !important;
+    line-height: inherit !important;
 }
 textarea {
     overflow: auto;

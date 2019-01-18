@@ -17,3 +17,18 @@ button {
         cursor: pointer;
     }
 }
+
+.button--light {
+    @extend button;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        //background-color: $secondary-color;
+        background-color: #fff;
+        border: 1px solid transparent;
+        color: $primary-color;
+    }
+}
