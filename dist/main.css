@@ -222,6 +222,9 @@ small {
 .no-padding {
   padding: 0; }
 
+li:focus {
+  outline: 2px dotted rgba(0, 0, 0, 0.4); }
+
 a.none:link {
   color: initial;
   text-decoration: none;
@@ -277,6 +280,8 @@ button, .button--light {
     background-color: #31006f;
     transition: all 0.2s ease-in-out;
     cursor: pointer; }
+  button:focus, .button--light:focus {
+    outline: 2px dotted rgba(0, 0, 0, 0.4); }
 
 .button--light {
   background-color: transparent;
@@ -287,6 +292,8 @@ button, .button--light {
     background-color: #fff;
     border: 1px solid transparent;
     color: #31006f; }
+  .button--light:focus {
+    outline: 2px dotted rgba(255, 255, 255, 0.4); }
 
 .blog__card {
   position: relative;
@@ -578,7 +585,7 @@ button, .button--light {
     box-shadow: 0 40px 20px -20px rgba(34, 29, 37, 0.829); }
     .footer__sponsors img {
       filter: grayscale(1);
-      max-width: 200px;
+      max-width: 300px;
       max-height: 100px;
       transition: all 0.3s ease-in-out;
       transform: translateY(0); }
