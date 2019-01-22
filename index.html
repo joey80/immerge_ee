@@ -11,29 +11,35 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="dist/main.css">
     </head>
-    <body class="no-padding">
-        <h1>This Is A Main Heading</h1>
-        <p>With over 10 years experience in website development, search engine optimization and online advertising, Immerge can provide an outstanding web presence for your organization and help you grow your brand online.</p>
-        <h2>h2 - This is a heading</h2>
-        <h3>h3 - This is a heading</h3>
-        <h4>h4 - This is a heading</h4>
-        <h5>h5 - This is a heading</h5>
+    <body>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pages/about.html">About</a>
-                <!-- <ul>
-                    <li><a href="pages/about/careers.html">Careers</li>
-                </ul> -->
-            </li>
-            <li><a href="pages/team.html">Team</a></li>
-            <li><a href="pages/portfolio.html">Portfolio</a></li>
-            <li><a href="pages/services.html">Services</a></li>
-            <li><a href="pages/blog.html">Blog</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
+        <!-- .header start -->
+        <header class="header">
+            I am the header
+        </header><!-- .header end -->
 
-        <div class="parent-content">
+        <!-- .content__container start -->
+        <div class="content__container">
+            <h1>This Is A Main Heading</h1>
+            <p>With over 10 years experience in website development, search engine optimization and online advertising, Immerge can provide an outstanding web presence for your organization and help you grow your brand online.</p>
+            <h2>h2 - This is a heading</h2>
+            <h3>h3 - This is a heading</h3>
+            <h4>h4 - This is a heading</h4>
+            <h5>h5 - This is a heading</h5>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About</a>
+                    <!-- <ul>
+                        <li><a href="pages/about/careers.html">Careers</li>
+                    </ul> -->
+                </li>
+                <li><a href="pages/team.html">Team</a></li>
+                <li><a href="pages/portfolio.html">Portfolio</a></li>
+                <li><a href="pages/services.html">Services</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
             <h2>I am content from the home page</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -42,15 +48,19 @@
             remaining essentially unchanged. It was popularised in the 1960s with the release of
             Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
             software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
+        </div><!-- .content__container end -->
 
-        <div class="footer">
+        <!-- .footer start -->
+        <footer class="footer">
+
             <div class="footer__sponsors">
                 <img src="https://www.theleverageway.com/wp-content/uploads/2016/06/Google_Partners_logo_blogpage.jpg">
                 <img src="https://www.immergetech.com/wp-content/uploads/2019/01/Member_SVTC_Transparent.png">
                 <img src="https://www.immergetech.com/wp-content/uploads/2018/11/EE_light_padded.png">
-            </div>
+            </div><!-- .footer__sponsors end -->
+
             <div class="footer__section__container">
+
                 <div class="footer__section">
                     <p><span class="footer__title">Immerge is a division of McClung Companies.</span></p>
                     <p>At McClung, we seek to deliver an
@@ -63,31 +73,39 @@
                     Harrisonburg, VA 22802</p>
                     <p><a href="#">info@immergetech.com</a><br>
                     <a href="#">(540) 437-9617</a></p>
-                </div>
+                </div><!-- .footer__section end -->
+
                 <div class="footer__section">
                     <p><span class="footer__title">Let's Start A Conversation</span></p>
+
+                    <!-- .form--dark start -->
                     <form class="form form--dark">
                         <div class="form__group">
                             <label>Name</label>
                             <input type="text" class="form__control">
                         </div>
+
                         <div class="form__group">
                             <label>Email address</label>
                             <input type="email" class="form__control">
                             <small class="form__text text-muted">We'll never share your email with anyone else.</small>
                         </div>
+                        
                         <div class="form__group">
                             <label>Company</label>
                             <input type="text" class="form__control">
                         </div>
+
                         <div class="form__group">
                             <label>Phone</label>
                             <input type="text" class="form__control">
                         </div>
+
                         <div class="form__group">
                             <label>Message</label>
                             <textarea class="form__control" rows="3"></textarea>
                         </div>
+
                         <div class="form__group">
                             <label class="checkbox form__default">
                                 <input type="checkbox" required>
@@ -96,11 +114,13 @@
                                 is not stored within the website.
                             </label>
                         </div>
+
                         <button class="button button--light" type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+                    </form><!-- .form--dark end -->
+
+                </div><!-- .footer__section end -->
+            </div><!-- .footer__section__container end -->
+        </footer><!-- .footer end -->
 
         <script src="dist/bundle.js"></script>
         <!--  <script type="module" src="main.js"></script>
