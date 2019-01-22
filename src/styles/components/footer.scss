@@ -3,9 +3,13 @@
 // ===========================================
 
 .footer {
-    background-color: #302b3b;
+    background-color: $primary-color-muted;
     margin-top: 8rem;
     width: 100%;
+
+    a:focus {
+        outline: $focus-dark;
+    }
 
     &__section {
         width: 45%;
@@ -87,7 +91,7 @@
     &__sponsors {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 2rem;
         width: 100%;
         background-color: $container-bg;
@@ -104,8 +108,14 @@
             &:hover {
                 filter: grayscale(0);
                 transition: all 0.3s ease-in-out;
-                transform: translateY(-10px);
+                transform: translateY(-5px);
             }
         }
+    }
+
+    &__title {
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: bold;
     }
 }
