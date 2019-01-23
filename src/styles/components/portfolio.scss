@@ -5,11 +5,13 @@
 .portfolio {
 
     &__container {
-        margin: 3rem auto;
+        margin: 0 auto;
+        max-width: $container-width-max;
+        width: $container-width;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         transition: all 0.3s ease-in-out;
     }
 

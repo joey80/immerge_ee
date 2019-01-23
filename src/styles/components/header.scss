@@ -3,6 +3,9 @@
 // ===========================================
 
 .header {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
     position: fixed;
     top: 0;
     height: 105px;
@@ -12,4 +15,38 @@
     border-bottom: 1px solid rgba(124, 124, 124, 0.2);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     z-index: 9;
+
+    &__container {
+        align-items: stretch;
+        justify-items: center;
+        width: $container-width;
+        max-width: $container-width-max;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        align-self: center;
+        background-image: url('https://www.immergetech.com/wp-content/uploads/2019/01/logo_cropped.png');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 304px;
+        height: 94px;
+    }
+
+    &__nav {
+        align-self: center;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+
+        & ul {
+            list-style: none;
+        }
+
+        & li {
+            display: inline-block;
+            padding-right: 2rem;
+        }
+    }
 }

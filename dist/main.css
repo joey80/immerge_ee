@@ -298,6 +298,9 @@ button, .button--light {
     outline: 2px dotted rgba(255, 255, 255, 0.4); }
 
 .header {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
   position: fixed;
   top: 0;
   height: 105px;
@@ -307,6 +310,30 @@ button, .button--light {
   border-bottom: 1px solid rgba(124, 124, 124, 0.2);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
   z-index: 9; }
+  .header__container {
+    align-items: stretch;
+    justify-items: center;
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between; }
+  .header__logo {
+    align-self: center;
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/logo_cropped.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 304px;
+    height: 94px; }
+  .header__nav {
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 0.8rem; }
+    .header__nav ul {
+      list-style: none; }
+    .header__nav li {
+      display: inline-block;
+      padding-right: 2rem; }
 
 .footer {
   background-color: #302b3b;
@@ -341,8 +368,9 @@ button, .button--light {
       flex-direction: row;
       justify-content: space-between;
       font-size: 0.8rem;
-      width: 90%;
-      padding: 3.5rem 1rem;
+      width: 95%;
+      max-width: 1200px;
+      padding: 3.5rem 0;
       margin: 0 auto;
       line-height: 1.8; }
     .footer__section__image {
@@ -394,8 +422,9 @@ button, .button--light {
     font-weight: bold; }
 
 .content__container {
-  margin: 150px auto 0 auto;
-  max-width: 95%; }
+  margin: 150px auto 4rem auto;
+  max-width: 1200px;
+  width: 95%; }
 
 .blog__card {
   position: relative;
@@ -455,7 +484,8 @@ button, .button--light {
   border-radius: 7px;
   border: 1px solid transparent;
   margin: 0 auto 6rem auto;
-  width: 90%;
+  width: 95%;
+  max-width: 1200px;
   transition: all 0.3s ease-in-out; }
   .team:nth-of-type(odd) .team__container {
     flex-direction: row-reverse; }
@@ -551,11 +581,13 @@ button, .button--light {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 
 .portfolio__container {
-  margin: 3rem auto;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 95%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   transition: all 0.3s ease-in-out; }
 
 .portfolio__item {
