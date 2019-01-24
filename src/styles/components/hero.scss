@@ -1,0 +1,34 @@
+// ===========================================
+// Hero
+// ===========================================
+
+.hero {
+    width: 100%;
+    height: 400px;
+    background-image: url('https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 100px 0 6rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin: 0 auto;
+        height: 100%;
+        width: $container-width;
+        max-width: $container-width-max;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        background-color: $container-bg;
+        width: 60%;
+        opacity: 0.9;
+        padding: 2rem;
+        box-shadow: 0 0 20px rgba(247, 247, 247, 1);
+    }
+}

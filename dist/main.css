@@ -484,6 +484,32 @@ button, .button--light {
   max-width: 1200px;
   width: 95%; }
 
+.hero {
+  width: 100%;
+  height: 400px;
+  background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 100px 0 6rem 0; }
+  .hero__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 auto;
+    height: 100%;
+    width: 95%;
+    max-width: 1200px; }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color: #f7f7f7;
+    width: 60%;
+    opacity: 0.9;
+    padding: 2rem;
+    box-shadow: 0 0 20px #f7f7f7; }
+
 .blog__card {
   position: relative;
   width: 30%;
