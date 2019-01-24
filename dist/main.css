@@ -361,7 +361,7 @@ button, .button--light {
     background-position: center center; }
     .header__leaf__container {
       display: flex;
-      justify-content: right;
+      justify-content: flex-end;
       right: 0;
       left: 0;
       margin-right: auto;
