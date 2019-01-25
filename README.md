@@ -1,1 +1,1 @@
-# immerge
+# immerge WP to EE conversion
