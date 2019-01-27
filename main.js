@@ -1,4 +1,4 @@
 import './src/styles/main.scss';
-import { fetchController } from './src/scripts/components/fetchController.js';
+import { uiController } from './src/scripts/components/uiController.js';
 
-fetchController.init();
+uiController.init();

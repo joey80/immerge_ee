@@ -10,6 +10,8 @@
     width: 100%;
     background-color: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+    transition: 0.2s ease-in-out;
+    z-index: 9;
 
     &__container {
         display: flex;    
@@ -24,20 +26,25 @@
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
-        width: 304px;
-        height: 94px;
+        width: 320px;
+        height: 83px;
+        transition: 0.3s ease-in-out;
+        transform: scale(1);
     }
 
     &__nav {
         text-transform: uppercase;
+        padding: 3rem 0;
+        transform: translateY(3px);
 
         & ul {
             margin: 0;
             list-style-type: none;
 
             & li {
+                position: relative;
                 display: inline;
-                padding-right: 2rem;
+                padding: 3rem 2rem 3rem 0;
 
                 &:last-child {
                     padding-right: 0;
@@ -45,19 +52,66 @@
             }
 
             & ul {
-                display: none;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                left: -45px;
+                top: 98px;
+                width: 350px;
+                padding: 1rem;
+                background-color: #fff;
+                border-top: 3px solid $secondary-color;
+                transform: scale(0);
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+                z-index: -1;
+
+                & li {
+                    padding: 1rem;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: $container-bg;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
             }
         }
+    }
+}
 
-        &--has-child::after {
+.js {
+
+    &__has-child {
+
+        &:hover > ul {
+            transform: scale(1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        &::after {
             font-family: 'Font Awesome\ 5 Free';
-			font-size: 1rem;
-			font-weight: 900;
-			font-style: normal;
-			display: inline-block;
-			margin-left: .5rem;
-			content: '\f107';
+            font-size: 1rem;
+            font-weight: 900;
+            font-style: normal;
+            display: inline-block;
+            margin-left: .5rem;
+            content: '\f107';
             text-decoration: inherit;
         }
     }
+
+    &__has-scrolled {
+        height: 85px;
+        transition: 0.2s ease-in-out;
+
+        & .header__logo {
+            transform: scale(0.9);
+            transition: 0.2s ease-in-out;
+        }
+
+        & .header__nav ul li > ul {
+            top: 88px;
+        }
+    }
+    
 }
