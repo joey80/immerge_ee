@@ -361,7 +361,7 @@ button, .button--light {
         flex-direction: column;
         left: -45px;
         top: 98px;
-        width: 350px;
+        width: 300px;
         padding: 1rem;
         background-color: #fff;
         border-top: 3px solid #76c043;
@@ -375,9 +375,20 @@ button, .button--light {
             background-color: #f7f7f7;
             transition: all 0.3s ease-in-out; }
 
+@keyframes scale-down-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%; }
+  100% {
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.3);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%; } }
+
 .js__has-child:hover > ul {
-  transform: scale(1);
-  transition: all 0.2s ease-in-out; }
+  animation: scale-down-ver-top 0.4s ease-in-out reverse both; }
 
 .js__has-child::after {
   font-family: 'Font Awesome 5 Free';
