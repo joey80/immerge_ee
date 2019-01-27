@@ -180,12 +180,12 @@ textarea {
   box-sizing: border-box; }
 
 html {
-  font-size: 16px; }
+  font-size: 14px; }
 
 body {
   background-color: #fff;
-  color: #373D3F;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #444;
+  font-family: 'Arial', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
   line-height: 1.65;
   overflow-x: hidden; }
@@ -195,7 +195,6 @@ p {
 
 h1, h2, h3, h4, h5 {
   margin: 1.414rem 0 0.5rem;
-  font-family: 'Montserrat', sans-serif;
   font-weight: inherit;
   letter-spacing: -0.05rem;
   line-height: 1.2;
@@ -273,38 +272,23 @@ a:hover {
 a.menu:link {
   position: relative;
   color: initial;
-  text-decoration: none !important;
-  transition: all 0.3s ease-in-out;
+  text-decoration: none;
   background-image: none; }
-  a.menu:link:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    text-decoration: none !important;
-    background-color: #76c043;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.2s ease-in-out 0s; }
 
 a.menu:visited {
   color: initial;
-  text-decoration: none; }
+  text-decoration: none;
+  background-image: none; }
 
 a.menu:active {
   color: initial;
-  text-decoration: none; }
+  text-decoration: none;
+  background-image: none; }
 
 a.menu:hover {
   color: initial;
-  transition: all 0.2s ease-in-out;
   text-decoration: none;
   background-image: none; }
-  a.menu:hover:before {
-    visibility: visible;
-    transform: scaleX(1); }
 
 button, .button--light {
   border-radius: 6px;
@@ -335,44 +319,19 @@ button, .button--light {
 
 .header {
   display: flex;
-  align-items: stretch;
-  justify-content: center;
   position: fixed;
   top: 0;
   height: 105px;
   width: 100%;
-  background-color: #f7f7f7;
-  color: #222;
-  border-bottom: 1px dashed rgba(49, 0, 111, 0.2);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-  z-index: 9; }
+  background-color: #fff;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1); }
   .header__container {
-    align-items: stretch;
-    justify-items: center;
-    width: 95%;
-    max-width: 1200px;
     display: flex;
-    justify-content: space-between; }
-  .header__leaf {
-    width: 200px;
-    height: 100px;
-    background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/branch.png");
-    background-size: cover;
-    background-position: center center; }
-    .header__leaf__container {
-      display: flex;
-      justify-content: flex-end;
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-      position: fixed;
-      top: 95px;
-      width: 95%;
-      max-width: 1200px;
-      z-index: 8; }
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%; }
   .header__logo {
-    align-self: center;
     background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/logo_cropped.png");
     background-size: contain;
     background-position: center center;
@@ -380,363 +339,32 @@ button, .button--light {
     width: 304px;
     height: 94px; }
   .header__nav {
-    align-self: center;
-    text-transform: uppercase;
-    font-size: 0.8rem; }
+    text-transform: uppercase; }
     .header__nav ul {
-      list-style: none; }
-    .header__nav li {
+      margin: 0;
+      list-style-type: none; }
+      .header__nav ul li {
+        display: inline;
+        padding-right: 2rem; }
+        .header__nav ul li:last-child {
+          padding-right: 0; }
+      .header__nav ul ul {
+        display: none; }
+    .header__nav--has-child::after {
+      font-family: 'Font Awesome 5 Free';
+      font-size: 1rem;
+      font-weight: 900;
+      font-style: normal;
       display: inline-block;
-      padding-right: 2rem; }
-
-.footer {
-  background-color: #302b3b;
-  margin-top: 8rem;
-  width: 100%; }
-  .footer a:focus {
-    outline: 2px dotted rgba(255, 255, 255, 0.4); }
-  .footer__section {
-    width: 45%;
-    color: #bcb5c9; }
-    .footer__section a:link {
-      text-decoration: none;
-      color: #9b88c3;
-      font-weight: 600;
-      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0);
-      transition: all 0.3s ease-in-out; }
-    .footer__section a:visited {
-      color: #9b88c3;
-      font-weight: 600;
-      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0); }
-    .footer__section a:active {
-      color: #9b88c3;
-      font-weight: 600;
-      background-image: linear-gradient(180deg, transparent 90%, rgba(155, 136, 195, 0.4) 0); }
-    .footer__section a:hover {
-      color: #fff;
-      font-weight: 600;
-      background-image: linear-gradient(180deg, transparent 60%, rgba(155, 136, 195, 0.4) 0);
-      transition: all 0.3s ease-in-out; }
-    .footer__section__container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      width: 95%;
-      max-width: 1200px;
-      padding: 3.5rem 0;
-      margin: 0 auto;
-      line-height: 1.8; }
-    .footer__section__image {
-      width: 250px;
-      height: 155px;
-      background-image: url("https://www.immergetech.com/wp-content/uploads/2016/11/McClungLogoBlk2685RevFnl-1.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      box-shadow: 0 0 80px rgba(26, 3, 27, 0.849);
-      margin-bottom: 2rem; }
-    .footer__section input {
-      padding: 1.8rem;
-      line-height: 3; }
-    .footer__section label {
-      background-color: #302b3b;
-      padding: 0 0.6rem;
-      line-height: 1;
-      color: rgba(199, 230, 179, 0.9); }
-    .footer__section p {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      line-height: 2; }
-    .footer__section textarea {
-      padding: 1.8rem;
-      line-height: 3; }
-  .footer__sponsors {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2rem;
-    width: 100%;
-    background-color: #f7f7f7;
-    border-bottom: 4px solid #76c043;
-    box-shadow: 0 40px 20px -20px rgba(34, 29, 37, 0.829); }
-    .footer__sponsors img {
-      filter: grayscale(1);
-      max-width: 200px;
-      max-height: 70px;
-      transition: all 0.3s ease-in-out;
-      transform: translateY(0); }
-      .footer__sponsors img:nth-of-type(even) {
-        max-width: 300px;
-        max-height: 100px; }
-      .footer__sponsors img:hover {
-        filter: grayscale(0);
-        transition: all 0.3s ease-in-out;
-        transform: translateY(-5px); }
-  .footer__title {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: bold; }
-
-.content__container {
-  margin: 150px auto 4rem auto;
-  max-width: 1200px;
-  width: 95%; }
+      margin-left: .5rem;
+      content: '\F107';
+      text-decoration: inherit; }
 
 .hero {
+  margin-top: 105px;
   width: 100%;
-  height: 400px;
-  background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 100px 0 6rem 0; }
-  .hero__container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin: 0 auto;
-    height: 100%;
-    width: 95%;
-    max-width: 1200px; }
-  .hero__content {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    background-color: #f7f7f7;
-    width: 60%;
-    opacity: 0.9;
-    padding: 2rem;
-    box-shadow: 0 0 20px #f7f7f7; }
-
-.blog__card {
-  position: relative;
-  width: 30%;
-  height: 550px;
-  border-radius: 7px;
-  background-color: #f7f7f7;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(124, 124, 124, 0.2);
-  margin-bottom: 6rem; }
-  .blog__card__container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 1200px;
-    width: 95%;
-    justify-content: space-between; }
-  .blog__card__content {
-    padding: 1.3rem;
-    font-size: 0.8rem; }
-    .blog__card__content h2 {
-      color: #28194d;
-      font-size: 1.563rem; }
-    .blog__card__content__meta {
-      display: block;
-      margin-bottom: 1rem;
-      color: #488b18;
-      letter-spacing: 0.08rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      font-weight: bold; }
-    .blog__card__content button, .blog__card__content .button--light {
-      position: absolute;
-      bottom: 1.3rem;
-      left: 1.3rem; }
-  .blog__card__header {
-    overflow: hidden;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-    transition: all 0.3s ease-in-out; }
-  .blog__card__image {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    background-image: url("https://picsum.photos/400/300");
-    background-size: cover;
-    width: 100%;
-    height: 200px;
-    transform: scale(1);
-    transition: all 0.4s ease-in-out; }
-  .blog__card:hover {
-    border: 1px solid rgba(124, 124, 124, 0.2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
-  .blog__card:hover .blog__card__header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 20px 20px -20px rgba(84, 79, 87, 0.63);
-    transition: all 0.3s ease-in-out; }
-
-.team {
-  background-color: #f7f7f7;
-  border-radius: 7px;
-  border: 1px solid transparent;
-  margin: 0 auto 6rem auto;
-  width: 95%;
-  max-width: 1200px;
-  transition: all 0.3s ease-in-out; }
-  .team:nth-of-type(odd) .team__container {
-    flex-direction: row-reverse; }
-  .team:nth-of-type(odd) .team__content {
-    padding-right: 2.5rem; }
-  .team__container {
-    display: flex;
-    flex-direction: row;
-    padding: 2rem; }
-  .team__content {
-    padding-top: 1rem;
-    padding-left: 2.5rem; }
-    .team__content h4 {
-      font-size: 2.441rem;
-      line-height: 0.5;
-      color: #28194d; }
-    .team__content h5 {
-      font-size: 1rem;
-      color: #488b18;
-      letter-spacing: 0.04rem; }
-    .team__content hr {
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-    .team__content p {
-      padding-top: 1rem; }
-  .team__facts {
-    width: 100%;
-    background-color: #31006f;
-    background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/swirl.png");
-    box-shadow: inset 0 60px 40px -20px #21004d;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    font-size: 0.9rem;
-    padding: 2.5rem;
-    color: #c2b5df; }
-    .team__facts ul {
-      line-height: 2.5;
-      list-style-type: none; }
-    .team__facts > ul li::before {
-      content: '';
-      display: inline-block;
-      height: 23px;
-      width: 14px;
-      background-size: 14px;
-      background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/leaf.png");
-      background-repeat: no-repeat;
-      margin-right: 1rem;
-      background-position: center center;
-      vertical-align: middle; }
-  .team__image {
-    width: 250px;
-    height: 250px;
-    transition: all 0.2s ease-out;
-    transform-style: preserve-3d;
-    position: relative;
-    margin: 1rem; }
-    .team__image__container {
-      perspective: 1000px; }
-      .team__image__container:hover .team__image {
-        transform: rotateY(180deg); }
-    .team__image__front {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      border-radius: 50%;
-      transform: rotateY(0deg);
-      background-image: url("https://www.immergetech.com/wp-content/uploads/2018/06/Danny1.jpg");
-      background-size: cover;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0px 0px 60px -13px rgba(0, 0, 0, 0.75); }
-    .team__image__back {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: rotateY(180deg);
-      border-radius: 50%;
-      background-image: url("https://www.immergetech.com/wp-content/uploads/2018/06/DannyFun.jpg");
-      background-size: cover;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0px 0px 60px -13px rgba(0, 0, 0, 0.75); }
-  .team:hover {
-    border: 1px solid rgba(124, 124, 124, 0.2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
-
-.portfolio__container {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out; }
-
-.portfolio__item {
-  display: flex;
-  flex-direction: wrap;
-  position: relative;
-  padding: 1rem;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  width: 45%;
-  height: 280px;
-  background-color: #f7f7f7;
-  margin-bottom: 3rem;
-  transition: all 0.3s ease-in-out; }
-  .portfolio__item button, .portfolio__item .button--light {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem; }
-  .portfolio__item__content {
-    width: 55%;
-    padding: 1rem; }
-    .portfolio__item__content h2 {
-      font-size: 1.25rem;
-      font-weight: bold;
-      line-height: 1.2;
-      color: #28194d; }
-    .portfolio__item__content hr {
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-    .portfolio__item__content p {
-      font-size: 0.8rem; }
-  .portfolio__item__image {
-    background-image: url("https://www.immergetech.com/wp-content/uploads/2018/03/lura-page-listing.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease-in-out; }
-    .portfolio__item__image__container {
-      width: 45%;
-      height: 170px;
-      border-top-left-radius: 7px;
-      border-bottom-right-radius: 7px;
-      overflow: hidden; }
-  .portfolio__item__meta {
-    font-size: 0.8rem;
-    color: #488b18;
-    letter-spacing: 0.04rem; }
-  .portfolio__item:hover {
-    border: 1px solid rgba(124, 124, 124, 0.2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out; }
-  .portfolio__item:hover .portfolio__item__image {
-    transform: scale(1.1) rotate(2deg);
-    transition: all 0.3s ease-in-out; }
+  height: 520px;
+  background-color: blue; }
 
 .form {
   position: relative; }
