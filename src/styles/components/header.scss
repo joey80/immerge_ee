@@ -6,12 +6,16 @@
     display: flex;
     position: fixed;
     top: 0;
-    height: 105px;
+    height: 80px;
     width: 100%;
     background-color: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, .1);
     transition: 0.2s ease-in-out;
     z-index: 9;
+
+    @include tablet {
+        height: 105px;
+    }
 
     &__container {
         display: flex;    
@@ -26,16 +30,56 @@
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
-        width: 320px;
-        height: 83px;
+        width: 150px;
+        height: 53px;
         transition: 0.3s ease-in-out;
         transform: scale(1);
+
+        @include tablet {
+            width: 200px;
+            height: 63px;
+        }
+
+        @include desktop {
+            width: 320px;
+            height: 83px;
+        }
+    }
+
+    &__mobile-menu {
+
+        &::after {
+            font-family: 'Font Awesome\ 5 Free';
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-style: normal;
+            display: inline-block;
+            margin-left: .5rem;
+            content: '\f0c9';
+            text-decoration: inherit;
+        }
+
+        @include desktop {
+            display: none;
+        }
     }
 
     &__nav {
+        display: none;
+        //display: flex;
+        //flex-direction: column;
+        //transform: translateY(110px);
+        //background-color: #fff;
         text-transform: uppercase;
-        padding: 3rem 0;
-        transform: translateY(3px);
+
+        @include tablet {
+        }
+
+        @include desktop {
+            display: block;
+            padding: 3rem 0;
+            transform: translateY(3px);
+        }
 
         & ul {
             margin: 0;
@@ -44,7 +88,7 @@
             & li {
                 position: relative;
                 display: inline;
-                padding: 3rem 2rem 3rem 0;
+                padding: 3rem 1.5rem 3rem 0;
 
                 &:last-child {
                     padding-right: 0;
@@ -117,16 +161,25 @@
     }
 
     &__has-scrolled {
-        height: 85px;
-        transition: 0.2s ease-in-out;
-
-        & .header__logo {
-            transform: scale(0.9);
+        
+        @include tablet {
+            height: 85px;
             transition: 0.2s ease-in-out;
         }
 
+        & .header__logo {
+
+            @include tablet {
+                transform: scale(0.9);
+                transition: 0.2s ease-in-out;
+            }
+        }
+
         & .header__nav ul li > ul {
-            top: 88px;
+
+            @include tablet {
+                top: 88px;
+            }
         }
     }
     

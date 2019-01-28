@@ -321,12 +321,15 @@ button, .button--light {
   display: flex;
   position: fixed;
   top: 0;
-  height: 105px;
+  height: 80px;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
   transition: 0.2s ease-in-out;
   z-index: 9; }
+  @media (min-width: 768px) {
+    .header {
+      height: 105px; } }
   .header__container {
     display: flex;
     justify-content: space-between;
@@ -338,21 +341,45 @@ button, .button--light {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 320px;
-    height: 83px;
+    width: 150px;
+    height: 53px;
     transition: 0.3s ease-in-out;
     transform: scale(1); }
+    @media (min-width: 768px) {
+      .header__logo {
+        width: 200px;
+        height: 63px; } }
+    @media (min-width: 1025px) {
+      .header__logo {
+        width: 320px;
+        height: 83px; } }
+  .header__mobile-menu::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: normal;
+    display: inline-block;
+    margin-left: .5rem;
+    content: '\F0C9';
+    text-decoration: inherit; }
+  @media (min-width: 1025px) {
+    .header__mobile-menu {
+      display: none; } }
   .header__nav {
-    text-transform: uppercase;
-    padding: 3rem 0;
-    transform: translateY(3px); }
+    display: none;
+    text-transform: uppercase; }
+    @media (min-width: 1025px) {
+      .header__nav {
+        display: block;
+        padding: 3rem 0;
+        transform: translateY(3px); } }
     .header__nav ul {
       margin: 0;
       list-style-type: none; }
       .header__nav ul li {
         position: relative;
         display: inline;
-        padding: 3rem 2rem 3rem 0; }
+        padding: 3rem 1.5rem 3rem 0; }
         .header__nav ul li:last-child {
           padding-right: 0; }
       .header__nav ul ul {
@@ -400,20 +427,28 @@ button, .button--light {
   content: '\F107';
   text-decoration: inherit; }
 
-.js__has-scrolled {
-  height: 85px;
-  transition: 0.2s ease-in-out; }
+@media (min-width: 768px) {
+  .js__has-scrolled {
+    height: 85px;
+    transition: 0.2s ease-in-out; } }
+
+@media (min-width: 768px) {
   .js__has-scrolled .header__logo {
     transform: scale(0.9);
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out; } }
+
+@media (min-width: 768px) {
   .js__has-scrolled .header__nav ul li > ul {
-    top: 88px; }
+    top: 88px; } }
 
 .hero {
-  margin-top: 105px;
+  margin-top: 80px;
   width: 100%;
   height: 520px;
   background-color: blue; }
+  @media (min-width: 768px) {
+    .hero {
+      margin-top: 105px; } }
 
 .form {
   position: relative; }
