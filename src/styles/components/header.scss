@@ -18,7 +18,9 @@
     }
 
     &__container {
-        display: flex;    
+        position: relative;
+        display: flex;
+        flex-wrap: wrap; 
         justify-content: space-between;
         align-items: center;
         padding: 0 2rem;
@@ -65,57 +67,92 @@
     }
 
     &__nav {
-        display: none;
-        //display: flex;
-        //flex-direction: column;
-        //transform: translateY(110px);
-        //background-color: #fff;
+        height: 0px;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
         text-transform: uppercase;
+        background-color: #fff;
+        width: 100%;
+        overflow: hidden;
 
         @include tablet {
+            top: 105px;
         }
 
         @include desktop {
+            position: relative;
+            text-align: initial;
             display: block;
-            padding: 3rem 0;
+            padding: initial;
+            width: initial;
+            height: initial;
+            top: initial;
+            left: initial;
+            right: initial;
+            margin: initial;
+            text-align: initial;
             transform: translateY(3px);
+            overflow: initial;
         }
 
         & ul {
             margin: 0;
+            padding-left: 0;
             list-style-type: none;
 
             & li {
                 position: relative;
-                display: inline;
-                padding: 3rem 1.5rem 3rem 0;
+                display: block;
+                padding-top: 1.7rem;
+                
+                @include desktop {
+                    display: inline;
+                    padding: 3rem 1.5rem 3rem 0;
+                }
 
                 &:last-child {
-                    padding-right: 0;
+
+                    @include desktop {
+                        padding-right: 0;
+                    }
                 }
             }
 
             & ul {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                left: -45px;
-                top: 98px;
-                width: 300px;
-                padding: 1rem;
-                background-color: #fff;
-                border-top: 3px solid $secondary-color;
-                transform: scale(0);
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
-                z-index: -1;
+                
+                @include desktop {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    left: -45px;
+                    top: 98px;
+                    width: 300px;
+                    padding: 1rem;
+                    background-color: #fff;
+                    border-top: 3px solid $secondary-color;
+                    transform: scale(0);
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+                    z-index: -1;
+                }
 
                 & li {
-                    padding: 1rem;
-                    transition: all 0.3s ease-in-out;
+
+                    @include desktop {
+                        padding: 1rem;
+                        transition: all 0.3s ease-in-out;
+                    }
 
                     &:hover {
-                        background-color: $container-bg;
-                        transition: all 0.3s ease-in-out;
+
+                        @include desktop {
+                            background-color: $container-bg;
+                            transition: all 0.3s ease-in-out;
+                        }
                     }
                 }
             }
@@ -145,18 +182,24 @@
     &__has-child {
 
         &:hover > ul {
-            animation: scale-down-ver-top 0.4s ease-in-out reverse both;
+
+            @include desktop {
+                animation: scale-down-ver-top 0.4s ease-in-out reverse both;
+            }
         }
 
         &::after {
-            font-family: 'Font Awesome\ 5 Free';
-            font-size: 1rem;
-            font-weight: 900;
-            font-style: normal;
-            display: inline-block;
-            margin-left: .5rem;
-            content: '\f107';
-            text-decoration: inherit;
+
+            @include desktop {
+                font-family: 'Font Awesome\ 5 Free';
+                font-size: 1rem;
+                font-weight: 900;
+                font-style: normal;
+                display: inline-block;
+                margin-left: .5rem;
+                content: '\f107';
+                text-decoration: inherit;
+            }
         }
     }
 
@@ -181,6 +224,12 @@
                 top: 88px;
             }
         }
+    }
+
+    &__is-visible {
+        height: 500px;
+        border-top: 3px solid $primary-color;
+        transition: all 0.3s ease-in-out;
     }
     
 }

@@ -331,7 +331,9 @@ button, .button--light {
     .header {
       height: 105px; } }
   .header__container {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
@@ -366,41 +368,73 @@ button, .button--light {
     .header__mobile-menu {
       display: none; } }
   .header__nav {
-    display: none;
-    text-transform: uppercase; }
+    height: 0px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden; }
+    @media (min-width: 768px) {
+      .header__nav {
+        top: 105px; } }
     @media (min-width: 1025px) {
       .header__nav {
+        position: relative;
+        text-align: initial;
         display: block;
-        padding: 3rem 0;
-        transform: translateY(3px); } }
+        padding: initial;
+        width: initial;
+        height: initial;
+        top: initial;
+        left: initial;
+        right: initial;
+        margin: initial;
+        text-align: initial;
+        transform: translateY(3px);
+        overflow: initial; } }
     .header__nav ul {
       margin: 0;
+      padding-left: 0;
       list-style-type: none; }
       .header__nav ul li {
         position: relative;
-        display: inline;
-        padding: 3rem 1.5rem 3rem 0; }
-        .header__nav ul li:last-child {
-          padding-right: 0; }
-      .header__nav ul ul {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        left: -45px;
-        top: 98px;
-        width: 300px;
-        padding: 1rem;
-        background-color: #fff;
-        border-top: 3px solid #76c043;
-        transform: scale(0);
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
-        z-index: -1; }
+        display: block;
+        padding-top: 1.7rem; }
+        @media (min-width: 1025px) {
+          .header__nav ul li {
+            display: inline;
+            padding: 3rem 1.5rem 3rem 0; } }
+        @media (min-width: 1025px) {
+          .header__nav ul li:last-child {
+            padding-right: 0; } }
+      @media (min-width: 1025px) {
+        .header__nav ul ul {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          left: -45px;
+          top: 98px;
+          width: 300px;
+          padding: 1rem;
+          background-color: #fff;
+          border-top: 3px solid #76c043;
+          transform: scale(0);
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+          z-index: -1; } }
+      @media (min-width: 1025px) {
         .header__nav ul ul li {
           padding: 1rem;
-          transition: all 0.3s ease-in-out; }
-          .header__nav ul ul li:hover {
-            background-color: #f7f7f7;
-            transition: all 0.3s ease-in-out; }
+          transition: all 0.3s ease-in-out; } }
+      @media (min-width: 1025px) {
+        .header__nav ul ul li:hover {
+          background-color: #f7f7f7;
+          transition: all 0.3s ease-in-out; } }
 
 @keyframes scale-down-ver-top {
   0% {
@@ -414,18 +448,20 @@ button, .button--light {
     -webkit-transform-origin: 100% 0%;
     transform-origin: 100% 0%; } }
 
-.js__has-child:hover > ul {
-  animation: scale-down-ver-top 0.4s ease-in-out reverse both; }
+@media (min-width: 1025px) {
+  .js__has-child:hover > ul {
+    animation: scale-down-ver-top 0.4s ease-in-out reverse both; } }
 
-.js__has-child::after {
-  font-family: 'Font Awesome 5 Free';
-  font-size: 1rem;
-  font-weight: 900;
-  font-style: normal;
-  display: inline-block;
-  margin-left: .5rem;
-  content: '\F107';
-  text-decoration: inherit; }
+@media (min-width: 1025px) {
+  .js__has-child::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1rem;
+    font-weight: 900;
+    font-style: normal;
+    display: inline-block;
+    margin-left: .5rem;
+    content: '\F107';
+    text-decoration: inherit; } }
 
 @media (min-width: 768px) {
   .js__has-scrolled {
@@ -440,6 +476,11 @@ button, .button--light {
 @media (min-width: 768px) {
   .js__has-scrolled .header__nav ul li > ul {
     top: 88px; } }
+
+.js__is-visible {
+  height: 500px;
+  border-top: 3px solid #31006f;
+  transition: all 0.3s ease-in-out; }
 
 .hero {
   margin-top: 80px;
