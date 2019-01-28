@@ -14,6 +14,11 @@
     z-index: 9;
 
     @include tablet {
+        //height: 105px;
+        height: 85px;
+    }
+
+    @include desktop {
         height: 105px;
     }
 
@@ -23,8 +28,16 @@
         flex-wrap: wrap; 
         justify-content: space-between;
         align-items: center;
-        padding: 0 2rem;
+        padding: $padding-mobile;
         width: 100%;
+
+        @include tablet {
+            padding: $padding-tablet;
+        }
+
+        @include desktop {
+            padding: $padding-desktop;
+        }
     }
 
     &__logo {
@@ -81,7 +94,8 @@
         overflow: hidden;
 
         @include tablet {
-            top: 105px;
+            top: 85px;
+            //top: 105px;
         }
 
         @include desktop {
@@ -205,14 +219,14 @@
 
     &__has-scrolled {
         
-        @include tablet {
+        @include desktop {
             height: 85px;
             transition: 0.2s ease-in-out;
         }
 
         & .header__logo {
 
-            @include tablet {
+            @include desktop {
                 transform: scale(0.9);
                 transition: 0.2s ease-in-out;
             }
@@ -220,8 +234,8 @@
 
         & .header__nav ul li > ul {
 
-            @include tablet {
-                top: 88px;
+            @include desktop {
+                top: 85px;
             }
         }
     }

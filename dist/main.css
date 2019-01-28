@@ -249,27 +249,20 @@ a.none:hover {
 a:link {
   text-decoration: none;
   color: #28194d;
-  font-weight: 600;
-  background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0);
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.2s ease-in-out; }
 
 a:visited {
-  color: #28194d;
-  font-weight: 600;
-  background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0); }
+  color: #28194d; }
 
 a:active {
-  color: #28194d;
-  font-weight: 600;
-  background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0); }
+  color: #28194d; }
 
 a:hover {
-  color: #28194d;
-  font-weight: 600;
-  background-image: linear-gradient(180deg, transparent 60%, rgba(40, 25, 77, 0.2) 0);
-  transition: all 0.3s ease-in-out; }
+  color: #6e54a5;
+  transition: all 0.2s ease-in-out; }
 
 a.menu:link {
+  font-weight: 700;
   position: relative;
   color: initial;
   text-decoration: none;
@@ -329,6 +322,9 @@ button, .button--light {
   z-index: 9; }
   @media (min-width: 768px) {
     .header {
+      height: 85px; } }
+  @media (min-width: 1025px) {
+    .header {
       height: 105px; } }
   .header__container {
     position: relative;
@@ -336,8 +332,14 @@ button, .button--light {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 3rem;
     width: 100%; }
+    @media (min-width: 768px) {
+      .header__container {
+        padding: 0 5rem; } }
+    @media (min-width: 1025px) {
+      .header__container {
+        padding: 0 2rem; } }
   .header__logo {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/logo_cropped.png");
     background-size: contain;
@@ -382,7 +384,7 @@ button, .button--light {
     overflow: hidden; }
     @media (min-width: 768px) {
       .header__nav {
-        top: 105px; } }
+        top: 85px; } }
     @media (min-width: 1025px) {
       .header__nav {
         position: relative;
@@ -463,33 +465,199 @@ button, .button--light {
     content: '\F107';
     text-decoration: inherit; } }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .js__has-scrolled {
     height: 85px;
     transition: 0.2s ease-in-out; } }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .js__has-scrolled .header__logo {
     transform: scale(0.9);
     transition: 0.2s ease-in-out; } }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .js__has-scrolled .header__nav ul li > ul {
-    top: 88px; } }
+    top: 85px; } }
 
 .js__is-visible {
   height: 500px;
   border-top: 3px solid #31006f;
   transition: all 0.3s ease-in-out; }
 
+.callout {
+  width: 80%;
+  max-width: 1080px;
+  margin: 6rem auto;
+  text-align: center;
+  font-size: 1.1rem; }
+  @media (min-width: 768px) {
+    .callout {
+      font-size: initial;
+      margin: 11rem auto; } }
+  .callout__card {
+    position: relative;
+    width: 80%;
+    margin: 3rem auto;
+    height: 350px; }
+    @media (min-width: 1025px) {
+      .callout__card {
+        width: 30%;
+        height: 400px;
+        margin: initial; } }
+    .callout__card__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 3rem auto; }
+      @media (min-width: 768px) {
+        .callout__card__container {
+          margin: 6rem auto; } }
+      @media (min-width: 1025px) {
+        .callout__card__container {
+          flex-direction: row; } }
+      .callout__card__container p {
+        position: absolute;
+        top: 160px; }
+    .callout__card__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 1rem auto;
+      font-size: 3rem;
+      color: #76c043;
+      text-align: center;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #31006f; }
+      @media (min-width: 768px) {
+        .callout__card__image {
+          margin: 0 auto 3rem auto; } }
+  .callout__container p {
+    margin-top: 4rem; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 6rem auto; }
+  @media (min-width: 1025px) {
+    .container {
+      flex-direction: row; } }
+  .container__full {
+    text-align: center;
+    width: 100%; }
+    .container__full p {
+      font-size: 1.1rem;
+      margin: 1rem 0 4rem 0; }
+  .container__half {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 420px;
+    background-size: cover;
+    background-position: center center; }
+    @media (min-width: 1025px) {
+      .container__half {
+        width: 50%; } }
+    .container__half:last-of-type {
+      align-items: flex-start; }
+    .container__half h3 {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin: 2rem 0 2rem 0;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.2); }
+
 .hero {
+  display: flex;
   margin-top: 80px;
   width: 100%;
-  height: 520px;
-  background-color: blue; }
+  height: 380px;
+  background-image: url("https://www.immergetech.com/wp-content/uploads/2018/10/Sprout-Image-Header-1.jpg");
+  background-position: bottom center;
+  background-size: cover; }
   @media (min-width: 768px) {
     .hero {
-      margin-top: 105px; } }
+      margin-top: 85px;
+      height: 420px; } }
+  @media (min-width: 1025px) {
+    .hero {
+      margin-top: 105px;
+      height: 500px; } }
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0 3rem;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.85); }
+    @media (min-width: 768px) {
+      .hero__container {
+        width: 100%;
+        padding: 0 5rem; } }
+    @media (min-width: 1025px) {
+      .hero__container {
+        padding: 0 2rem;
+        width: 50%; } }
+    .hero__container p {
+      font-size: 1.1rem; }
+    .hero__container button, .hero__container .button--light {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-color: #444;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      padding: 0.5rem 1.4rem;
+      margin-top: 1rem; }
+      .hero__container button:hover, .hero__container .button--light:hover {
+        background-color: #cfcfcf;
+        color: #000; }
+
+.blog {
+  width: 80%;
+  max-width: 1080px;
+  margin: 6rem auto;
+  text-align: center;
+  font-size: 1.1rem; }
+  @media (min-width: 768px) {
+    .blog {
+      font-size: initial;
+      margin: 11rem auto; } }
+  .blog__card {
+    margin: 3rem auto;
+    border: 1px solid #d8d8d8;
+    text-align: left; }
+    @media (min-width: 768px) {
+      .blog__card {
+        width: 45%; } }
+    @media (min-width: 1025px) {
+      .blog__card {
+        width: 30%;
+        margin: initial; } }
+    .blog__card__content {
+      padding: 2rem; }
+    .blog__card__container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
+      margin: 3rem auto; }
+      @media (min-width: 768px) {
+        .blog__card__container {
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin: 6rem auto; } }
+      .blog__card__container h2 {
+        font-size: 1.2rem;
+        font-weight: 700; }
+    .blog__card__image {
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 200px; }
 
 .form {
   position: relative; }

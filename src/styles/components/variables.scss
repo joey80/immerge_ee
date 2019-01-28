@@ -7,8 +7,11 @@ $tablet-width: 768px;
 $desktop-width: 1025px;
 
 // Container Sizes
-$container-width: 95%;
-$container-width-max: 1200px;
+$container-width: 80%;
+$container-width-max: 1080px;
+$padding-mobile: 0 3rem;
+$padding-tablet: 0 5rem;
+$padding-desktop: 0 2rem;
 
 // Brand Colors
 $primary-color: #31006f;

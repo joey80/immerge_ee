@@ -25,7 +25,7 @@ const uiController = (function() {
                 header.classList.add('js__has-scrolled');
                 return;
             }
-        } else if (windowTopPos == 0) {
+        } else if (windowTopPos < 250) {
             if (header.classList.contains('js__has-scrolled')) {
                 header.classList.remove('js__has-scrolled');
                 return;

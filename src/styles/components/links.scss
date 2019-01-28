@@ -30,32 +30,25 @@ a.none:hover {
 a:link {
     text-decoration: none;
     color: $primary-color-dark;
-    font-weight: 600;
-    background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 a:visited {
     color: $primary-color-dark;
-    font-weight: 600;
-    background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0);
 }
 
 a:active {
     color: $primary-color-dark;
-    font-weight: 600;
-    background-image: linear-gradient(180deg, transparent 90%, rgba(110, 84, 165, 0.2) 0);
 }
 
 a:hover {
-    color: $primary-color-dark;
-    font-weight: 600;
-    background-image: linear-gradient(180deg, transparent 60%, rgba(40, 25, 77, 0.2) 0);
-    transition: all 0.3s ease-in-out;
+    color: $primary-color-light;
+    transition: all 0.2s ease-in-out;
 }
 
 
 a.menu:link {
+    font-weight: 700;
     position: relative;
     color: initial;
     text-decoration: none;

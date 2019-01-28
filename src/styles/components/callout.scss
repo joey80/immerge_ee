@@ -1,0 +1,75 @@
+// ===========================================
+// Callout
+// ===========================================
+
+.callout {
+    width: $container-width;
+    max-width: $container-width-max;
+    margin: 6rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+
+    @include tablet {
+        font-size: initial;
+        margin: 11rem auto;
+    }
+
+    &__card {
+        position: relative;
+        width: $container-width;
+        margin: 3rem auto;
+        height: 350px;
+
+        @include desktop {
+            width: 30%;
+            height: 400px;
+            margin: initial;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 3rem auto;
+
+            @include tablet {
+                margin: 6rem auto;
+            }
+
+            @include desktop {
+                flex-direction: row;
+            }
+
+            & p {
+                position: absolute;
+                top: 160px;
+            }
+        }
+
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem auto;
+            font-size: 3rem;
+            color: $secondary-color;
+            text-align: center;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid $primary-color;
+
+            @include tablet {
+                margin: 0 auto 3rem auto;
+            }
+        }
+    }
+
+    &__container {
+
+        & p {
+            margin-top: 4rem;
+        }
+
+    }
+}
