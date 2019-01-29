@@ -377,18 +377,22 @@ button, .button--light {
       .header__logo {
         width: 320px;
         height: 83px; } }
-  .header__mobile-menu::after {
-    font-family: 'Font Awesome 5 Free';
-    font-size: 1.5rem;
-    font-weight: 900;
-    font-style: normal;
-    display: inline-block;
-    margin-left: .5rem;
-    content: '\F0C9';
-    text-decoration: inherit; }
-  @media (min-width: 1025px) {
-    .header__mobile-menu {
-      display: none; } }
+  .header__mobile-menu {
+    background-color: transparent !important;
+    border: 0;
+    color: #28194d; }
+    .header__mobile-menu::after {
+      font-family: 'Font Awesome 5 Free';
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-style: normal;
+      display: inline-block;
+      margin-left: .5rem;
+      content: '\F0C9';
+      text-decoration: inherit; }
+    @media (min-width: 1025px) {
+      .header__mobile-menu {
+        display: none; } }
   .header__nav {
     height: 0px;
     transition: all 0.3s ease-in-out;
@@ -690,16 +694,15 @@ button, .button--light {
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    padding: 0 3rem;
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.85); }
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 3rem; }
     @media (min-width: 768px) {
       .hero__container {
         width: 100%;
-        padding: 0 5rem; } }
+        padding: 5rem; } }
     @media (min-width: 1025px) {
       .hero__container {
-        padding: 0 2rem;
         width: 50%; } }
     .hero__container p {
       font-size: 1.1rem; }

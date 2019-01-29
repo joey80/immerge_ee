@@ -14,7 +14,6 @@
     z-index: 9;
 
     @include tablet {
-        //height: 105px;
         height: 85px;
     }
 
@@ -28,15 +27,15 @@
         flex-wrap: wrap; 
         justify-content: space-between;
         align-items: center;
-        padding: $padding-mobile;
+        padding: 0 3rem;
         width: 100%;
 
         @include tablet {
-            padding: $padding-tablet;
+            padding: 0 5rem;
         }
 
         @include desktop {
-            padding: $padding-desktop;
+            padding: 0 2rem;
         }
     }
 
@@ -62,6 +61,9 @@
     }
 
     &__mobile-menu {
+        background-color: transparent !important;
+        border: 0;
+        color: $primary-color-dark;
 
         &::after {
             font-family: 'Font Awesome\ 5 Free';
@@ -95,7 +97,6 @@
 
         @include tablet {
             top: 85px;
-            //top: 105px;
         }
 
         @include desktop {

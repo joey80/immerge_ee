@@ -26,17 +26,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: left;
-        padding: $padding-mobile;
         text-align: left;
         background-color: rgba(255, 255, 255, 0.85);
+        padding: 3rem;
 
         @include tablet {
             width: 100%;
-            padding: $padding-tablet;
+            padding: 5rem;
         }
 
         @include desktop {
-            padding: $padding-desktop;
             width: 50%;
         }
 
