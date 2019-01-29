@@ -5,6 +5,7 @@
 .hero {
     display: flex;
     margin-top: 80px;
+    margin-bottom: 6rem;
     width: 100%;
     height: 380px;
     background-image: url('https://www.immergetech.com/wp-content/uploads/2018/10/Sprout-Image-Header-1.jpg');
@@ -57,5 +58,13 @@
                 color: #000;
             }
         }
+    }
+
+    &--about {
+        background-image: url('https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-pic.jpeg');
+    }
+
+    &--small {
+        max-height: 215px;
     }
 }

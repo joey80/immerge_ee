@@ -16,25 +16,25 @@
         <header class="header">
             <div class="header__container">
                 <a href="index.html" class="none"><div class="header__logo"></div></a>
-                <button class="header__mobile-menu"></button>
-                <nav class="header__nav">
+                <button class="header__mobile-menu" aria-label="Mobile Menu"></button>
+                <nav class="header__nav" role="navigation" aria-label="Site">
                     <ul>
-                        <li><a href="pages/about.html" class="menu">About</a>
+                        <li><a href="pages/about.html" class="menu" aria-label="About" title="About">About</a>
                             <ul>
-                                <li><a href="pages/about/careers.html" class="menu">Careers</a></li>
+                                <li><a href="pages/about/careers.html" class="menu" aria-label="Careers" title="Careers">Careers</a></li>
                             </ul>
                         </li>
-                        <li><a href="pages/team.html" class="menu">Team</a></li>
-                        <li><a href="pages/portfolio.html" class="menu">Portfolio</a></li>
-                        <li><a href="pages/services.html" class="menu">Services</a>
+                        <li><a href="pages/team.html" class="menu" aria-label="Team" title="Team">Team</a></li>
+                        <li><a href="pages/portfolio.html" class="menu" aria-label="Portfolio" title="Portfolio">Portfolio</a></li>
+                        <li><a href="pages/services.html" class="menu" aria-label="Services" title="Services">Services</a>
                             <ul>
-                                <li><a href="pages/services.html" class="menu">Web Design & Development</a></li>
-                                <li><a href="pages/services.html" class="menu">Digital Marketing</a></li>
-                                <li><a href="pages/services.html" class="menu">Print & Promotional</a></li>
+                                <li><a href="pages/services.html" class="menu" aria-label="Web Design & Development" title="Web Design & Development">Web Design & Development</a></li>
+                                <li><a href="pages/services.html" class="menu" aria-label="Digital Marketing" title="Digital Marketing">Digital Marketing</a></li>
+                                <li><a href="pages/services.html" class="menu" aria-label="Print & Promotion" title="Print & Promotion">Print & Promotional</a></li>
                             </ul>
                         </li>
-                        <li><a href="pages/blog.html" class="menu">Blog</a></li>
-                        <li><a href="pages/contact.html" class="menu">Contact</a></li>
+                        <li><a href="pages/blog.html" class="menu" aria-label="Blog" title="Blog">Blog</a></li>
+                        <li><a href="pages/contact.html" class="menu" aria-label="Contact" title="Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div><!-- .header__container end -->
@@ -47,7 +47,7 @@
                 <p>We are a team of passionate marketers who aspire to be your partner in success.
                 Our love for innovation and our belief in our clients gives us the ability to assist
                 you in reaching your full potential.</p>
-                <a href="#" class="none"><button>Our Services</button></a>
+                <a href="#" class="none" aria-label="Our Services" title="Our Services"><button>Our Services</button></a>
             </div><!-- .hero__container end -->
         </section><!-- .hero end -->
 
@@ -101,11 +101,11 @@
             <h2>Our Recent Work</h2>
             <p>View some of our recent work below or <a href="#">view our portfolio.</a></p>
             <div class="container">
-                <div class="container__half" style="background-image: url('https://www.immergetech.com/wp-content/uploads/2018/03/cvec-listing.jpg');">
-                    <h3><a href="#">Central Virginia Electric Cooperative</a></h3>
+                <div class="container__half container__half--index">
+                    <h3><a href="#" aria-label="Central Virginia Electric Cooperative" title="Central Virginia Electric Cooperative">Central Virginia Electric Cooperative</a></h3>
                 </div>
-                <div class="container__half" style="background-image: url('https://www.immergetech.com/wp-content/uploads/2018/03/lura-page-listing.jpg');">
-                    <h3><a href="#">Luray-Page County Chamber Of Commerce</a></h3>
+                <div class="container__half container__half--index">
+                    <h3><a href="#" aria-label="Luray-Page County Chamber Of Commerce" title="Luray-Page County Chamber Of Commerce">Luray-Page County Chamber Of Commerce</a></h3>
                 </div>
             </div>
         </section><!-- .container__full end -->
@@ -116,7 +116,9 @@
             <div class="blog__card__container">
                 <!-- .blog__card start -->
                 <div class="blog__card">
-                    <div class="blog__card__image" style="background-image: url('https://www.immergetech.com/wp-content/uploads/2018/09/marketing_agency_post-400x250.png');"></div>
+                    <div class="blog__card__image">
+                        <img src="https://www.immergetech.com/wp-content/uploads/2018/09/marketing_agency_post-400x250.png">
+                    </div>
                     <div class="blog__card__content">
                         <h2>3 Ways to Determine If My Business Should Hire a Digital Marketing Agency</h2>
                         <span class="blog__card__meta">Sept 27, 2018</span>
@@ -129,7 +131,9 @@
 
                 <!-- .blog__card start -->
                 <div class="blog__card">
-                    <div class="blog__card__image" style="background-image: url('https://www.immergetech.com/wp-content/uploads/2018/09/hacking_blog-400x250.png');"></div>
+                    <div class="blog__card__image">
+                        <img src="https://www.immergetech.com/wp-content/uploads/2018/09/hacking_blog-400x250.png">
+                    </div>
                     <div class="blog__card__content">
                         <h2>Simple Ways to Protect Your Website from Brute Force Hacking</h2>
                         <span class="blog__card__meta">Sept 18, 2018</span>
@@ -142,7 +146,9 @@
 
                 <!-- .blog__card start -->
                 <div class="blog__card">
-                    <div class="blog__card__image" style="background-image: url('https://www.immergetech.com/wp-content/uploads/2018/09/content_blog_image-400x250.png');"></div>
+                    <div class="blog__card__image">
+                        <img src="https://www.immergetech.com/wp-content/uploads/2018/09/content_blog_image-400x250.png">
+                    </div>
                     <div class="blog__card__content">
                         <h2>Using Web Content to Boost Your Web Presence</h2>
                         <span class="blog__card__meta">Sept 13, 2018</span>
@@ -167,8 +173,8 @@
                     and exceeding partner expectations at every touch-point.</p>
                     <p>139 N. Liberty Street Suite 202<br>
                     Harrisonburg, VA 22802</p>
-                    <p><a href="#">info@immergetech.com</a><br>
-                    <a href="#">(540) 437-9617</a></p>
+                    <p><a href="#" aria-label="Our Email" title="Our Email">info@immergetech.com</a><br>
+                    <a href="#" aria-label="Our Phone Number" title="Our Phone Number">(540) 437-9617</a></p>
                     <div class="footer__sponsors">
                         <img src="https://www.theleverageway.com/wp-content/uploads/2016/06/Google_Partners_logo_blogpage.jpg">
                         <img src="https://www.immergetech.com/wp-content/uploads/2019/01/Member_SVTC_Transparent.png">
@@ -208,7 +214,7 @@
                                 is not stored within the website.
                             </label>
                         </div>
-                        <button type="submit">Submit</button>
+                        <button aria-label="Form Submit" type="submit">Submit</button>
                     </form><!-- .form end -->
                 </div><!-- .footer__section end -->
             </div><!-- .footer__section__container end -->
@@ -216,12 +222,12 @@
             <div class="footer__subfooter">
                 <div class="footer__section__container">
                     <div class="footer__copyright">
-                        © 2019 Immerge | <a href="#" class="footer-link">Privacy Policy</a>
+                        © 2019 Immerge | <a href="#" class="footer-link" aria-label="Privacy Policy" title="Privacy Policy">Privacy Policy</a>
                     </div>
                     <div class="footer__social">
-                        <a href="#" class="footer-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-link" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-link" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div><!-- .footer__section__container end -->
             </div><!-- .footer__subfooter end -->
