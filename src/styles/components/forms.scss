@@ -4,6 +4,7 @@
 
 .form {
     position: relative;
+    margin-bottom: 5rem;
 
     input[type="checkbox"], input[type="radio"] {
         box-sizing: border-box;
@@ -11,32 +12,27 @@
         margin: 0 0.8rem 0.8rem 0;
     }
 
-    input:focus {
-        outline: $focus-light;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0 20px rgba(26, 3, 27, 0.2);
-    }
-
-    label {
-        display: inline-block;
-        position: absolute;
-        top: -7px;
-        left: 20px;
-        z-index: 2;
-    }
-
     textarea {
         overflow: auto;
         resize: vertical;
-
-        &:focus {
-            outline: $focus-light;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 20px rgba(26, 3, 27, 0.2);
-        }
+        font-size: 1.2rem;
+        color: #999;
 
         &.form__control {
             height: auto;
+        }
+    }
+
+    button {
+        border: 0;
+        background-color: transparent;
+        padding: .5rem 1rem;
+        font-size: 1.5rem;
+        color: #666;
+        border-radius: 0;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
 
@@ -71,22 +67,7 @@
         transition: all 0.3s ease-in-out;
 
         &::placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-    }
-
-    &--dark {
-        input:focus {
-            outline: $focus-dark;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 20px rgba(26, 3, 27, 0.2);
-        }
-    
-        textarea:focus {
-            outline: $focus-dark;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 20px rgba(26, 3, 27, 0.2);
+            color: #999;
         }
     }
 
@@ -100,6 +81,13 @@
     &__group {
         position: relative;
         margin-bottom: 2rem;
+
+        & input {
+            border-bottom: 1px solid #ccc;
+            color: #999;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+        }
 
         &__grid {
             display: flex;
