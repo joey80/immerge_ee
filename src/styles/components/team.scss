@@ -28,11 +28,16 @@
             }
         }
 
+        & h4 {
+            letter-spacing: 0.07rem;
+        }
+
         & h5 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 400;
             color: #aaa;
             text-transform: initial;
+            letter-spacing: 0.03rem;
         }
 
         & p {

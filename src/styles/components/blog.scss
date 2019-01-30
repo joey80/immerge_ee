@@ -25,11 +25,51 @@
 
         @include desktop {
             width: 30%;
-            margin: initial;
+        }
+
+        &--half {
+            width: 100%;
+
+            @include tablet {
+                width: 45%;
+            }
+        }
+
+        &--noborder {
+            border: 0;
         }
 
         &__content {
             padding: 2rem;
+
+            & button {
+                border: 2px solid $primary-color;
+                text-transform: uppercase;
+                background-color: transparent;
+                color: $primary-color;
+                border-radius: 50px;
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 0.5rem 0.7rem;
+
+                &:hover {
+                    color: $primary-color-light;
+                    border-color: $primary-color-light;
+                }
+            }
+
+            &--services {
+                margin-top: 1.8rem;
+                text-align: left;
+                padding-left: 0;
+                padding-right: 0;
+
+                & h2 {
+                    text-transform: none;
+                    font-weight: 500 !important;
+                    font-size: 1.5rem !important;
+                }
+            }
         }
 
         &__container {
@@ -45,6 +85,10 @@
                 margin: 6rem auto;
             }
 
+            &--half {
+                justify-content: space-around;
+            }
+
             & h2 {
                 font-size: 1.2rem;
                 font-weight: 700;
@@ -57,6 +101,25 @@
             width: 100%;
             height: 200px;
             overflow: hidden;
+
+            &--services {
+
+                & img {
+                    width: 300px;
+                    height: 200px;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        opacity: 0.5;
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+            }
         }
+    }
+
+    &--nomargin {
+        margin: 0;
+        width: 100%;
     }
 }

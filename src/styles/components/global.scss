@@ -72,3 +72,18 @@ a:focus {
         color: $text-muted;
     }
 }
+
+.grow {
+    flex-grow: 1;
+}
+
+.flex {
+    display: block;
+    
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

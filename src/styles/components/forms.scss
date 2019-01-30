@@ -104,4 +104,15 @@
         display: block;
         margin-top: .25rem;
     }
+
+    &--blog {
+        text-align: left;
+        width: 100%;
+        
+        & input {
+            padding: 1.7rem 1rem;
+            background-color: #fff;
+            margin-top: 0;
+        }
+    }
 }
