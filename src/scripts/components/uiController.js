@@ -12,8 +12,9 @@ const uiController = (function() {
     const nav = document.querySelector('.header__nav');
     const linkParent = header.getElementsByTagName('li');
     const mobileButton = document.querySelector('.header__mobile-menu');
+    const teamImage = document.querySelectorAll('.team__image');
     let menuClosed = true;
-    
+
 
     // Shrink logo and header height on scroll
     const handleScroll = () => {
@@ -32,7 +33,6 @@ const uiController = (function() {
             }
         }
     };
-
 
     // Add a drop down arrow if the header links have a submenu
     const handleMenuLinks = (lists) => {
@@ -55,14 +55,24 @@ const uiController = (function() {
         return;
     };
 
+    const flipTeamImage = (event) => {
+        event.target.children[0].src = event.target.dataset.hover;
+        //let hoverSrc = event.target.dataset.hover;
+        //console.log('Target: ', event.target.children[0].src);
+        //console.log('Original SRC: ', event.target.dataset.original);
+        //console.log('Hover SRC: ', event.target.dataset.hover);
+        //event.target.src = event.target.dataset.hover;
+
+        //targetSrc = hoverSrc;
+    };
 
     // Toggles the mobile menu
     const handleMobileMenu = () => {
         if (nav.classList.contains('js__is-visible') ? closeMenu() : openMenu());
     };
 
-    
     const setupEventListeners = () => {
+
         // Header animation on scroll
         window.addEventListener('scroll', function() {
             handleScroll();
@@ -71,6 +81,19 @@ const uiController = (function() {
         // Mobile menu button toggle
         mobileButton.addEventListener('click', function() {
             handleMobileMenu();
+        });
+
+        // Team image flip
+        document.body.addEventListener('mouseover', function(event) {
+            if (event.target.classList.contains('js-image')) {
+                event.target.src = event.target.dataset.hover;
+            }
+        });
+
+        document.body.addEventListener('mouseout', function(event) {
+            if (event.target.classList.contains('js-image')) {
+                event.target.src = event.target.dataset.original;
+            }
         });
 
     

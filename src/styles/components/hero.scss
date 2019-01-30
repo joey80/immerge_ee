@@ -64,6 +64,20 @@
         background-image: url('https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-pic.jpeg');
     }
 
+    &--portfolio {
+        background-image: url('https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg');
+        background-position: left;
+    }
+
+    &--services {
+        background-image: url('https://www.immergetech.com/wp-content/uploads/2018/02/AdobeStock_101916306-2.jpg');
+        background-position: top;
+    }
+
+    &--team {
+        background-image: url('https://www.immergetech.com/wp-content/uploads/2018/06/stone_bricks.jpg');
+    }
+
     &--small {
         max-height: 215px;
     }

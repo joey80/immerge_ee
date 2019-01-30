@@ -3,5 +3,65 @@
 // ===========================================
 
 .team {
+    width: 100%;
     
+    &__container {
+        margin: 6rem auto;
+        width: $container-width;
+        max-width: $container-width-max;
+    }
+
+    &__content {
+        width: 100%;
+
+        @include desktop {
+            width: 75%;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include desktop {
+                flex-direction: row;
+            }
+        }
+
+        & h5 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #aaa;
+            text-transform: initial;
+        }
+
+        & p {
+            font-size: 1.1rem;
+        }
+    }
+
+    &__facts {
+        border: 1px solid #ccc;
+        padding: 2rem;
+        margin-top: 2.5rem;
+        font-size: 1.3rem;
+
+        & ul {
+            font-size: 1rem;
+            padding-left: 1rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+
+        @include desktop {
+            width: 25%;
+        }
+
+        & img {
+            width: 200px;
+            height: 200px;
+        }
+    }
 }

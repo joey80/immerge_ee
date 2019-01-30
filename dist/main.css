@@ -184,10 +184,10 @@ html {
 
 body {
   background-color: #fff;
-  color: #444;
+  color: #666;
   font-family: 'Arial', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.9;
   overflow-x: hidden; }
 
 p {
@@ -223,7 +223,10 @@ a:focus {
 .no-padding {
   padding: 0; }
 
-.text-muted {
+.text--left {
+  text-align: left; }
+
+.text--muted {
   color: #bcb5c9; }
 
 a.none:link {
@@ -445,7 +448,7 @@ button, .button--light {
           display: flex;
           flex-direction: column;
           left: -45px;
-          top: 98px;
+          top: 99px;
           width: 300px;
           padding: 1rem;
           background-color: #fff;
@@ -501,7 +504,7 @@ button, .button--light {
 
 @media (min-width: 1025px) {
   .js__has-scrolled .header__nav ul li > ul {
-    top: 85px; } }
+    top: 89px; } }
 
 .js__is-visible {
   height: 500px;
@@ -570,32 +573,72 @@ button, .button--light {
   .container__full {
     text-align: center;
     width: 100%; }
+    .container__full--cta {
+      padding: 9rem 0 4rem 0;
+      background-color: #31006f;
+      color: #fff; }
+      .container__full--cta button, .container__full--cta .button--light {
+        background-color: #fff;
+        border-color: #fff;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding: 0.5rem 1.4rem;
+        margin-top: 1rem;
+        color: #31006f; }
+        .container__full--cta button:hover, .container__full--cta .button--light:hover {
+          background-color: rgba(255, 255, 255, 0.555);
+          color: #000; }
     .container__full p {
       font-size: 1.1rem;
       margin: 1rem 0 4rem 0; }
+    .container__full__container {
+      margin: 0 auto 6rem auto;
+      width: 80%;
+      max-width: 1080px; }
   .container__half {
     display: flex;
     align-items: flex-end;
     width: 100%;
-    height: 420px;
     background-size: cover;
     background-position: center center; }
+    .container__half--index {
+      height: 420px; }
+      .container__half--index:nth-of-type(1) {
+        background-image: url("https://www.immergetech.com/wp-content/uploads/2018/03/cvec-listing.jpg"); }
+      .container__half--index:nth-of-type(2) {
+        background-image: url("https://www.immergetech.com/wp-content/uploads/2018/03/lura-page-listing.jpg"); }
+      .container__half--index h3 {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 2rem 0 2rem 0;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.2); }
+      .container__half--index:last-of-type {
+        align-items: flex-start; }
+    .container__half--about {
+      display: block;
+      background-color: #898b8e;
+      color: #fff;
+      text-align: left;
+      padding: 6rem 9rem; }
+      .container__half--about:nth-of-type(1) {
+        background-image: url("https://www.immergetech.com/wp-content/uploads/2018/11/20181107-IMG_9339.jpg"); }
+      .container__half--about hr {
+        background-color: #fff;
+        width: 30%;
+        height: 5px;
+        margin: 3rem 0 3rem 0;
+        border: 0; }
     @media (min-width: 1025px) {
       .container__half {
         width: 50%; } }
-    .container__half:last-of-type {
-      align-items: flex-start; }
-    .container__half h3 {
-      display: block;
-      width: 100%;
-      text-align: left;
-      margin: 2rem 0 2rem 0;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.2); }
 
 .footer {
-  width: 100%; }
+  width: 100%;
+  margin-top: 6rem; }
   .footer__copyright {
     font-size: 1.2rem;
     padding: 1.3rem 0; }
@@ -676,6 +719,7 @@ button, .button--light {
 .hero {
   display: flex;
   margin-top: 80px;
+  margin-bottom: 6rem;
   width: 100%;
   height: 380px;
   background-image: url("https://www.immergetech.com/wp-content/uploads/2018/10/Sprout-Image-Header-1.jpg");
@@ -717,11 +761,23 @@ button, .button--light {
       .hero__container button:hover, .hero__container .button--light:hover {
         background-color: #cfcfcf;
         color: #000; }
+  .hero--about {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-pic.jpeg"); }
+  .hero--portfolio {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg");
+    background-position: left; }
+  .hero--services {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2018/02/AdobeStock_101916306-2.jpg");
+    background-position: top; }
+  .hero--team {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2018/06/stone_bricks.jpg"); }
+  .hero--small {
+    max-height: 215px; }
 
 .blog {
   width: 80%;
   max-width: 1080px;
-  margin: 6rem auto;
+  margin: 6rem auto 0 auto;
   text-align: center;
   font-size: 1.1rem; }
   @media (min-width: 768px) {
@@ -759,7 +815,76 @@ button, .button--light {
       background-size: cover;
       background-position: center center;
       width: 100%;
+      height: 200px;
+      overflow: hidden; }
+
+.team {
+  width: 100%; }
+  .team__container {
+    margin: 6rem auto;
+    width: 80%;
+    max-width: 1080px; }
+  .team__content {
+    width: 100%; }
+    @media (min-width: 1025px) {
+      .team__content {
+        width: 75%; } }
+    .team__content__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      @media (min-width: 1025px) {
+        .team__content__container {
+          flex-direction: row; } }
+    .team__content h5 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #aaa;
+      text-transform: initial; }
+    .team__content p {
+      font-size: 1.1rem; }
+  .team__facts {
+    border: 1px solid #ccc;
+    padding: 2rem;
+    margin-top: 2.5rem;
+    font-size: 1.3rem; }
+    .team__facts ul {
+      font-size: 1rem;
+      padding-left: 1rem; }
+  .team__image {
+    width: 100%; }
+    @media (min-width: 1025px) {
+      .team__image {
+        width: 25%; } }
+    .team__image img {
+      width: 200px;
       height: 200px; }
+
+.portfolio__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+.portfolio__item {
+  width: 50%; }
+  .portfolio__item h2 {
+    text-align: center;
+    margin: 2rem auto 8rem auto; }
+  .portfolio__item__image {
+    margin: 0 auto; }
+    .portfolio__item__image img {
+      display: block;
+      margin: 0 auto;
+      width: 500px;
+      height: 380px;
+      transition: all 0.2s ease-in-out;
+      opacity: 1; }
+      .portfolio__item__image img:hover {
+        opacity: .5;
+        transition: all 0.2s ease-in-out; }
 
 .form {
   position: relative;
