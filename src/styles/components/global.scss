@@ -64,6 +64,10 @@ a:focus {
 
 .text {
 
+    &--center {
+        text-align: center;
+    }
+
     &--left {
         text-align: left;
     }
@@ -75,6 +79,7 @@ a:focus {
 
 .grow {
     flex-grow: 1;
+    width: 100%;
 }
 
 .flex {

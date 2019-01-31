@@ -223,6 +223,9 @@ a:focus {
 .no-padding {
   padding: 0; }
 
+.text--center {
+  text-align: center; }
+
 .text--left {
   text-align: left; }
 
@@ -230,7 +233,8 @@ a:focus {
   color: #bcb5c9; }
 
 .grow {
-  flex-grow: 1; }
+  flex-grow: 1;
+  width: 100%; }
 
 .flex {
   display: block; }
@@ -602,6 +606,7 @@ button, .button--light {
           background-color: rgba(255, 255, 255, 0.555);
           color: #000; }
       .container__full--cta--blog {
+        text-align: left;
         padding: 4rem 0 0.1rem 0;
         color: #000;
         background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/mountainsBG.jpg");
@@ -718,6 +723,11 @@ button, .button--light {
             padding-left: 3rem; }
           .footer__section p:nth-of-type(3) {
             padding-left: 3rem; } }
+    .footer__section__map {
+      margin: 0 auto 3rem auto;
+      width: 80%;
+      height: 300px;
+      background-color: black; }
     .footer__section__container {
       display: flex;
       width: 90%;
@@ -821,6 +831,9 @@ button, .button--light {
   .hero--blog {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-piclo-res.jpg");
     background-position: center; }
+  .hero--contact {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2018/02/AdobeStock_86035543.jpg");
+    background-position: center; }
   .hero--portfolio {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/workspace-piclo-res.jpg");
     background-position: left; }
@@ -843,7 +856,7 @@ button, .button--light {
       font-size: initial;
       margin: 11rem auto; } }
   .blog__card {
-    margin: 3rem auto;
+    margin-bottom: 3rem;
     border: 1px solid #d8d8d8;
     text-align: left; }
     @media (min-width: 768px) {
@@ -899,14 +912,15 @@ button, .button--light {
         font-size: 1.2rem;
         font-weight: 700; }
     .blog__card__image {
-      background-size: cover;
-      background-position: center center;
       width: 100%;
       height: 200px;
       overflow: hidden; }
+      .blog__card__image img {
+        width: 100%;
+        object-fit: contain; }
       .blog__card__image--services img {
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        object-fit: contain;
         transition: all 0.2s ease-in-out; }
         .blog__card__image--services img:hover {
           opacity: 0.5;
@@ -969,17 +983,22 @@ button, .button--light {
   margin: 0 auto; }
 
 .portfolio__item {
-  width: 50%; }
+  width: 100%; }
+  @media (min-width: 1025px) {
+    .portfolio__item {
+      width: 45%; } }
   .portfolio__item h2 {
     text-align: center;
     margin: 2rem auto 8rem auto; }
   .portfolio__item__image {
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 100%;
+    height: 380px;
+    overflow: hidden; }
     .portfolio__item__image img {
+      object-fit: fill;
       display: block;
       margin: 0 auto;
-      width: 500px;
-      height: 380px;
       transition: all 0.2s ease-in-out;
       opacity: 1; }
       .portfolio__item__image img:hover {
@@ -1062,7 +1081,11 @@ button, .button--light {
     .form--blog input {
       padding: 1.7rem 1rem;
       background-color: #fff;
-      margin-top: 0; }
+      margin-top: 0;
+      border-radius: 0; }
+    .form--blog button, .form--blog .button--light {
+      background-color: #222;
+      color: #fff; }
 
 
 /*# sourceMappingURL=main.css.map*/
