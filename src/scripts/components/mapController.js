@@ -1,68 +1,99 @@
 import { isVisible } from './helpers';
 
 /**
-* mapController.js - Controller for leaflet js
+* mapController.js - Google Maps v3 Controller
 *
-* Author - Joey Leger (2018)
-* Description - Controls the UI for the map
+* Author - Joey Leger (2019)
+* Description - Controller for creating a google map and adding markers to it
 *
 */
 const mapController = (function() {
 
     // Set up some variables
-    const map = document.getElementById('map');
-    let mymap;
-    let popup;
+    const myMap = document.querySelector('.footer__section__map');
+    let map;
+    let points = [];
+    let count = 0;
+    let infoWindowArray = [];
 
-    // Functions
-    const createMap = () => {
-
-        // Set up map variables
-        const L = require('leaflet');
-        const mapBoxToken = 'pk.eyJ1Ijoiam9leTgwIiwiYSI6ImNqcHIycWF2ajE1dDQzeG56dDNsdG40ZzAifQ.FvTJQ69PrRFCGl1IVdMzYQ';
-        const mapStyle = 'cjpugsacx08jh2qqox7gs2qnh';
-        mymap = L.map('map').setView([37.4316, -78.6569], 8);
-        popup = L.popup();
-        const redIcon = new L.Icon({
-            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
+    // Loads the google map when the page loads
+    const loadMap = () => {
+        map = new google.maps.Map(myMap, {
+            center: {lat: 38.4511588, lng: -78.87048979999997},
+            zoom: 13
         });
-        const marker = L.marker([38.0301, -79.0336], {icon: redIcon}).addTo(mymap);
-        
-        // Create the map
-        L.tileLayer(`https://api.mapbox.com/styles/v1/joey80/${mapStyle}/tiles/256/{z}/{x}/{y}?access_token={accessToken}`, {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox.streets',
-            accessToken: mapBoxToken
-        }).addTo(mymap);
-
-        // Add the marker
-        marker.bindPopup("<b>Stuarts Draft, Virginia</b><br>This is a description! :)").openPopup();
-
-        // Close all map popups on load
-        mymap.closePopup();
     };
 
-    const onMapClick = (e) => {
-        popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
+    // Iterate over each class in the DOM collection and push
+    // its content to the points array
+    const buildMapMarkers = () => {
+        let latitude = 38.4511588,
+            longitude = -78.87048979999997,
+            name = 'Immerge',
+            phone = '(540) 437-9617',
+            address = '139 N. Liberty St., Suite 202<br />Harrisonburg, VA 22802',
+
+            // Create the info window content that pops up when you click
+            // on a location marker
+            markup = `
+                <div class="infoContainer">
+                    <h2>${name}</h2>
+                    <p>${address}</p>
+                    <p>${phone}</p>
+                </div>`;
+
+            // Push it to the array and create the next marker
+            points[0] = [latitude, longitude, markup];
     };
-    
+
+    // Add markers to the map from the points array
+    const addMapMarkers = (addArray) => {
+        for(let i = 0; i < addArray.length; i++) {
+
+            // Set a delay on each marker to stagger them being dropped
+            // onto the map
+            setTimeout(function() {
+                let marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(addArray[i][0], addArray[i][1]),
+                    animation: google.maps.Animation.DROP,
+                    map: map
+                });
+                let markerContent = addArray[i][2],
+                    infoWindow = new google.maps.InfoWindow({
+                    content: markerContent
+                    });
+                
+                // add each infoWindow to array so we can close them later
+                infoWindowArray.push(infoWindow); 
+                        
+                // Bind a click event to each marker. First we close all open windows
+                // and then open the window for the marker that was clicked
+                google.maps.event.addListener(marker, 'click', function() {
+                    closeAllInfoWindows(infoWindowArray);
+                    infoWindow.open(map, marker);
+                });
+            }, i * 50);    
+        }
+    };
+
+    // When clicking on a new marker this makes sure that any other infoWindows
+    // get closed first
+    const closeAllInfoWindows = (windowArray) => {
+        for(let i = 0; i < windowArray.length; i++) {
+            infoWindowArray[i].close();
+        };
+    };
+
     const setupEventListeners = () => {
-        mymap.on('click', onMapClick);
+
     };
 
     return {
         init: function() {
-            if (isVisible(map)) {
-                createMap();
+            if (isVisible(myMap)) {
+                loadMap();
+                buildMapMarkers();
+                addMapMarkers(points);
                 setupEventListeners();
             }
         }

@@ -12,7 +12,7 @@ const uiController = (function() {
     const nav = document.querySelector('.header__nav');
     const linkParent = header.getElementsByTagName('li');
     const mobileButton = document.querySelector('.header__mobile-menu');
-    const teamImage = document.querySelectorAll('.team__image');
+    const scrollButton = document.querySelector('.scroll-to-top');
     let menuClosed = true;
 
 
@@ -24,11 +24,13 @@ const uiController = (function() {
         if (windowTopPos > 250) {
             if (!header.classList.contains('js__has-scrolled')) {
                 header.classList.add('js__has-scrolled');
+                scrollButton.classList.remove('scroll-to-top--hide');
                 return;
             }
         } else if (windowTopPos < 250) {
             if (header.classList.contains('js__has-scrolled')) {
                 header.classList.remove('js__has-scrolled');
+                scrollButton.classList.add('scroll-to-top--hide');
                 return;
             }
         }
@@ -55,17 +57,6 @@ const uiController = (function() {
         return;
     };
 
-    const flipTeamImage = (event) => {
-        event.target.children[0].src = event.target.dataset.hover;
-        //let hoverSrc = event.target.dataset.hover;
-        //console.log('Target: ', event.target.children[0].src);
-        //console.log('Original SRC: ', event.target.dataset.original);
-        //console.log('Hover SRC: ', event.target.dataset.hover);
-        //event.target.src = event.target.dataset.hover;
-
-        //targetSrc = hoverSrc;
-    };
-
     // Toggles the mobile menu
     const handleMobileMenu = () => {
         if (nav.classList.contains('js__is-visible') ? closeMenu() : openMenu());
@@ -83,17 +74,27 @@ const uiController = (function() {
             handleMobileMenu();
         });
 
-        // Team image flip
+        // Team image flip In
         document.body.addEventListener('mouseover', function(event) {
             if (event.target.classList.contains('js-image')) {
                 event.target.src = event.target.dataset.hover;
             }
         });
 
+        // Team image flip out
         document.body.addEventListener('mouseout', function(event) {
             if (event.target.classList.contains('js-image')) {
                 event.target.src = event.target.dataset.original;
             }
+        });
+
+        // Scroll To Top Button Event
+        scrollButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
         });
 
     

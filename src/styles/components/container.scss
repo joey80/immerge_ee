@@ -43,6 +43,11 @@
                 background-image: url('https://www.immergetech.com/wp-content/uploads/2019/01/mountainsBG.jpg');
                 background-size: cover;
             }
+
+            &--green {
+                @extend .container__full--cta;
+                background-color: $secondary-color;
+            }
         }
 
         & p {
@@ -54,6 +59,19 @@
             margin: 0 auto 6rem auto;
             width: $container-width;
             max-width: $container-width-max;
+        }
+
+        &__portfolio {
+            margin-top: 0;
+            padding: 6rem 0;
+        
+            &:nth-of-type(even) {
+                background-color: #f7f7f7;
+
+                & > .container__full__container {
+                    flex-direction: row-reverse;
+                }
+            }
         }
     }
 
@@ -99,10 +117,23 @@
             background-color: #898b8e;
             color: #fff;
             text-align: left;
-            padding: 6rem 9rem;
+            padding: 3rem;
+
+            @include tablet {
+                padding: 6rem;
+            }
+
+            @include desktop {
+                padding: 6rem 7rem;
+            }
 
             &:nth-of-type(1) {
                 background-image: url('https://www.immergetech.com/wp-content/uploads/2018/11/20181107-IMG_9339.jpg');
+                min-height: 300px;
+
+                @include tablet {
+                    min-height: 600px;
+                }
             }
 
             hr {
@@ -111,6 +142,30 @@
                 height: 5px;
                 margin: 3rem 0 3rem 0;
                 border: 0;
+            }
+        }
+
+        &--portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 45%;
+            text-align: left;
+
+            & h3 {
+                margin-bottom: 1rem;
+                font-size: 1.7rem;
+            }
+
+            & p {
+                padding: 0;
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            & img {
+                width: 500px;
+                height: 500px;
             }
         }
 

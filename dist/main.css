@@ -242,8 +242,55 @@ a:focus {
     .flex {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center; } }
+
+/* The little scroll to top button on every page */
+.scroll-to-top {
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  bottom: 125px;
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 1;
+  transition: all 0.3s ease-in-out; }
+  .scroll-to-top:hover {
+    color: #6e54a5;
+    font-size: 2.3rem;
+    transition: all 0.3s ease-in-out; }
+  .scroll-to-top--hide {
+    opacity: 0;
+    right: -30px;
+    transition: all 0.3s ease-in-out; }
+
+/* For The Map Marker On The Google Map On The Contact Page*/
+.infoContainer {
+  text-align: left; }
+  .infoContainer h2 {
+    color: #31006f;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0 0 0.3rem 0 !important;
+    padding: 0 !important;
+    text-transform: none;
+    letter-spacing: 0.05rem; }
+  .infoContainer p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1rem !important; }
+
+/* This is used on the services detail pages*/
+.special-background {
+  background-color: #f7f7f7;
+  padding: 3rem; }
 
 a.none:link {
   color: inherit;
@@ -589,11 +636,11 @@ button, .button--light {
   .container__full {
     text-align: center;
     width: 100%; }
-    .container__full--cta {
+    .container__full--cta, .container__full--cta--green {
       padding: 9rem 0 4rem 0;
       background-color: #31006f;
       color: #fff; }
-      .container__full--cta button, .container__full--cta .button--light {
+      .container__full--cta button, .container__full--cta--green button, .container__full--cta .button--light, .container__full--cta--green .button--light {
         background-color: #fff;
         border-color: #fff;
         border-radius: 50px;
@@ -602,7 +649,7 @@ button, .button--light {
         padding: 0.5rem 1.4rem;
         margin-top: 1rem;
         color: #31006f; }
-        .container__full--cta button:hover, .container__full--cta .button--light:hover {
+        .container__full--cta button:hover, .container__full--cta--green button:hover, .container__full--cta .button--light:hover, .container__full--cta--green .button--light:hover {
           background-color: rgba(255, 255, 255, 0.555);
           color: #000; }
       .container__full--cta--blog {
@@ -611,6 +658,8 @@ button, .button--light {
         color: #000;
         background-image: url("https://www.immergetech.com/wp-content/uploads/2019/01/mountainsBG.jpg");
         background-size: cover; }
+      .container__full--cta--green {
+        background-color: #76c043; }
     .container__full p {
       font-size: 1.1rem;
       margin: 1rem 0 4rem 0; }
@@ -618,6 +667,13 @@ button, .button--light {
       margin: 0 auto 6rem auto;
       width: 80%;
       max-width: 1080px; }
+    .container__full__portfolio {
+      margin-top: 0;
+      padding: 6rem 0; }
+      .container__full__portfolio:nth-of-type(even) {
+        background-color: #f7f7f7; }
+        .container__full__portfolio:nth-of-type(even) > .container__full__container {
+          flex-direction: row-reverse; }
   .container__half {
     display: flex;
     align-items: flex-end;
@@ -648,15 +704,41 @@ button, .button--light {
       background-color: #898b8e;
       color: #fff;
       text-align: left;
-      padding: 6rem 9rem; }
+      padding: 3rem; }
+      @media (min-width: 768px) {
+        .container__half--about {
+          padding: 6rem; } }
+      @media (min-width: 1025px) {
+        .container__half--about {
+          padding: 6rem 7rem; } }
       .container__half--about:nth-of-type(1) {
-        background-image: url("https://www.immergetech.com/wp-content/uploads/2018/11/20181107-IMG_9339.jpg"); }
+        background-image: url("https://www.immergetech.com/wp-content/uploads/2018/11/20181107-IMG_9339.jpg");
+        min-height: 300px; }
+        @media (min-width: 768px) {
+          .container__half--about:nth-of-type(1) {
+            min-height: 600px; } }
       .container__half--about hr {
         background-color: #fff;
         width: 30%;
         height: 5px;
         margin: 3rem 0 3rem 0;
         border: 0; }
+    .container__half--portfolio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 45%;
+      text-align: left; }
+      .container__half--portfolio h3 {
+        margin-bottom: 1rem;
+        font-size: 1.7rem; }
+      .container__half--portfolio p {
+        padding: 0;
+        margin: 0;
+        font-size: 1.2rem; }
+      .container__half--portfolio img {
+        width: 500px;
+        height: 500px; }
   .container__sidebar__container {
     display: flex;
     flex-direction: column; }
@@ -726,8 +808,7 @@ button, .button--light {
     .footer__section__map {
       margin: 0 auto 3rem auto;
       width: 80%;
-      height: 300px;
-      background-color: black; }
+      height: 300px; }
     .footer__section__container {
       display: flex;
       width: 90%;
@@ -805,10 +886,10 @@ button, .button--light {
     align-items: left;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 3rem; }
+    padding: 3rem;
+    width: 100%; }
     @media (min-width: 768px) {
       .hero__container {
-        width: 100%;
         padding: 5rem; } }
     @media (min-width: 1025px) {
       .hero__container {
@@ -830,6 +911,9 @@ button, .button--light {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-pic.jpeg"); }
   .hero--blog {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-piclo-res.jpg");
+    background-position: center; }
+  .hero--careers {
+    background-image: url("https://www.immergetech.com/wp-content/uploads/2016/11/people-coffee-tea-meeting.jpg");
     background-position: center; }
   .hero--contact {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2018/02/AdobeStock_86035543.jpg");
@@ -987,6 +1071,16 @@ button, .button--light {
   @media (min-width: 1025px) {
     .portfolio__item {
       width: 45%; } }
+  .portfolio__item__container button, .portfolio__item__container .button--light {
+    background-color: #31006f;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 0.3rem 1.6rem;
+    margin: 1rem 4rem 0 0; }
+    .portfolio__item__container button:hover, .portfolio__item__container .button--light:hover {
+      background-color: #6e54a5; }
   .portfolio__item h2 {
     text-align: center;
     margin: 2rem auto 8rem auto; }

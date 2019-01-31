@@ -84,11 +84,69 @@ a:focus {
 
 .flex {
     display: block;
-    
+
     @include desktop {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
+}
+
+/* The little scroll to top button on every page */
+.scroll-to-top {
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+    bottom: 125px;
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $primary-color-light;
+        font-size: 2.3rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &--hide {
+        opacity: 0;
+        right: -30px;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* For The Map Marker On The Google Map On The Contact Page*/
+.infoContainer {
+    text-align: left;
+
+    & h2 {
+        color: $primary-color;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin: 0 0 0.3rem 0 !important;
+        padding: 0 !important;
+        text-transform: none;
+        letter-spacing: 0.05rem;
+    }
+
+    & p {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* This is used on the services detail pages*/
+.special-background {
+    background-color: #f7f7f7;
+    padding: 3rem;
 }
