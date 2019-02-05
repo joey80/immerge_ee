@@ -5,13 +5,12 @@
 .callout {
     width: $container-width;
     max-width: $container-width-max;
-    margin: 6rem auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 1.1rem;
 
     @include tablet {
         font-size: initial;
-        margin: 11rem auto;
     }
 
     &__card {
@@ -42,7 +41,7 @@
 
             & p {
                 position: absolute;
-                top: 160px;
+                top: 230px;
             }
         }
 

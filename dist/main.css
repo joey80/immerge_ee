@@ -180,7 +180,7 @@ textarea {
   box-sizing: border-box; }
 
 html {
-  font-size: 14px; }
+  font-size: 16px; }
 
 body {
   background-color: #fff;
@@ -191,7 +191,7 @@ body {
   overflow-x: hidden; }
 
 p {
-  margin-bottom: 1.3rem; }
+  margin: 2rem 0; }
 
 h1, h2, h3, h4, h5 {
   margin: 1.414rem 0 0.5rem;
@@ -291,6 +291,9 @@ a:focus {
 .special-background {
   background-color: #f7f7f7;
   padding: 3rem; }
+
+section {
+  margin: 0 auto 6rem auto !important; }
 
 a.none:link {
   color: inherit;
@@ -471,7 +474,8 @@ button, .button--light {
     text-transform: uppercase;
     background-color: #fff;
     width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    font-size: 0.9rem; }
     @media (min-width: 768px) {
       .header__nav {
         top: 85px; } }
@@ -570,20 +574,19 @@ button, .button--light {
     top: 89px; } }
 
 .js__is-visible {
-  height: 500px;
+  height: 800px;
   border-top: 3px solid #31006f;
   transition: all 0.3s ease-in-out; }
 
 .callout {
   width: 80%;
   max-width: 1080px;
-  margin: 6rem auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 1.1rem; }
   @media (min-width: 768px) {
     .callout {
-      font-size: initial;
-      margin: 11rem auto; } }
+      font-size: initial; } }
   .callout__card {
     position: relative;
     width: 80%;
@@ -607,7 +610,7 @@ button, .button--light {
           flex-direction: row; } }
       .callout__card__container p {
         position: absolute;
-        top: 160px; }
+        top: 230px; }
     .callout__card__image {
       display: flex;
       justify-content: center;
@@ -633,11 +636,14 @@ button, .button--light {
   @media (min-width: 1025px) {
     .container {
       flex-direction: row; } }
+  .container__buttons {
+    margin: 0 auto;
+    text-align: center; }
   .container__full {
     text-align: center;
     width: 100%; }
     .container__full--cta, .container__full--cta--green {
-      padding: 9rem 0 4rem 0;
+      padding: 9rem 0;
       background-color: #31006f;
       color: #fff; }
       .container__full--cta button, .container__full--cta--green button, .container__full--cta .button--light, .container__full--cta--green .button--light {
@@ -647,7 +653,6 @@ button, .button--light {
         font-size: 1.2rem;
         font-weight: 400;
         padding: 0.5rem 1.4rem;
-        margin-top: 1rem;
         color: #31006f; }
         .container__full--cta button:hover, .container__full--cta--green button:hover, .container__full--cta .button--light:hover, .container__full--cta--green .button--light:hover {
           background-color: rgba(255, 255, 255, 0.555);
@@ -660,11 +665,15 @@ button, .button--light {
         background-size: cover; }
       .container__full--cta--green {
         background-color: #76c043; }
+        .container__full--cta--green > div > img {
+          max-width: 100%; }
+        .container__full--cta--green > div > p {
+          font-size: 2rem; }
     .container__full p {
       font-size: 1.1rem;
       margin: 1rem 0 4rem 0; }
     .container__full__container {
-      margin: 0 auto 6rem auto;
+      margin: 0 auto;
       width: 80%;
       max-width: 1080px; }
     .container__full__portfolio {
@@ -780,9 +789,9 @@ button, .button--light {
 
 .footer {
   width: 100%;
-  margin-top: 6rem; }
+  margin-top: 6rem;
+  font-size: 0.9rem; }
   .footer__copyright {
-    font-size: 1.2rem;
     padding: 1.3rem 0; }
   .footer__section {
     width: 100%; }
@@ -795,7 +804,6 @@ button, .button--light {
         .footer__section h2 {
           margin: 0 0 5rem 0; } }
     .footer__section p {
-      font-size: 1.2rem;
       text-align: left; }
       @media (min-width: 1025px) {
         .footer__section p {
@@ -833,10 +841,10 @@ button, .button--light {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1.3rem 0; }
     .footer__social i {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       display: inline-block;
       padding-right: 2rem; }
       @media (min-width: 1025px) {

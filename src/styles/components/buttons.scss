@@ -39,3 +39,26 @@ button {
         outline: $focus-dark;
     }
 }
+
+.button--green {
+    @extend button;
+    background-color: #76c142;
+    border: 1px solid #76c142;
+    border-color: #76c142;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0.5rem 1.4rem;
+    color: #000;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background-color: #fff;
+        border: 1px solid transparent;
+        color: $primary-color;
+    }
+
+    &:focus {
+        outline: $focus-dark;
+    }
+}
