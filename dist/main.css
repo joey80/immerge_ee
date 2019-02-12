@@ -104,7 +104,7 @@ hr {
   height: 0;
   overflow: visible; }
 
-button, .button--light,
+button, .button--light, .button--green,
 input,
 optgroup,
 select,
@@ -115,21 +115,21 @@ textarea {
 optgroup {
   font-weight: bold; }
 
-button, .button--light,
+button, .button--light, .button--green,
 input {
   overflow: visible; }
 
-button, .button--light,
+button, .button--light, .button--green,
 select {
   text-transform: none; }
 
-button, .button--light,
+button, .button--light, .button--green,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; }
 
-button:-moz-focusring, .button--light:-moz-focusring,
+button:-moz-focusring, .button--light:-moz-focusring, .button--green:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -180,7 +180,8 @@ textarea {
   box-sizing: border-box; }
 
 html {
-  font-size: 16px; }
+  font-size: 16px;
+  scroll-behavior: smooth; }
 
 body {
   background-color: #fff;
@@ -188,7 +189,8 @@ body {
   font-family: 'Arial', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
   line-height: 1.9;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale; }
 
 p {
   margin: 2rem 0; }
@@ -245,6 +247,9 @@ a:focus {
       justify-content: space-between;
       align-items: center; } }
 
+.flex-center {
+  align-items: center !important; }
+
 /* The little scroll to top button on every page */
 .scroll-to-top {
   position: fixed;
@@ -294,6 +299,11 @@ a:focus {
 
 section {
   margin: 0 auto 6rem auto !important; }
+
+/* This is for pages with no hero and the content needs to drop
+    below the header */
+.no-hero {
+  margin-top: 180px !important; }
 
 a.none:link {
   color: inherit;
@@ -372,7 +382,7 @@ a.menu:hover {
   text-decoration: none;
   background-image: none; }
 
-button, .button--light {
+button, .button--light, .button--green {
   border-radius: 6px;
   border: 0;
   background-color: #6e54a5;
@@ -380,11 +390,11 @@ button, .button--light {
   color: #fff;
   transition: all 0.2s ease-in-out;
   font-size: 0.9rem; }
-  button:hover, .button--light:hover {
+  button:hover, .button--light:hover, .button--green:hover {
     background-color: #31006f;
     transition: all 0.2s ease-in-out;
     cursor: pointer; }
-  button:focus, .button--light:focus {
+  button:focus, .button--light:focus, .button--green:focus {
     outline: 2px dotted rgba(0, 0, 0, 0.4); }
 
 .button--light {
@@ -397,6 +407,23 @@ button, .button--light {
     border: 1px solid transparent;
     color: #31006f; }
   .button--light:focus {
+    outline: 2px dotted rgba(255, 255, 255, 0.4); }
+
+.button--green {
+  background-color: #76c142;
+  border: 1px solid #76c142;
+  border-color: #76c142;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem 1.4rem;
+  color: #000; }
+  .button--green:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    border: 1px solid transparent;
+    color: #31006f; }
+  .button--green:focus {
     outline: 2px dotted rgba(255, 255, 255, 0.4); }
 
 .header {
@@ -414,7 +441,7 @@ button, .button--light {
       height: 85px; } }
   @media (min-width: 1025px) {
     .header {
-      height: 105px; } }
+      height: 115px; } }
   .header__container {
     position: relative;
     display: flex;
@@ -515,7 +542,7 @@ button, .button--light {
           display: flex;
           flex-direction: column;
           left: -45px;
-          top: 99px;
+          top: 108px;
           width: 300px;
           padding: 1rem;
           background-color: #fff;
@@ -571,7 +598,7 @@ button, .button--light {
 
 @media (min-width: 1025px) {
   .js__has-scrolled .header__nav ul li > ul {
-    top: 89px; } }
+    top: 94px; } }
 
 .js__is-visible {
   height: 800px;
@@ -640,13 +667,13 @@ button, .button--light {
     margin: 0 auto;
     text-align: center; }
   .container__full {
-    text-align: center;
     width: 100%; }
     .container__full--cta, .container__full--cta--green {
-      padding: 9rem 0;
+      padding: 5rem 0;
       background-color: #31006f;
-      color: #fff; }
-      .container__full--cta button, .container__full--cta--green button, .container__full--cta .button--light, .container__full--cta--green .button--light {
+      color: #fff;
+      text-align: center; }
+      .container__full--cta button, .container__full--cta--green button, .container__full--cta .button--light, .container__full--cta--green .button--light, .container__full--cta .button--green, .container__full--cta--green .button--green {
         background-color: #fff;
         border-color: #fff;
         border-radius: 50px;
@@ -654,9 +681,11 @@ button, .button--light {
         font-weight: 400;
         padding: 0.5rem 1.4rem;
         color: #31006f; }
-        .container__full--cta button:hover, .container__full--cta--green button:hover, .container__full--cta .button--light:hover, .container__full--cta--green .button--light:hover {
+        .container__full--cta button:hover, .container__full--cta--green button:hover, .container__full--cta .button--light:hover, .container__full--cta--green .button--light:hover, .container__full--cta .button--green:hover, .container__full--cta--green .button--green:hover {
           background-color: rgba(255, 255, 255, 0.555);
           color: #000; }
+      .container__full--cta a, .container__full--cta--green a {
+        color: #76c043; }
       .container__full--cta--blog {
         text-align: left;
         padding: 4rem 0 0.1rem 0;
@@ -669,13 +698,13 @@ button, .button--light {
           max-width: 100%; }
         .container__full--cta--green > div > p {
           font-size: 2rem; }
-    .container__full p {
-      font-size: 1.1rem;
-      margin: 1rem 0 4rem 0; }
+        .container__full--cta--green a {
+          color: initial; }
     .container__full__container {
       margin: 0 auto;
       width: 80%;
-      max-width: 1080px; }
+      max-width: 1080px;
+      align-items: flex-start; }
     .container__full__portfolio {
       margin-top: 0;
       padding: 6rem 0; }
@@ -683,6 +712,8 @@ button, .button--light {
         background-color: #f7f7f7; }
         .container__full__portfolio:nth-of-type(even) > .container__full__container {
           flex-direction: row-reverse; }
+    .container__full__services:nth-of-type(even) > .container__full__container {
+      flex-direction: row-reverse; }
   .container__half {
     display: flex;
     align-items: flex-end;
@@ -746,8 +777,15 @@ button, .button--light {
         margin: 0;
         font-size: 1.2rem; }
       .container__half--portfolio img {
-        width: 500px;
-        height: 500px; }
+        max-width: 500px;
+        max-height: 500px; }
+  .container__quarter {
+    min-width: 25%; }
+    .container__quarter img {
+      width: 200px;
+      height: 200px; }
+  .container__two-thirds {
+    width: 75%; }
   .container__sidebar__container {
     display: flex;
     flex-direction: column; }
@@ -768,9 +806,9 @@ button, .button--light {
       width: 100%; }
       @media (min-width: 1025px) {
         .container__sidebar__container .sidebar {
-          padding: 3rem 0 0 3rem;
+          padding: 0 0 0 3rem;
           width: 25%; } }
-      .container__sidebar__container .sidebar button, .container__sidebar__container .sidebar .button--light {
+      .container__sidebar__container .sidebar button, .container__sidebar__container .sidebar .button--light, .container__sidebar__container .sidebar .button--green {
         padding: 0.5 1rem;
         font-size: 1rem;
         border: 1px solid #ddd;
@@ -778,7 +816,7 @@ button, .button--light {
         color: #666;
         border-radius: 0 3px 3px 0; }
       .container__sidebar__container .sidebar h4 {
-        margin: 6rem 0 3rem 0;
+        margin: 0 0 3rem 0;
         letter-spacing: 0.1rem; }
       .container__sidebar__container .sidebar ul {
         padding-left: 0;
@@ -786,6 +824,8 @@ button, .button--light {
         .container__sidebar__container .sidebar ul li {
           font-size: 1.1rem;
           margin-top: 1rem; }
+      .container__sidebar__container .sidebar--with-border {
+        border-left: 1px solid #d8d8d8; }
 
 .footer {
   width: 100%;
@@ -904,7 +944,7 @@ button, .button--light {
         width: 50%; } }
     .hero__container p {
       font-size: 1.1rem; }
-    .hero__container button, .hero__container .button--light {
+    .hero__container button, .hero__container .button--light, .hero__container .button--green {
       background-color: rgba(0, 0, 0, 0.7);
       border-color: #444;
       border-radius: 50px;
@@ -912,7 +952,7 @@ button, .button--light {
       font-weight: 400;
       padding: 0.5rem 1.4rem;
       margin-top: 1rem; }
-      .hero__container button:hover, .hero__container .button--light:hover {
+      .hero__container button:hover, .hero__container .button--light:hover, .hero__container .button--green:hover {
         background-color: #cfcfcf;
         color: #000; }
   .hero--about {
@@ -957,6 +997,8 @@ button, .button--light {
     @media (min-width: 1025px) {
       .blog__card {
         width: 30%; } }
+    .blog__card--full {
+      width: 100%; }
     .blog__card--half {
       width: 100%; }
       @media (min-width: 768px) {
@@ -966,7 +1008,7 @@ button, .button--light {
       border: 0; }
     .blog__card__content {
       padding: 2rem; }
-      .blog__card__content button, .blog__card__content .button--light {
+      .blog__card__content button, .blog__card__content .button--light, .blog__card__content .button--green {
         border: 2px solid #31006f;
         text-transform: uppercase;
         background-color: transparent;
@@ -975,9 +1017,11 @@ button, .button--light {
         font-size: 1rem;
         font-weight: 400;
         padding: 0.5rem 0.7rem; }
-        .blog__card__content button:hover, .blog__card__content .button--light:hover {
+        .blog__card__content button:hover, .blog__card__content .button--light:hover, .blog__card__content .button--green:hover {
           color: #6e54a5;
           border-color: #6e54a5; }
+      .blog__card__content h1 {
+        font-size: 2rem; }
       .blog__card__content--services {
         margin-top: 1.8rem;
         text-align: left;
@@ -998,6 +1042,9 @@ button, .button--light {
           flex-direction: row;
           flex-wrap: wrap;
           margin: 6rem auto; } }
+      .blog__card__container--full {
+        margin-top: 120px;
+        width: 100%; }
       .blog__card__container--half {
         justify-content: space-around; }
       .blog__card__container h2 {
@@ -1017,6 +1064,9 @@ button, .button--light {
         .blog__card__image--services img:hover {
           opacity: 0.5;
           transition: all 0.2s ease-in-out; }
+      .blog__card__image--tall {
+        height: auto;
+        margin-top: 3rem; }
   .blog--nomargin {
     margin: 0;
     width: 100%; }
@@ -1079,7 +1129,7 @@ button, .button--light {
   @media (min-width: 1025px) {
     .portfolio__item {
       width: 45%; } }
-  .portfolio__item__container button, .portfolio__item__container .button--light {
+  .portfolio__item__container button, .portfolio__item__container .button--light, .portfolio__item__container .button--green {
     background-color: #31006f;
     color: #fff;
     border-radius: 50px;
@@ -1087,7 +1137,7 @@ button, .button--light {
     font-weight: 400;
     padding: 0.3rem 1.6rem;
     margin: 1rem 4rem 0 0; }
-    .portfolio__item__container button:hover, .portfolio__item__container .button--light:hover {
+    .portfolio__item__container button:hover, .portfolio__item__container .button--light:hover, .portfolio__item__container .button--green:hover {
       background-color: #6e54a5; }
   .portfolio__item h2 {
     text-align: center;
@@ -1121,14 +1171,14 @@ button, .button--light {
     color: #999; }
     .form textarea.form__control {
       height: auto; }
-  .form button, .form .button--light {
+  .form button, .form .button--light, .form .button--green {
     border: 0;
     background-color: transparent;
     padding: .5rem 1rem;
     font-size: 1.5rem;
     color: #666;
     border-radius: 0; }
-    .form button:hover, .form .button--light:hover {
+    .form button:hover, .form .button--light:hover, .form .button--green:hover {
       background-color: rgba(0, 0, 0, 0.1); }
   .form__check {
     position: relative;
@@ -1185,7 +1235,7 @@ button, .button--light {
       background-color: #fff;
       margin-top: 0;
       border-radius: 0; }
-    .form--blog button, .form--blog .button--light {
+    .form--blog button, .form--blog .button--light, .form--blog .button--green {
       background-color: #222;
       color: #fff; }
 

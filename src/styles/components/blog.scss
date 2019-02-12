@@ -27,6 +27,10 @@
             width: 30%;
         }
 
+        &--full {
+            width: 100%;
+        }
+
         &--half {
             width: 100%;
 
@@ -58,6 +62,10 @@
                 }
             }
 
+            & h1 {
+                font-size: 2rem;
+            }
+
             &--services {
                 margin-top: 1.8rem;
                 text-align: left;
@@ -83,6 +91,11 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 margin: 6rem auto;
+            }
+
+            &--full {
+                margin-top: 120px;
+                width: 100%;
             }
 
             &--half {
@@ -117,6 +130,11 @@
                         transition: all 0.2s ease-in-out;
                     }
                 }
+            }
+
+            &--tall {
+                height: auto;
+                margin-top: 3rem;
             }
         }
     }

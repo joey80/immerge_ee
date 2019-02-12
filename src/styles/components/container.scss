@@ -17,13 +17,13 @@
     }
 
     &__full {
-        text-align: center;
         width: 100%;
 
         &--cta {
-            padding: 9rem 0;
+            padding: 5rem 0;
             background-color: $primary-color;
             color: #fff;
+            text-align: center;
 
             & button {
                 background-color: #fff;
@@ -32,13 +32,16 @@
                 font-size: 1.2rem;
                 font-weight: 400;
                 padding: 0.5rem 1.4rem;
-                //margin-top: 1rem;
                 color: $primary-color;
 
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.555);
                     color: #000;
                 }
+            }
+
+            & a {
+                color: #76c043;
             }
 
             &--blog {
@@ -60,18 +63,22 @@
                 & > div > p {
                     font-size: 2rem;
                 }
+
+                & a {
+                    color: initial;
+                }
             }
         }
 
         & p {
-            font-size: 1.1rem;
-            margin: 1rem 0 4rem 0;
+            //margin: 1rem 0 4rem 0;
         }
 
         &__container {
             margin: 0 auto;
             width: $container-width;
             max-width: $container-width-max;
+            align-items: flex-start;
         }
 
         &__portfolio {
@@ -80,6 +87,16 @@
         
             &:nth-of-type(even) {
                 background-color: #f7f7f7;
+
+                & > .container__full__container {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+
+        &__services {
+        
+            &:nth-of-type(even) {
 
                 & > .container__full__container {
                     flex-direction: row-reverse;
@@ -177,8 +194,8 @@
             }
 
             & img {
-                width: 500px;
-                height: 500px;
+                max-width: 500px;
+                max-height: 500px;
             }
         }
 
@@ -224,7 +241,7 @@
                 width: 100%;
 
                 @include desktop {
-                    padding: 3rem 0 0 3rem;
+                    padding: 0 0 0 3rem;
                     width: 25%;
                 }
 
@@ -238,7 +255,7 @@
                 }
 
                 & h4 {
-                    margin: 6rem 0 3rem 0;
+                    margin: 0 0 3rem 0;
                     letter-spacing: 0.1rem;
                 }
 
@@ -250,6 +267,10 @@
                         font-size: 1.1rem;
                         margin-top: 1rem;
                     }
+                }
+
+                &--with-border {
+                    border-left: 1px solid #d8d8d8;
                 }
             }
         }

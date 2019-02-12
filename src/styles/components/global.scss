@@ -9,6 +9,7 @@
 
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     font-weight: 400;
     line-height: 1.9;
     overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -93,6 +95,10 @@ a:focus {
     }
 }
 
+.flex-center {
+    align-items: center !important;
+}
+
 /* The little scroll to top button on every page */
 .scroll-to-top {
     position: fixed;
@@ -153,4 +159,10 @@ a:focus {
 
 section {
     margin: 0 auto 6rem auto !important;
+}
+
+/* This is for pages with no hero and the content needs to drop
+    below the header */
+.no-hero {
+    margin-top: 180px !important;
 }
