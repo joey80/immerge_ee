@@ -20,6 +20,15 @@ body {
     line-height: 1.9;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: 80px;
+
+    @include tablet {
+        padding-top: 85px;
+    }
+
+    @include desktop {
+        padding-top: 115px;
+    }
 }
 
 p {
@@ -158,7 +167,7 @@ a:focus {
 }
 
 section {
-    margin: 0 auto 6rem auto !important;
+    margin: 0 auto 9rem auto !important;
 }
 
 /* This is for pages with no hero and the content needs to drop

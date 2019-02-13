@@ -53,8 +53,8 @@ button {
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background-color: #fff;
-        border: 1px solid transparent;
+        background-color: $container-bg;
+        border: 1px solid $secondary-color;
         color: $primary-color;
     }
 
