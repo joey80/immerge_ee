@@ -8,7 +8,6 @@
     font-size: 0.9rem;
 
     &__copyright {
-        //font-size: 1.2rem;
         padding: 1.3rem 0;
     }
     
@@ -23,17 +22,15 @@
             margin: 5rem 0;
 
             @include desktop {
-                margin: 0 0 5rem 0;
+                margin: 0 0 2rem 0;
             }
         }
 
         & p {
-            //font-size: 1.2rem;
             text-align: left;
 
             @include desktop {
                 padding-right: 8rem;
-                margin-top: 2rem;
 
                 &:nth-of-type(2) {
                     padding-left: 3rem;
@@ -70,11 +67,6 @@
             background-repeat: no-repeat;
             width: 250px;
             height: 155px;
-            margin: 0 auto 3rem auto;//
-
-            @include desktop {
-                margin: 0 0 3rem 0;
-            }
         }
     }
 
@@ -83,16 +75,12 @@
         flex-direction: row;
         flex-wrap: nowrap;
         font-size: 1rem;
-        padding: 1.3rem 0;
+        padding: 1.3rem 4rem 0 0;
 
         & i {
             font-size: 1.3rem;
             display: inline-block;
-            padding-right: 2rem;
-
-            @include desktop {
-                padding-left: 2rem;
-            }
+            padding-right: 2.5rem;
         }
     }
 

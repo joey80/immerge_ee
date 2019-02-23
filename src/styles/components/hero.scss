@@ -5,7 +5,7 @@
 .hero {
     display: flex;
     width: 100%;
-    height: 380px;
+    min-height: 380px;
     background-image: url('https://www.immergetech.com/wp-content/uploads/2018/10/Sprout-Image-Header-1.jpg');
     background-position: bottom center;
     background-size: cover;
@@ -14,33 +14,25 @@
         height: 420px;
     }
 
-    @include desktop {
-        height: 500px;
-    }
-
     &__container {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: left;
+        //align-items: center;
         text-align: left;
         background-color: rgba(255, 255, 255, 0.85);
         padding: 3rem;
         width: 100%;
 
         @include tablet {
-            padding: 5rem;
+            padding: 6rem;
         }
 
         @include desktop {
             width: 50%;
         }
 
-        & p {
-            font-size: 1.1rem;
-        }
-
-        & button {
+        &__button {
             background-color: rgba(0, 0, 0, 0.7);
             border-color: #444;
             border-radius: 50px;
@@ -48,11 +40,18 @@
             font-weight: 400;
             padding: 0.5rem 1.4rem;
             margin-top: 1rem;
+            align-self: flex-start;
+            color: #fff;
 
             &:hover {
                 background-color: rgb(207, 207, 207);
                 color: #000;
             }
+        }
+
+        & h1 {
+            font-size: 2rem;
+            align-self: flex-start;
         }
     }
 

@@ -200,7 +200,7 @@ body {
       padding-top: 115px; } }
 
 p {
-  margin: 2rem 0; }
+  margin: 1rem 0; }
 
 h1, h2, h3, h4, h5 {
   margin: 1.414rem 0 0.5rem;
@@ -254,6 +254,15 @@ a:focus {
       justify-content: space-between;
       align-items: center; } }
 
+.flex-column {
+  display: block; }
+  @media (min-width: 768px) {
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; } }
+
 .flex-center {
   align-items: center !important; }
 
@@ -262,7 +271,7 @@ a:focus {
   position: fixed;
   z-index: 99999;
   right: 0;
-  bottom: 125px;
+  bottom: 200px;
   padding: 0.5rem 1rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -671,8 +680,12 @@ button, .button--light, .button--green {
     .container {
       flex-direction: row; } }
   .container__buttons {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     text-align: center; }
+    .container__buttons a:nth-child(2) > div:nth-child(1) {
+      margin-left: 2rem; }
   .container__full {
     width: 100%; }
     .container__full--cta, .container__full--cta--green {
@@ -680,7 +693,7 @@ button, .button--light, .button--green {
       background-color: #31006f;
       color: #fff;
       text-align: center; }
-      .container__full--cta button, .container__full--cta--green button, .container__full--cta .button--light, .container__full--cta--green .button--light, .container__full--cta .button--green, .container__full--cta--green .button--green {
+      .container__full--cta__button {
         background-color: #fff;
         border-color: #fff;
         border-radius: 50px;
@@ -688,7 +701,7 @@ button, .button--light, .button--green {
         font-weight: 400;
         padding: 0.5rem 1.4rem;
         color: #31006f; }
-        .container__full--cta button:hover, .container__full--cta--green button:hover, .container__full--cta .button--light:hover, .container__full--cta--green .button--light:hover, .container__full--cta .button--green:hover, .container__full--cta--green .button--green:hover {
+        .container__full--cta__button:hover {
           background-color: rgba(255, 255, 255, 0.555);
           color: #000; }
       .container__full--cta a, .container__full--cta--green a {
@@ -707,6 +720,8 @@ button, .button--light, .button--green {
           font-size: 2rem; }
         .container__full--cta--green a {
           color: initial; }
+        .container__full--cta--green a:hover {
+          color: #f6efff; }
     .container__full__container {
       margin: 0 auto;
       width: 80%;
@@ -872,13 +887,12 @@ button, .button--light, .button--green {
       margin: 5rem 0; }
       @media (min-width: 1025px) {
         .footer__section h2 {
-          margin: 0 0 5rem 0; } }
+          margin: 0 0 2rem 0; } }
     .footer__section p {
       text-align: left; }
       @media (min-width: 1025px) {
         .footer__section p {
-          padding-right: 8rem;
-          margin-top: 2rem; }
+          padding-right: 8rem; }
           .footer__section p:nth-of-type(2) {
             padding-left: 3rem; }
           .footer__section p:nth-of-type(3) {
@@ -902,24 +916,17 @@ button, .button--light, .button--green {
       background-position: 0 -15px;
       background-repeat: no-repeat;
       width: 250px;
-      height: 155px;
-      margin: 0 auto 3rem auto; }
-      @media (min-width: 1025px) {
-        .footer__section__image {
-          margin: 0 0 3rem 0; } }
+      height: 155px; }
   .footer__social {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 1rem;
-    padding: 1.3rem 0; }
+    padding: 1.3rem 4rem 0 0; }
     .footer__social i {
       font-size: 1.3rem;
       display: inline-block;
-      padding-right: 2rem; }
-      @media (min-width: 1025px) {
-        .footer__social i {
-          padding-left: 2rem; } }
+      padding-right: 2.5rem; }
   .footer__sponsors {
     display: flex;
     flex-direction: row;
@@ -943,44 +950,43 @@ button, .button--light, .button--green {
 .hero {
   display: flex;
   width: 100%;
-  height: 380px;
+  min-height: 380px;
   background-image: url("https://www.immergetech.com/wp-content/uploads/2018/10/Sprout-Image-Header-1.jpg");
   background-position: bottom center;
   background-size: cover; }
   @media (min-width: 768px) {
     .hero {
       height: 420px; } }
-  @media (min-width: 1025px) {
-    .hero {
-      height: 500px; } }
   .hero__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 3rem;
     width: 100%; }
     @media (min-width: 768px) {
       .hero__container {
-        padding: 5rem; } }
+        padding: 6rem; } }
     @media (min-width: 1025px) {
       .hero__container {
         width: 50%; } }
-    .hero__container p {
-      font-size: 1.1rem; }
-    .hero__container button, .hero__container .button--light, .hero__container .button--green {
+    .hero__container__button {
       background-color: rgba(0, 0, 0, 0.7);
       border-color: #444;
       border-radius: 50px;
       font-size: 1.2rem;
       font-weight: 400;
       padding: 0.5rem 1.4rem;
-      margin-top: 1rem; }
-      .hero__container button:hover, .hero__container .button--light:hover, .hero__container .button--green:hover {
+      margin-top: 1rem;
+      align-self: flex-start;
+      color: #fff; }
+      .hero__container__button:hover {
         background-color: #cfcfcf;
         color: #000; }
+    .hero__container h1 {
+      font-size: 2rem;
+      align-self: flex-start; }
   .hero--about {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2017/02/coffee-keyboard-pic.jpeg"); }
   .hero--blog {
@@ -1067,7 +1073,7 @@ button, .button--light, .button--green {
         .blog__card__container {
           flex-direction: row;
           flex-wrap: wrap;
-          margin: 6rem auto; } }
+          margin: 2rem auto; } }
       .blog__card__container--full {
         margin-top: 120px;
         width: 100%; }
@@ -1155,15 +1161,15 @@ button, .button--light, .button--green {
   @media (min-width: 1025px) {
     .portfolio__item {
       width: 45%; } }
-  .portfolio__item__container button, .portfolio__item__container .button--light, .portfolio__item__container .button--green {
+  .portfolio__item__container__button {
     background-color: #31006f;
     color: #fff;
     border-radius: 50px;
     font-size: 1.4rem;
     font-weight: 400;
     padding: 0.3rem 1.6rem;
-    margin: 1rem 4rem 0 0; }
-    .portfolio__item__container button:hover, .portfolio__item__container .button--light:hover, .portfolio__item__container .button--green:hover {
+    margin: 1rem 0; }
+    .portfolio__item__container__button:hover {
       background-color: #6e54a5; }
   .portfolio__item h2 {
     text-align: center;
@@ -1264,6 +1270,19 @@ button, .button--light, .button--green {
     .form--blog button, .form--blog .button--light, .form--blog .button--green {
       background-color: #222;
       color: #fff; }
+
+.freeform-column-content-align-left > button:nth-child(1), .freeform-column-content-align-left > .button--light:nth-child(1), .freeform-column-content-align-left > .button--green:nth-child(1) {
+  border: 0 !important;
+  background-color: transparent !important;
+  padding: .5rem 1rem !important;
+  font-size: 1.5rem !important;
+  color: #666 !important;
+  border-radius: 0 !important; }
+  .freeform-column-content-align-left > button:nth-child(1):hover, .freeform-column-content-align-left > .button--light:nth-child(1):hover, .freeform-column-content-align-left > .button--green:nth-child(1):hover {
+    background-color: rgba(0, 0, 0, 0.1) !important; }
+
+div.footer__section:nth-child(2) > form:nth-child(2) {
+  margin-bottom: 6rem; }
 
 
 /*# sourceMappingURL=main.css.map*/

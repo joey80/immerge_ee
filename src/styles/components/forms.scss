@@ -122,3 +122,20 @@
         }
     }
 }
+
+.freeform-column-content-align-left > button:nth-child(1) {
+    border: 0 !important;
+    background-color: transparent !important;
+    padding: .5rem 1rem !important;
+    font-size: 1.5rem !important;
+    color: #666 !important;
+    border-radius: 0 !important;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+div.footer__section:nth-child(2) > form:nth-child(2) {
+    margin-bottom: 6rem;
+}
