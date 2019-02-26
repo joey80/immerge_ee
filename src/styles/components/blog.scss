@@ -7,10 +7,8 @@
     max-width: $container-width-max;
     margin: 6rem auto 0 auto;
     text-align: center;
-    font-size: 1.1rem;
 
     @include tablet {
-        font-size: initial;
         margin: 11rem auto;
     }
 

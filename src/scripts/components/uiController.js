@@ -13,6 +13,7 @@ const uiController = (function() {
     const linkParent = header.getElementsByTagName('li');
     const mobileButton = document.querySelector('.header__mobile-menu');
     const scrollButton = document.querySelector('.scroll-to-top');
+    const blogPee = document.querySelectorAll('.blog__card__content > p');
     let menuClosed = true;
 
 
@@ -55,6 +56,19 @@ const uiController = (function() {
         nav.classList.add('js__is-visible');
         menuClosed = false;
         return;
+    };
+
+    // Loops through an array of blog content p tags, strips
+    // the length down and add an elipse
+    const trimBlogPee = () => {
+        let peeString;
+        let tinyPee;
+        for (let pee of blogPee) {
+            peeString = pee.innerHTML;
+            tinyPee = peeString.substring(0, 330);
+            pee.innerHTML = tinyPee;
+            pee.insertAdjacentHTML('beforeend', ' ... ');
+        }
     };
 
     // Toggles the mobile menu
@@ -104,6 +118,9 @@ const uiController = (function() {
         init: function() {
             setupEventListeners();
             handleMenuLinks(linkParent);
+            if (blogPee.length > 0) {
+                trimBlogPee();
+            }
         }
     };
 

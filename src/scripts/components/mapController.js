@@ -10,7 +10,7 @@ import { isVisible } from './helpers';
 const mapController = (function() {
 
     // Set up some variables
-    const myMap = document.querySelector('.footer__section__map');
+    const myMap = document.getElementById('js-google_map');
     let map;
     let points = [];
     let count = 0;
@@ -20,7 +20,7 @@ const mapController = (function() {
     const loadMap = () => {
         map = new google.maps.Map(myMap, {
             center: {lat: 38.4511588, lng: -78.87048979999997},
-            zoom: 13
+            zoom: 18
         });
     };
 

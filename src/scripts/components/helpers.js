@@ -13,7 +13,7 @@ export function isVisible(elm) {
         return false;
     } else if (elm === 'undefined') {
         return false;
-    } else if (elm.offsetWidth || elm.offsetHeight || elm.getClientRects().length) {
+    } else if (elm.offsetWidth || elm.offsetHeight) {
         return true;
     } else {
         return false;
