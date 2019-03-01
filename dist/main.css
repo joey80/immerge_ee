@@ -189,7 +189,7 @@ body {
   color: #666666;
   font-family: 'Raleway', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
-  line-height: 1.9;
+  line-height: 2.2;
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 80px; }
@@ -335,6 +335,9 @@ section {
   width: 100%;
   height: 300px; }
 
+.error {
+  color: #fa5252; }
+
 a.none:link {
   color: inherit;
   text-decoration: none;
@@ -396,7 +399,9 @@ a.menu:link {
   color: initial;
   text-decoration: none;
   background-image: none;
-  font-size: 0.83rem; }
+  font-size: 0.83rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.9; }
 
 a.menu:visited {
   color: initial;
@@ -629,7 +634,7 @@ button, .button--light, .button--green {
 
 @media (min-width: 1025px) {
   .js__has-scrolled .header__nav ul li > ul {
-    top: 94px; } }
+    top: 95px; } }
 
 .js__is-visible {
   height: 800px;
@@ -1226,19 +1231,19 @@ button, .button--light, .button--green {
     color: #999; }
     .form textarea.form__control {
       height: auto; }
-  .form button, .form .button--light, .form .button--green {
+  .form__button {
     border: 0;
     background-color: transparent;
     padding: .5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #666;
     border-radius: 0; }
-    .form button:hover, .form .button--light:hover, .form .button--green:hover {
+    .form__button:hover {
       background-color: rgba(0, 0, 0, 0.1); }
   .form__check {
     position: relative;
     display: block;
-    padding-left: 1.25rem; }
+    margin-top: 1rem; }
     .form__check__input {
       position: absolute;
       margin-top: .3rem;
@@ -1260,6 +1265,19 @@ button, .button--light, .button--green {
     transition: all 0.3s ease-in-out; }
     .form__control::placeholder {
       color: #999; }
+    .form__control--textarea {
+      display: block;
+      width: 100%;
+      padding: 1.2rem;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #999;
+      background-color: rgba(189, 189, 189, 0.1);
+      border-top-left-radius: 5px;
+      border: 0;
+      transition: all 0.3s ease-in-out; }
+      .form__control--textarea::placeholder {
+        color: #999; }
   .form__default {
     position: static !important;
     background-color: none !important;
@@ -1268,11 +1286,17 @@ button, .button--light, .button--green {
   .form__group {
     position: relative;
     margin-bottom: 2rem; }
-    .form__group input {
+    .form__group > input {
       border-bottom: 1px solid #ccc;
       color: #999;
       padding: 1.2rem;
       font-size: 1.2rem; }
+      .form__group > input:focus {
+        outline: 2px dotted #ccc;
+        border-bottom: 0; }
+    .form__group > textarea:focus {
+      outline: 2px dotted #ccc;
+      border-bottom: 0; }
     .form__group__grid {
       display: flex;
       justify-content: space-between; }
@@ -1293,16 +1317,6 @@ button, .button--light, .button--green {
     .form--blog button, .form--blog .button--light, .form--blog .button--green {
       background-color: #222;
       color: #fff; }
-
-.freeform-column-content-align-left > button:nth-child(1), .freeform-column-content-align-left > .button--light:nth-child(1), .freeform-column-content-align-left > .button--green:nth-child(1) {
-  border: 0 !important;
-  background-color: transparent !important;
-  padding: .5rem 1rem !important;
-  font-size: 1.5rem !important;
-  color: #666 !important;
-  border-radius: 0 !important; }
-  .freeform-column-content-align-left > button:nth-child(1):hover, .freeform-column-content-align-left > .button--light:nth-child(1):hover, .freeform-column-content-align-left > .button--green:nth-child(1):hover {
-    background-color: rgba(0, 0, 0, 0.1) !important; }
 
 div.footer__section:nth-child(2) > form:nth-child(2) {
   margin-bottom: 6rem; }

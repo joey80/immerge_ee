@@ -3,6 +3,7 @@
  * BACKUP+
  *
  * @author: Benjamin Shirkey
+ * @author: Joey Leger - Updated For Nexcess
  * @company: Immerge Technologies
  * @website: https://www.immergetech.com
  * @created: 6/28/2018
@@ -24,13 +25,13 @@
 
 # WEBSITE NAME FOR ARCHIVE FILE
 # Suggested to use the FQDN: example.com or www.example.com
-$WEBSITE = 'www.timberlakesmith.com';
+$WEBSITE = '73cd022fb3-3118.nxcli.net';
 
 # DATABASE CONFIGURATION
-$DB_HOSTNAME = 'mariadb-162.wc2.phx1.stabletransit.com';
-$DB_DATABASE = '459491_tsmith';
-$DB_USERNAME = '459491_tsmithu';
-$DB_PASSWORD = '56EjadrEtret';
+$DB_HOSTNAME = 'localhost';
+$DB_DATABASE = 'a996aff5_eedev';
+$DB_USERNAME = 'a996aff5_eedev';
+$DB_PASSWORD = 'OfterCarrelCationDance';
 
 function mySqlConnectionTest($host, $db, $user, $pass) {
 	try {
