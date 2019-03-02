@@ -13,7 +13,7 @@ const uiController = (function() {
     const linkParent = header.getElementsByTagName('li');
     const mobileButton = document.querySelector('.header__mobile-menu');
     const scrollButton = document.querySelector('.scroll-to-top');
-    const blogPee = document.querySelectorAll('.blog__card__content > p');
+    const blogPee = document.querySelectorAll('.blog__card__content--list > p');
     let menuClosed = true;
 
 

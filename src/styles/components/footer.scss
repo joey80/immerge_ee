@@ -9,6 +9,11 @@
 
     &__copyright {
         padding: 1.3rem 0;
+        margin: 0 auto;
+
+        @include tablet {
+            margin: initial;
+        }
     }
     
     &__section {
@@ -75,12 +80,21 @@
         flex-direction: row;
         flex-wrap: nowrap;
         font-size: 1rem;
-        padding: 1.3rem 4rem 0 0;
+        margin: 0 auto;
+
+        @include tablet {
+            margin: initial;
+            padding: 1.3rem 4rem 0 0;
+        }
 
         & i {
             font-size: 1.3rem;
             display: inline-block;
-            padding-right: 2.5rem;
+            padding: 0 1.25rem;
+
+            @include tablet {
+                padding: 0 2.5rem 0 0;
+            }
         }
     }
 

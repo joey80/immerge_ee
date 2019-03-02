@@ -838,7 +838,8 @@ button, .button--light, .button--green {
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
-      width: 100%; }
+      width: 100%;
+      overflow: hidden; }
       @media (min-width: 1025px) {
         .container__half--portfolio {
           width: 45%; } }
@@ -905,7 +906,11 @@ button, .button--light, .button--green {
   margin-top: 6rem;
   font-size: 0.9rem; }
   .footer__copyright {
-    padding: 1.3rem 0; }
+    padding: 1.3rem 0;
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      .footer__copyright {
+        margin: initial; } }
   .footer__section {
     width: 100%; }
     @media (min-width: 1025px) {
@@ -950,11 +955,18 @@ button, .button--light, .button--green {
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 1rem;
-    padding: 1.3rem 4rem 0 0; }
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      .footer__social {
+        margin: initial;
+        padding: 1.3rem 4rem 0 0; } }
     .footer__social i {
       font-size: 1.3rem;
       display: inline-block;
-      padding-right: 2.5rem; }
+      padding: 0 1.25rem; }
+      @media (min-width: 768px) {
+        .footer__social i {
+          padding: 0 2.5rem 0 0; } }
   .footer__sponsors {
     display: flex;
     flex-direction: row;
@@ -1082,8 +1094,10 @@ button, .button--light, .button--green {
           border-color: #6e54a5; }
       .blog__card__content h1 {
         font-size: 2rem; }
+      .blog__card__content--list h2 {
+        font-size: 1.2rem;
+        font-weight: 700; }
       .blog__card__content--services {
-        margin-top: 1.8rem;
         text-align: left;
         padding-left: 0;
         padding-right: 0; }
@@ -1107,9 +1121,6 @@ button, .button--light, .button--green {
         width: 100%; }
       .blog__card__container--half {
         justify-content: space-around; }
-      .blog__card__container h2 {
-        font-size: 1.2rem;
-        font-weight: 700; }
     .blog__card__image {
       width: 100%;
       height: 200px;
@@ -1193,12 +1204,16 @@ button, .button--light, .button--green {
     background-color: #31006f;
     color: #fff;
     border-radius: 50px;
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    padding: 0.3rem 1.6rem;
+    padding: 0.3rem 0.9rem;
     margin: 1rem 0; }
     .portfolio__item__container__button:hover {
       background-color: #6e54a5; }
+    @media (min-width: 768px) {
+      .portfolio__item__container__button {
+        padding: 0.3rem 1.6rem;
+        font-size: 1.4rem; } }
   .portfolio__item h2 {
     text-align: center;
     margin: 2rem auto 8rem auto; }

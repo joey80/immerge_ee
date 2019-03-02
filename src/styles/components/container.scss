@@ -243,6 +243,7 @@
             align-items: flex-start;
             text-align: left;
             width: 100%;
+            overflow: hidden;
 
             @include desktop {
                 width: 45%;
