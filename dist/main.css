@@ -838,8 +838,7 @@ button, .button--light, .button--green {
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
-      width: 100%;
-      overflow: hidden; }
+      width: 100%; }
       @media (min-width: 1025px) {
         .container__half--portfolio {
           width: 45%; } }
@@ -851,8 +850,13 @@ button, .button--light, .button--green {
         margin: 0;
         font-size: 1.2rem; }
       .container__half--portfolio img {
-        max-width: 500px;
-        max-height: 500px; }
+        max-width: 100%;
+        margin-top: 4rem; }
+        @media (min-width: 768px) {
+          .container__half--portfolio img {
+            margin-top: initial;
+            max-width: 500px;
+            max-height: 500px; } }
   .container__quarter {
     min-width: 25%; }
     .container__quarter img {
@@ -1227,7 +1231,9 @@ button, .button--light, .button--green {
       display: block;
       margin: 0 auto;
       transition: all 0.2s ease-in-out;
-      opacity: 1; }
+      opacity: 1;
+      max-height: 100%;
+      max-width: 100%; }
       .portfolio__item__image img:hover {
         opacity: .5;
         transition: all 0.2s ease-in-out; }

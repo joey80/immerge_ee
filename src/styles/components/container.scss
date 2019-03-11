@@ -243,7 +243,6 @@
             align-items: flex-start;
             text-align: left;
             width: 100%;
-            overflow: hidden;
 
             @include desktop {
                 width: 45%;
@@ -261,8 +260,14 @@
             }
 
             & img {
-                max-width: 500px;
-                max-height: 500px;
+                max-width: 100%;
+                margin-top: 4rem;
+
+                @include tablet {
+                    margin-top: initial;
+                    max-width: 500px;
+                    max-height: 500px;
+                }
             }
         }
 

@@ -59,6 +59,8 @@
                 margin: 0 auto;
                 transition: all 0.2s ease-in-out;
                 opacity: 1;
+                max-height: 100%;
+                max-width: 100%;
 
                 &:hover {
                     opacity: .5;
