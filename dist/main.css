@@ -275,7 +275,7 @@ a:focus {
   position: fixed;
   z-index: 99999;
   right: 0;
-  bottom: 200px;
+  bottom: 100px;
   padding: 0.5rem 1rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -973,20 +973,31 @@ button, .button--light, .button--green {
           padding: 0 2.5rem 0 0; } }
   .footer__sponsors {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-top: 5rem; }
+    @media (min-width: 768px) {
+      .footer__sponsors {
+        flex-direction: row; } }
     @media (min-width: 1025px) {
       .footer__sponsors {
         padding-right: 9rem; } }
     .footer__sponsors img {
-      width: 30%; }
+      width: 80%;
+      margin-bottom: 3rem; }
+      @media (min-width: 768px) {
+        .footer__sponsors img {
+          width: 30%;
+          margin-bottom: initial; } }
       .footer__sponsors img:nth-of-type(1) {
-        max-height: 70px;
         border: 1px solid #4384f565; }
-      .footer__sponsors img:nth-of-type(2) {
-        max-height: 100px; }
+        @media (min-width: 768px) {
+          .footer__sponsors img:nth-of-type(1) {
+            max-height: 70px; } }
+      @media (min-width: 768px) {
+        .footer__sponsors img:nth-of-type(2) {
+          max-height: 100px; } }
   .footer__subfooter {
     background-color: #444;
     color: #fff; }
@@ -1000,6 +1011,7 @@ button, .button--light, .button--green {
   background-size: cover; }
   @media (min-width: 768px) {
     .hero {
+      min-height: 215px;
       height: 420px; } }
   .hero__container {
     display: flex;
@@ -1053,7 +1065,7 @@ button, .button--light, .button--green {
   .hero--team {
     background-image: url("https://www.immergetech.com/wp-content/uploads/2018/06/stone_bricks.jpg"); }
   .hero--small {
-    max-height: 215px; }
+    max-height: 215px !important; }
 
 .blog {
   width: 80%;

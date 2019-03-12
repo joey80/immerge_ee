@@ -11,6 +11,7 @@
     background-size: cover;
 
     @include tablet {
+        min-height: 215px;
         height: 420px;
     }
 
@@ -92,6 +93,6 @@
     }
 
     &--small {
-        max-height: 215px;
+        max-height: 215px !important;
     }
 }

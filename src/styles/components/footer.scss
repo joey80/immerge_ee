@@ -100,25 +100,41 @@
 
     &__sponsors {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         margin-top: 5rem;
+
+        @include tablet {
+            flex-direction: row;
+        }
 
         @include desktop {
             padding-right: 9rem;
         }
 
         & img {
-            width: 30%;
+            width: 80%;
+            margin-bottom: 3rem;
+
+            @include tablet {
+                width: 30%;
+                margin-bottom: initial;
+            }
 
             &:nth-of-type(1) {
-                max-height: 70px;
                 border: 1px solid #4384f565;
+
+                @include tablet {
+                    max-height: 70px;
+                }
             }
 
             &:nth-of-type(2) {
-                max-height: 100px;
+
+                @include tablet {
+                    max-height: 100px;
+                }
             }
         }
     }
