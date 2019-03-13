@@ -13,6 +13,8 @@ const uiController = (function() {
     const linkParent = header.getElementsByTagName('li');
     const mobileButton = document.querySelector('.header__mobile-menu');
     const scrollButton = document.querySelector('.scroll-to-top');
+    const searchIcon = document.querySelector('.header__search__icon');
+    const searchInput = document.querySelector('.header__search__input');
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
     let menuClosed = true;
 
@@ -109,6 +111,37 @@ const uiController = (function() {
                 left: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Controls The Search Icon In The Nav
+        searchIcon.addEventListener('click', function() {
+            if (nav.classList.contains('header__nav--show')) {
+                nav.classList.remove('header__nav--show');
+                nav.classList.add('header__nav--hide');
+                setTimeout(function() {
+                    searchInput.classList.add('header__search__input--show');
+                    searchIcon.classList.remove('fa-search');
+                    searchIcon.classList.add('fa-times');
+                    searchIcon.classList.add('fa-lg');
+                }, 500);
+            } else if (nav.classList.contains('header__nav--hide')) {
+                searchInput.classList.remove('header__search__input--show');
+                nav.classList.remove('header__nav--hide');
+                nav.classList.add('header__nav--show');
+                setTimeout(function(){
+                    searchIcon.classList.remove('fa-times');
+                    searchIcon.classList.remove('fa-lg');
+                    searchIcon.classList.add('fa-search');
+                }, 100);
+            } else {
+                nav.classList.add('header__nav--hide');
+                setTimeout(function() {
+                    searchInput.classList.add('header__search__input--show');
+                    searchIcon.classList.remove('fa-search');
+                    searchIcon.classList.add('fa-times');
+                    searchIcon.classList.add('fa-lg');
+                }, 500);
+            }
         });
 
     

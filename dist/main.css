@@ -555,8 +555,10 @@ button, .button--light, .button--green {
         right: initial;
         margin: initial;
         text-align: initial;
-        transform: translateY(3px);
-        overflow: initial; } }
+        overflow: initial;
+        flex-grow: 1;
+        text-align: right;
+        padding-right: 2rem; } }
     .header__nav ul {
       margin: 0;
       padding-left: 0;
@@ -594,6 +596,34 @@ button, .button--light, .button--green {
         .header__nav ul ul li:hover {
           background-color: #f7f7f7;
           transition: all 0.3s ease-in-out; } }
+    .header__nav--hide {
+      transform: translateY(10px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+    .header__nav--show {
+      transform: translateY(0);
+      opacity: 1;
+      transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+  .header__search__icon {
+    display: none; }
+    @media (min-width: 1025px) {
+      .header__search__icon {
+        display: block;
+        transform: translateY(2px); } }
+  .header__search__input {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    width: 550px;
+    border: 0;
+    color: #000;
+    background-color: grey;
+    transition: all 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    opacity: 0; }
+    .header__search__input--show {
+      top: 37px;
+      transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      opacity: 1; }
 
 @keyframes scale-down-ver-top {
   0% {
@@ -1274,9 +1304,7 @@ button, .button--light, .button--green {
     .form__button:hover {
       background-color: rgba(0, 0, 0, 0.1); }
   .form__check {
-    position: relative;
-    display: block;
-    margin-top: 1rem; }
+    margin-right: 0.5rem; }
     .form__check__input {
       position: absolute;
       margin-top: .3rem;
@@ -1350,6 +1378,9 @@ button, .button--light, .button--green {
     .form--blog button, .form--blog .button--light, .form--blog .button--green {
       background-color: #222;
       color: #fff; }
+  .form__submit {
+    display: flex;
+    justify-content: flex-end; }
 
 div.footer__section:nth-child(2) > form:nth-child(2) {
   margin-bottom: 6rem; }

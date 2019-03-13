@@ -37,9 +37,10 @@
     }
 
     &__check {
-        position: relative;
-        display: block;
-        margin-top: 1rem;
+        // position: relative;
+        // display: block;
+        // margin-top: 1rem;
+        margin-right: 0.5rem;
 
         &__input {
             position: absolute;
@@ -150,6 +151,11 @@
             background-color: #222;
             color: #fff;
         }
+    }
+
+    &__submit {
+        display: flex;
+        justify-content: flex-end;
     }
 }
 
