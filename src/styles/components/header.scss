@@ -37,6 +37,14 @@
         @include desktop {
             padding: 0 2rem;
         }
+
+        & > form:first-of-type {
+            display: none;
+        
+            @include desktop {
+                display: block;
+            }
+        }
     }
 
     &__logo {
@@ -115,7 +123,6 @@
             overflow: initial;
             flex-grow: 1;
             text-align: right;
-            padding-right: 2rem;
         }
 
         & ul {
@@ -179,7 +186,7 @@
         &--show {
             transform: translateY(0);
             opacity: 1;
-            transition: all 0.3s cubic-bezier(0.895, 0.030, 0.685, 0.220);
+            transition: all 0.8s cubic-bezier(0.32, 0.78, 0.11, 0.97);
         }
     }
 
@@ -191,6 +198,11 @@
             @include desktop {
                 display: block;
                 transform: translateY(2px);
+                padding-left: 1rem;
+            }
+
+            &:hover {
+                cursor: pointer;
             }
         }
 
@@ -209,7 +221,7 @@
                 color: #808080;
                 background-color: rgba(242, 242, 242, 0.4);
                 transform: translateY(-120px);
-                transition: all 0.2s cubic-bezier(0.895, 0.030, 0.685, 0.220);
+                transition: all 0.1s cubic-bezier(0.895, 0.030, 0.685, 0.220);
                 opacity: 0;
                 z-index: 999999;
                 font-weight: 700;
@@ -221,7 +233,7 @@
 
             &--show {
                 transform: translateY(0);
-                transition: all 0.4s cubic-bezier(0.895, 0.030, 0.685, 0.220);
+                transition: all 1s cubic-bezier(0.32, 0.78, 0.11, 0.97);
                 opacity: 1;
             }
 
@@ -317,7 +329,11 @@
             @include desktop {
                 top: 19px;
                 height: 50px;
-                transition: all 0.4s cubic-bezier(0.895, 0.030, 0.685, 0.220);
+                transition: all 0.1s cubic-bezier(0.895, 0.030, 0.685, 0.220);
+            }
+
+            &--show {
+                transition: all 1s cubic-bezier(0.32, 0.78, 0.11, 0.97);
             }
         }
     }

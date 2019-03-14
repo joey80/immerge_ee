@@ -29,9 +29,6 @@ const uiController = (function() {
                 header.classList.add('js__has-scrolled');
                 searchInput.classList.add('js__has-scrolled');
                 scrollButton.classList.remove('scroll-to-top--hide');
-
-                // In case the search field is visible, hide it.
-                // showNav();
                 return;
             }
         } else if (windowTopPos < 250) {
