@@ -27,12 +27,17 @@ const uiController = (function() {
         if (windowTopPos > 250) {
             if (!header.classList.contains('js__has-scrolled')) {
                 header.classList.add('js__has-scrolled');
+                searchInput.classList.add('js__has-scrolled');
                 scrollButton.classList.remove('scroll-to-top--hide');
+
+                // In case the search field is visible, hide it.
+                // showNav();
                 return;
             }
         } else if (windowTopPos < 250) {
             if (header.classList.contains('js__has-scrolled')) {
                 header.classList.remove('js__has-scrolled');
+                searchInput.classList.remove('js__has-scrolled');
                 scrollButton.classList.add('scroll-to-top--hide');
                 return;
             }
@@ -60,8 +65,31 @@ const uiController = (function() {
         return;
     };
 
+    // Hide and show nav links when the search icon is clicked
+    const hideNav = () => {
+        nav.classList.remove('header__nav--show');
+        nav.classList.add('header__nav--hide');
+        searchInput.classList.add('header__search__input--show');
+        setTimeout(function() {
+            searchIcon.classList.remove('fa-search');
+            searchIcon.classList.add('fa-times');
+            searchIcon.classList.add('fa-lg');
+        }, 500);
+    };
+
+    const showNav = () => {
+        searchInput.classList.remove('header__search__input--show');
+        nav.classList.remove('header__nav--hide');
+        nav.classList.add('header__nav--show');
+        setTimeout(function(){
+            searchIcon.classList.remove('fa-times');
+            searchIcon.classList.remove('fa-lg');
+            searchIcon.classList.add('fa-search');
+        }, 100);
+    };
+
     // Loops through an array of blog content p tags, strips
-    // the length down and add an elipse
+    // the length down and adds an elipse
     const trimBlogPee = () => {
         let peeString;
         let tinyPee;
@@ -115,35 +143,8 @@ const uiController = (function() {
 
         // Controls The Search Icon In The Nav
         searchIcon.addEventListener('click', function() {
-            if (nav.classList.contains('header__nav--show')) {
-                nav.classList.remove('header__nav--show');
-                nav.classList.add('header__nav--hide');
-                setTimeout(function() {
-                    searchInput.classList.add('header__search__input--show');
-                    searchIcon.classList.remove('fa-search');
-                    searchIcon.classList.add('fa-times');
-                    searchIcon.classList.add('fa-lg');
-                }, 500);
-            } else if (nav.classList.contains('header__nav--hide')) {
-                searchInput.classList.remove('header__search__input--show');
-                nav.classList.remove('header__nav--hide');
-                nav.classList.add('header__nav--show');
-                setTimeout(function(){
-                    searchIcon.classList.remove('fa-times');
-                    searchIcon.classList.remove('fa-lg');
-                    searchIcon.classList.add('fa-search');
-                }, 100);
-            } else {
-                nav.classList.add('header__nav--hide');
-                setTimeout(function() {
-                    searchInput.classList.add('header__search__input--show');
-                    searchIcon.classList.remove('fa-search');
-                    searchIcon.classList.add('fa-times');
-                    searchIcon.classList.add('fa-lg');
-                }, 500);
-            }
+            if (nav.classList.contains('header__nav--show') ? hideNav() : showNav());
         });
-
     
     };
 
