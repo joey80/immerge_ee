@@ -1425,8 +1425,31 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
 
 .search {
   margin-top: 5rem; }
+  .search h3, .search h5 {
+    text-transform: initial; }
+  .search h5 {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: initial;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 0;
+    text-decoration: underline; }
   .search ul li {
-    margin-top: 5rem; }
+    margin-top: 3rem; }
+    .search ul li p {
+      line-height: 1.7;
+      max-width: 90%;
+      margin-top: 0; }
+  .search__tag {
+    font-style: initial;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    background-color: #76c043;
+    color: #fff;
+    padding: 0.3rem; }
 
 
 /*# sourceMappingURL=main.css.map*/
