@@ -181,8 +181,7 @@ textarea {
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
-  height: 100%; }
+  scroll-behavior: smooth; }
 
 body {
   background-color: #fff;
