@@ -131,11 +131,13 @@ const uiController = (function() {
 
         // Scroll To Top Button Event
         scrollButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
+            // window.scrollTo({
+            //     top: 0,
+            //     left: 0,
+            //     behavior: 'smooth'
+            // });
+
+            setTimeout(window.scrollTo(0,0),100);
         });
 
         // Controls The Search Icon In The Nav
