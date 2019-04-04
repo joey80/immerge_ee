@@ -1,3 +1,5 @@
+import { isVisible } from './helpers';
+
 /**
 * uiController.js - UI Controller
 *
@@ -107,7 +109,11 @@ const uiController = (function() {
 
         // Header animation on scroll
         window.addEventListener('scroll', function() {
-            handleScroll();
+
+            // We dont want it to animate on tablet or mobile
+            if(!isVisible(mobileButton)) {
+                handleScroll();
+            }
         });
 
         // Mobile menu button toggle
@@ -131,12 +137,6 @@ const uiController = (function() {
 
         // Scroll To Top Button Event
         scrollButton.addEventListener('click', function() {
-            // window.scrollTo({
-            //     top: 0,
-            //     left: 0,
-            //     behavior: 'smooth'
-            // });
-
             setTimeout(window.scrollTo(0,0),100);
         });
 

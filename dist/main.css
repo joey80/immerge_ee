@@ -722,6 +722,22 @@ button, .button--light, .button--green {
     width: 80%;
     margin: 3rem auto;
     height: 350px; }
+    .callout__card:nth-of-type(2) {
+      margin: 5rem auto; }
+      @media (min-width: 768px) {
+        .callout__card:nth-of-type(2) {
+          margin: 3rem auto; } }
+      @media (min-width: 1025px) {
+        .callout__card:nth-of-type(2) {
+          margin: initial; } }
+    .callout__card:nth-of-type(3) {
+      margin: 9rem auto; }
+      @media (min-width: 768px) {
+        .callout__card:nth-of-type(3) {
+          margin: 3rem auto; } }
+      @media (min-width: 1025px) {
+        .callout__card:nth-of-type(3) {
+          margin: initial; } }
     @media (min-width: 1025px) {
       .callout__card {
         width: 30%;

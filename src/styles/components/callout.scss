@@ -14,6 +14,30 @@
         margin: 3rem auto;
         height: 350px;
 
+        &:nth-of-type(2) {
+            margin: 5rem auto;
+
+            @include tablet {
+                margin: 3rem auto;
+            }
+
+            @include desktop {
+                margin: initial;
+            }
+        }
+
+        &:nth-of-type(3) {
+            margin: 9rem auto;
+
+            @include tablet {
+                margin: 3rem auto;
+            }
+
+            @include desktop {
+                margin: initial;
+            }
+        }
+
         @include desktop {
             width: 30%;
             height: 400px;
