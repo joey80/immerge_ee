@@ -133,7 +133,11 @@
             & li {
                 position: relative;
                 display: block;
-                padding-top: 1.7rem;
+                padding-top: 0.6rem;
+
+                @include tablet {
+                    padding-top: 1.7rem;
+                }
                 
                 @include desktop {
                     display: inline;
