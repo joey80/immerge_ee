@@ -190,14 +190,7 @@ body {
   font-weight: 400;
   line-height: 2.2;
   overflow-x: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  padding-top: 80px; }
-  @media (min-width: 768px) {
-    body {
-      padding-top: 85px; } }
-  @media (min-width: 1025px) {
-    body {
-      padding-top: 115px; } }
+  -moz-osx-font-smoothing: grayscale; }
 
 p {
   margin: 1rem 0; }
@@ -1035,9 +1028,8 @@ button, .button--light, .button--green {
         .footer__section__container {
           flex-direction: row; } }
     .footer__section__image {
-      background-image: url("https://www.immergetech.com/wp-content/uploads/2016/11/McClungLogoBlk2685RevFnl-1.png");
+      background-image: url("https://www.immergetech.com/assets/images/base/mcclunglogo.png");
       background-size: contain;
-      background-position: 0 -15px;
       background-repeat: no-repeat;
       width: 250px;
       height: 155px; }
