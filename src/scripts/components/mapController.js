@@ -7,7 +7,7 @@ import { isVisible } from './helpers';
 * Description - Controller for creating a google map and adding markers to it
 *
 */
-const mapController = (function() {
+const mapController = (() => {
 
     // Set up some variables
     const myMap = document.getElementById('js-google_map');
@@ -52,7 +52,7 @@ const mapController = (function() {
 
             // Set a delay on each marker to stagger them being dropped
             // onto the map
-            setTimeout(function() {
+            setTimeout(() => {
                 let marker = new google.maps.Marker({
                     position: new google.maps.LatLng(addArray[i][0], addArray[i][1]),
                     animation: google.maps.Animation.DROP,
@@ -60,7 +60,7 @@ const mapController = (function() {
                 });
                 let markerContent = addArray[i][2],
                     infoWindow = new google.maps.InfoWindow({
-                    content: markerContent
+                        content: markerContent
                     });
                 
                 // add each infoWindow to array so we can close them later
@@ -89,7 +89,7 @@ const mapController = (function() {
     };
 
     return {
-        init: function() {
+        init: () => {
             if (isVisible(myMap)) {
                 loadMap();
                 buildMapMarkers();
