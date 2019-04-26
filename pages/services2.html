@@ -18,6 +18,9 @@
             <div class="header__container">
                 <a href="../index.html" class="none"><div class="header__logo"></div></a>
                 <button class="header__mobile-menu" aria-label="Mobile Menu"></button>
+                <form action='http://73cd022fb3-3118.nxcli.net/search/results/' method="post">
+                    <input type="text" name="keywords" class="header__search__input" placeholder="Search">
+                </form>
                 <nav class="header__nav" role="navigation" aria-label="Site">
                     <ul>
                         <li><a href="about.html" class="menu" aria-label="About" title="About">About</a>
@@ -34,130 +37,88 @@
                                 <li><a href="services/item.html" class="menu" aria-label="Print & Promotion" title="Print & Promotion">Print & Promotional</a></li>
                             </ul>
                         </li>
-                        <li><a href="services2.html" class="menu" aria-label="Form Test" title="Form Test">Form Test</a></li>
                         <li><a href="blog.html" class="menu" aria-label="Blog" title="Blog">Blog</a></li>
                         <li><a href="contact.html" class="menu" aria-label="Contact" title="Contact">Contact</a></li>
                     </ul>
                 </nav>
+                <span class="header__search__icon fas fa-search" aria-label="Search-icon" title="Search"></span>
             </div><!-- .header__container end -->
         </header><!-- .header end -->
-        
+
         <!-- .hero start -->
         <section class="hero hero--services">
             <div class="hero__container">
-                <h1>Services Offered By Immerge</h1>
-                <p>Our expert team is based in Harrisonburg, Virginia. We have serviced clients for over 10 years
-                throughout the Shenandoah Valley, DC Metro area, around Virginia, and around the country.</p>
             </div><!-- .hero__container end -->
         </section><!-- .hero end -->
+        
+        <!-- .multiform start -->
+        <section class="multiform">
+            <div class="multiform__container">
+                <h2>Tell Us About Your Project</h2>
+                <!--<hr>-->
+                <form class="multiform__form">
+                    <div class="multiform__ball__container"></div>
 
-        <!-- .container__full start -->
-        <section class="container__full">
-            <div class="container__full__container text--left">
-                <p>Immerge is a comprehensive digital marketing agency with a proven track record of delivering
-                online solutions that produce results. We’re here to partner with you in all of your digital
-                marketing needs from strategy to implementation.</p>
-                <p><strong>We’re committed to your success.</strong> Whether you want to bring more traffic to
-                your site, generate more quality leads, or boost sales by increasing the effectiveness of your web
-                presence, we’ve got the tools, resources, and industry experts to make it happen.</p>
-            </div>
-        </section><!-- .container__full end -->
+                    <!-- first section -->
+                    <div class="multiform__section multiform__show">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="multiform__field" name="firstname" data-name="First Name">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="multiform__field" name="lastname" data-name="Last Name">
+                        <div class="multiform__nav">
+                            <div class="invisible"></div>
+                            <button type="button" class="multiform__button next">Next<i class="multiform__icon fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
 
-        <!-- .blog start -->
-        <section class="blog">
-            <div class="blog__card__container">
+                    <!-- second section -->
+                    <div class="multiform__section">
+                        <h4>Nice To Meet You, <span class="multiform__name"></span></h4>
+                        <label for="company">Company Name</label>
+                        <input type="text" class="multiform__field" name="company" data-name="Company Name">
+                        <label for="email">Email</label>
+                        <input type="text" class="multiform__field" name="email" data-name="Email">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="multiform__field" name="phone" data-name="Phone">
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button previous"><i class="multiform__icon fas fa-angle-left"></i>Previous</button>
+                            <button type="button" class="multiform__button next">Next<i class="multiform__icon fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+    
+                    <!-- third section -->
+                    <div class="multiform__section">
+                        <h4>What Type Of Project Are You Interested In Starting?</h4>
+                        <select name="project">
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Web Design And Development">Web Design And Development</option>
+                            <option value="Both">Both</option>
+                        </select>
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button previous"><i class="multiform__icon fas fa-angle-left"></i>Previous</button>
+                            <button type="button" class="multiform__button next">Next<i class="multiform__icon fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
 
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/design-dev.jpg">
-                        </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Web Design & Development</h2>
-                            <p>Your website should be a valuable resource for you and your customers and a
-                            sales engine. We craft fluid user experiences that make it easy for customers
-                            to find what they need, when they need it, and on any device.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
+                    <!-- fourth section -->
+                    <div class="multiform__section">
+                        <span class="multiform__project"></span>
+                        <p>This is where we would talk more about this type of project</p>
+                    </div>
 
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/seo.jpg">
+                    <!-- fifth section -->
+                    <div class="multiform__section">
+                        <label for="junk">Junk:</label>
+                        <input type="text" class="multiform__field" name="junk" data-name="Junk">
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button previous"><i class="multiform__icon fas fa-angle-left"></i>Previous</button>
+                            <button type="button" class="multiform__button multiform__button__submit">Submit</button>
                         </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Search Engine Optimization</h2>
-                            <p>Make sure you’re there when people are looking for you. Increase organic
-                            website traffic and conversions by optimizing your site and online presence
-                            for search engine preference.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
+                    </div>
 
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/ppc.jpg">
-                        </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Pay-Per-Click Advertising</h2>
-                            <p>Pay-per-click advertising is a cost-effective solution for directly reaching
-                            your potential customers with accurate targeting and tracking. Boost brand
-                            awareness, qualified site traffic, and sales without breaking the bank.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
-
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/design-dev.jpg">
-                        </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Web Design & Development</h2>
-                            <p>Your website should be a valuable resource for you and your customers and a
-                            sales engine. We craft fluid user experiences that make it easy for customers
-                            to find what they need, when they need it, and on any device.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
-
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/seo.jpg">
-                        </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Search Engine Optimization</h2>
-                            <p>Make sure you’re there when people are looking for you. Increase organic
-                            website traffic and conversions by optimizing your site and online presence
-                            for search engine preference.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
-
-                <!-- .blog__card start -->
-                <div class="blog__card blog__card--noborder">
-                    <a href="#" class="none">
-                        <div class="blog__card__image blog__card__image--services">
-                            <img src="https://www.immergetech.com/wp-content/uploads/2018/12/ppc.jpg">
-                        </div>
-                        <div class="blog__card__content blog__card__content--services">
-                            <h2>Pay-Per-Click Advertising</h2>
-                            <p>Pay-per-click advertising is a cost-effective solution for directly reaching
-                            your potential customers with accurate targeting and tracking. Boost brand
-                            awareness, qualified site traffic, and sales without breaking the bank.</p>
-                        </div>
-                    </a>
-                </div><!-- .blog__card end -->
-            </div><!-- .blog__card__container end -->
-        </section><!-- .blog end -->
+                </form><!-- .multiform__form end -->
+            </div><!-- .multiform__container end -->
+        </section><!-- .multiform end -->
 
         <!-- .footer start -->
         <footer class="footer">
