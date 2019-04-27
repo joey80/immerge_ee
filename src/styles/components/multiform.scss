@@ -64,6 +64,7 @@
     &__error {
         //background-color: #f2dede !important;
         //border: 1px solid #970A08 !important;
+        //animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
         border: 1px solid #ffa8a8 !important;
         color: #970A08;
     }
@@ -71,6 +72,10 @@
     &__field {
         display: block;
         width: 100%;
+    }
+
+    &__form {
+        overflow: hidden;
     }
 
     &__icon {
@@ -87,21 +92,35 @@
 
     &__section {
         border: 1px solid rgba(172, 170, 170, 0.2);
-        border-top: 1px solid #362469;
+        border-top: 4px solid #362469;
         border-radius: 12px;
         box-shadow: 0 0 20px #a5a5a52f;
         display: none;
         margin: 3rem auto;
         padding: 2rem;
+        transform: translateX(-700px);
+        transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
         width: 90%;
 
         & h4 {
             text-transform: initial;
+            line-height: 1.7;
         }
     }
 
     &__show {
         display: block !important;
+    }
+
+    &__display {
+        transform: translateX(0);
+        transition: all 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    }
+
+    &__hide {
+        opacity: 0;
+        transform: translateX(700px);
+        transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     }
 
     h2 {

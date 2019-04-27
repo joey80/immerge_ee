@@ -1,4 +1,4 @@
-import { isVisible } from './helpers';
+import { isVisible, getUsersTime } from './helpers';
 
 /**
 * formController.js
@@ -15,13 +15,15 @@ const formController = (() => {
     const section = document.querySelectorAll('.multiform__section');
     const ballContainer = document.querySelector('.multiform__ball__container');
     const theForm = document.querySelector('.multiform');
-    const name = document.querySelector('.multiform__name');
+    const name = document.querySelectorAll('.multiform__name');
     const project = document.querySelector('.multiform__project');
+    const timeOfDay = document.querySelector('.multiform__time');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
     let state = {};
     let theBalls;
+    let time;
     let i = 0;
 
     // Adds the progress completed dots to the top of the form
@@ -67,17 +69,26 @@ const formController = (() => {
         return check;
     };
 
+    const getTheTime = () => {
+        time = getUsersTime();
+        timeOfDay.innerHTML = '';
+        timeOfDay.insertAdjacentHTML('beforeend', time);
+    };
+
     const getInformation = () => {
         const savedState = JSON.parse(localStorage.getItem('state'));
-        name.innerHTML = '';
-        name.insertAdjacentHTML('beforeend', `${savedState.name}!`);
+        name.forEach((elm) => {
+            elm.innerHTML = '';
+            elm.insertAdjacentHTML('beforeend', savedState.name);
+        });
         project.innerHTML = '';
-        project.insertAdjacentHTML('beforeend', `Great choice ${savedState.name}! ${savedState.project} is something that we excel at.`);
+        project.insertAdjacentHTML('beforeend', (savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
     };
 
     const saveInformation = () => {
         state.name = nameInput.value;
         state.project = projectInput.value;
+        state.time = getUsersTime();
         localStorage.setItem('state', JSON.stringify(state));
     };
 
@@ -90,14 +101,27 @@ const formController = (() => {
                     const validData = checkRequiredFields();
                     if (validData) {
                         i++;
-                        section[i - 1].classList.remove('multiform__show');
+                        
+                        // Hide current
+                        section[i - 1].classList.add('multiform__hide');
+                        setTimeout(() => {
+                            section[i - 1].classList.remove('multiform__show');
+                            section[i - 1].classList.remove('multiform__display');
+                            section[i - 1].classList.remove('multiform__hide');
+                        }, 100);
+                        
+                        // Show next
                         section[i].classList.add('multiform__show');
+                        setTimeout(() => {
+                            section[i].classList.add('multiform__display');
+                        }, 300);
                         
                         theBalls[i - 1].classList.remove('multiform__active');
                         theBalls[i].classList.add('multiform__active');
                     }
                 }
 
+                // Set and get the inputs we need to track
                 saveInformation();
                 getInformation();
             });
@@ -107,8 +131,20 @@ const formController = (() => {
             elm.addEventListener('click', () => {
                 if (i >= 1) {
                     i--;
-                    section[i + 1].classList.remove('multiform__show');
-                    section[i].classList.add('multiform__show');
+
+                    // Hide current
+                    section[i + 1].classList.remove('multiform__display');
+                    setTimeout(() => {
+                        section[i + 1].classList.remove('multiform__show');
+                        section[i].classList.add('multiform__show');
+                        section[i].classList.add('multiform__hide');
+                    }, 100);
+                    
+                    // Show next
+                    setTimeout(() => {
+                        section[i].classList.add('multiform__display');
+                        section[i].classList.remove('multiform__hide');
+                    }, 200);
                     
                     theBalls[i + 1].classList.remove('multiform__active');
                     theBalls[i].classList.add('multiform__active');
@@ -122,6 +158,7 @@ const formController = (() => {
         init: () => {
             if (isVisible(theForm)) {
                 addBalls();
+                getTheTime();
                 setupEventListeners();
             }
         }

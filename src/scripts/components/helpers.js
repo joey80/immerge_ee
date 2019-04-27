@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 /**
 * helper.js - A Collection Of Helper Functions
 *
@@ -18,4 +20,19 @@ export function isVisible(elm) {
     } else {
         return false;
     }
+};
+
+export function getUsersTime() {
+    const currentHour = dayjs().hour();
+    let timeOfDay;
+
+    if (currentHour > 4 && currentHour < 12) {
+        timeOfDay = 'Morning';
+    } else if (currentHour > 11 && currentHour < 5) {
+        timeOfDay = 'Afternoon';
+    } else {
+        timeOfDay = 'Evening';
+    }
+
+    return timeOfDay;
 };
