@@ -13,8 +13,12 @@
     width: 50%;
 
     &__active {
-        background-color: #362469;
+        //background-color: #362469;
+        background-image: url('https://www.immergetech.com/assets/images/base/favicon.png');
+        background-size: cover;
         border: 1px solid transparent !important;
+        width: 20px !important;
+        height: 20px !important;
     }
 
     &__ball {
@@ -27,6 +31,7 @@
 
         &__container {
             display: flex;
+            align-items: center;
             justify-content: center;
             margin: 1rem 0;
         }
@@ -62,11 +67,12 @@
     }
 
     &__error {
-        //background-color: #f2dede !important;
-        //border: 1px solid #970A08 !important;
-        //animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
         border: 1px solid #ffa8a8 !important;
         color: #970A08;
+    }
+
+    &__error-group {
+        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     }
 
     &__field {
@@ -96,7 +102,7 @@
         border-radius: 12px;
         box-shadow: 0 0 20px #a5a5a52f;
         display: none;
-        margin: 3rem auto;
+        margin: 2rem auto;
         padding: 2rem;
         transform: translateX(-700px);
         transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
@@ -123,8 +129,13 @@
         transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     }
 
+    &__remove {
+        display: none !important;
+    }
+
     h2 {
         text-align: center;
+        text-transform: initial;
     }
 
     hr {
@@ -145,14 +156,12 @@
 
     label {
         background-color: #f7f7f7;
-        //border: 1px solid #000;
-        //color: #362469;
         color:rgb(68, 68, 68);
         display: inline-block;
         font-size: 0.8rem;
         font-weight: 800;
-        padding: 0rem 1.5rem;
-        transform: translate(20px, 20px);
+        padding: 0rem 1.1rem;
+        transform: translate(20px, 17px);
     }
 
     select {

@@ -1,4 +1,5 @@
 import { isVisible, getUsersTime } from './helpers';
+import { create } from 'domain';
 
 /**
 * formController.js
@@ -18,6 +19,8 @@ const formController = (() => {
     const name = document.querySelectorAll('.multiform__name');
     const project = document.querySelector('.multiform__project');
     const timeOfDay = document.querySelector('.multiform__time');
+    const digitalMarketing = document.querySelector('.multiform__digital-marketing');
+    const webDevelopment = document.querySelector('.multiform__web-development');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
@@ -29,8 +32,7 @@ const formController = (() => {
     // Adds the progress completed dots to the top of the form
     const addBalls = () => {
         section.forEach(() => {
-            const markup = `<div class="multiform__ball"></div>`;
-            ballContainer.insertAdjacentHTML('beforeend', markup);
+            ballContainer.insertAdjacentHTML('beforeend', '<div class="multiform__ball"></div>');
         });
         
         theBalls = document.querySelectorAll('.multiform__ball');
@@ -47,12 +49,16 @@ const formController = (() => {
         const theFields = document.querySelectorAll('.multiform__field');
         const totalFields = Array.from(theFields);
         const shownFields = totalFields.filter((field) => {
-            return field.parentNode.classList.contains('multiform__show');
+            return field.parentNode.parentNode.classList.contains('multiform__show');
         });
 
         shownFields.forEach((elm) => {
             if (elm.value == '') {
                 elm.classList.add('multiform__error');
+                elm.parentNode.classList.add('multiform__error-group');
+                setTimeout(() => {
+                    elm.parentNode.classList.remove('multiform__error-group');
+                }, 900);
             } else {
                 elm.classList.remove('multiform__error');
             }
@@ -71,25 +77,45 @@ const formController = (() => {
 
     const getTheTime = () => {
         time = getUsersTime();
-        timeOfDay.innerHTML = '';
-        timeOfDay.insertAdjacentHTML('beforeend', time);
-    };
-
-    const getInformation = () => {
-        const savedState = JSON.parse(localStorage.getItem('state'));
-        name.forEach((elm) => {
-            elm.innerHTML = '';
-            elm.insertAdjacentHTML('beforeend', savedState.name);
-        });
-        project.innerHTML = '';
-        project.insertAdjacentHTML('beforeend', (savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
+        createDivContents(timeOfDay, time);
     };
 
     const saveInformation = () => {
         state.name = nameInput.value;
         state.project = projectInput.value;
-        state.time = getUsersTime();
         localStorage.setItem('state', JSON.stringify(state));
+    };
+
+    const writeInformation = () => {
+        const savedState = JSON.parse(localStorage.getItem('state'));
+        name.forEach((elm) => {
+            createDivContents(elm, savedState.name);
+        });
+
+        // Show project
+        webDevelopment.classList.remove('multiform__remove');
+        digitalMarketing.classList.remove('multiform__remove');
+
+        if (savedState.project == 'Digital Marketing') {
+            webDevelopment.classList.add('multiform__remove');
+        }
+
+        if (savedState.project == 'Web Design And Development') {
+            digitalMarketing.classList.add('multiform__remove');
+        }
+
+        project.innerHTML = '';
+        project.insertAdjacentHTML('beforeend', (savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
+    };
+
+    const createDivContents = (target, content) => {
+        target.innerHTML = '';
+        target.insertAdjacentHTML('beforeend', content);
+    };
+
+    const processData = () => {
+        saveInformation();
+        writeInformation();
     };
 
     const setupEventListeners = () => {
@@ -122,8 +148,7 @@ const formController = (() => {
                 }
 
                 // Set and get the inputs we need to track
-                saveInformation();
-                getInformation();
+                processData();
             });
         });
           

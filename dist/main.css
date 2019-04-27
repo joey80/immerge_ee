@@ -1510,8 +1510,11 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   opacity: 0.9;
   width: 50%; }
   .multiform__active {
-    background-color: #362469;
-    border: 1px solid transparent !important; }
+    background-image: url("https://www.immergetech.com/assets/images/base/favicon.png");
+    background-size: cover;
+    border: 1px solid transparent !important;
+    width: 20px !important;
+    height: 20px !important; }
   .multiform__ball {
     width: 11px;
     height: 11px;
@@ -1521,6 +1524,7 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     border: 1px solid rgba(172, 170, 170, 0.7); }
     .multiform__ball__container {
       display: flex;
+      align-items: center;
       justify-content: center;
       margin: 1rem 0; }
   .multiform__button {
@@ -1545,6 +1549,8 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   .multiform__error {
     border: 1px solid #ffa8a8 !important;
     color: #970A08; }
+  .multiform__error-group {
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both; }
   .multiform__field {
     display: block;
     width: 100%; }
@@ -1564,7 +1570,7 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     border-radius: 12px;
     box-shadow: 0 0 20px #a5a5a52f;
     display: none;
-    margin: 3rem auto;
+    margin: 2rem auto;
     padding: 2rem;
     transform: translateX(-700px);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1581,8 +1587,11 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     opacity: 0;
     transform: translateX(700px);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .multiform__remove {
+    display: none !important; }
   .multiform h2 {
-    text-align: center; }
+    text-align: center;
+    text-transform: initial; }
   .multiform hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -1601,8 +1610,8 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 800;
-    padding: 0rem 1.5rem;
-    transform: translate(20px, 20px); }
+    padding: 0rem 1.1rem;
+    transform: translate(20px, 17px); }
   .multiform select {
     display: block;
     font-size: 16px;
