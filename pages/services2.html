@@ -67,11 +67,13 @@
                         </h4>
                         <div class="multiform__group">
                             <label for="firstname">First Name</label>
-                            <input type="text" class="multiform__field" name="firstname" data-name="First Name">
+                            <input type="text" class="multiform__field" name="firstname" data-name="First Name" data-error="Please Enter Your First Name">
+                            <span class="multiform__error-message"></span>
                         </div>
                         <div class="multiform__group">
                             <label for="lastname">Last Name</label>
-                            <input type="text" class="multiform__field" name="lastname" data-name="Last Name">
+                            <input type="text" class="multiform__field" name="lastname" data-name="Last Name" data-error="Please Enter Your Last Name">
+                            <span class="multiform__error-message"></span>
                         </div>
                         <div class="multiform__nav">
                             <div class="invisible"></div>
@@ -87,15 +89,18 @@
                         </h4>
                         <div class="multiform__group">
                             <label for="company">Company Name</label>
-                            <input type="text" class="multiform__field" name="company" data-name="Company Name">
+                            <input type="text" class="multiform__field" name="company" data-name="Company Name" data-error="Please Enter Your Company Name">
+                            <span class="multiform__error-message"></span>
                         </div>
                         <div class="multiform__group">
                             <label for="email">Email</label>
-                            <input type="text" class="multiform__field" name="email" data-name="Email">
+                            <input type="text" class="multiform__field" name="email" data-name="Email" data-error="Please Enter A Valid Email Address ex: name@domain.com">
+                            <span class="multiform__error-message"></span>
                         </div>
                         <div class="multiform__group">
                             <label for="phone">Phone</label>
-                            <input type="text" class="multiform__field" name="phone" data-name="Phone">
+                            <input type="text" class="multiform__field" name="phone" data-name="Phone" data-error="Please Enter A Phone Number With This Format Including Dashes: 123-456-7890" placeholder="123-456-7890">
+                            <span class="multiform__error-message"></span>
                         </div>
                         <div class="multiform__nav">
                             <button type="button" class="multiform__button previous"><i class="multiform__icon fas fa-angle-left"></i>Previous</button>

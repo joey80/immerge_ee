@@ -38,13 +38,14 @@
     }
 
     &__button {
+        align-items: center;
         background-color: #868e96;
         border-radius: 5px;
         color: #fff;
         display: flex;
-        align-items: center;
         font-weight: 800;
-        padding: 0.5rem 1.5rem;
+        justify-content: space-around;
+        padding: 0.5rem 1.1rem;
 
         &:hover {
             background-color: #362469;
@@ -68,11 +69,17 @@
 
     &__error {
         border: 1px solid #ffa8a8 !important;
-        color: #970A08;
+        color: #ff4040;
     }
 
     &__error-group {
         animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+
+    &__error-message {
+        color: #ff4040;
+        font-size: 0.7rem;
+        margin-left: 1rem;
     }
 
     &__field {
@@ -86,6 +93,7 @@
 
     &__icon {
         font-size: 1rem;
+        transform: translateY(-1px);
         margin: 0 0.3rem;
     }
 
@@ -150,8 +158,24 @@
     input {
         background-color: #f7f7f7;
         border: 1px solid rgba(172, 170, 170, 0.4);
-        margin-bottom: 1.5rem;
+        filter: none !important;
+        margin-top: 1.5rem;
         padding: 1rem;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &::placeholder {
+            color: #a6a6a6;
+        }
+
+        &:-webkit-autofill {
+            background-color: #f7f7f7;
+            border: 1px solid rgba(172, 170, 170, 0.4);
+            margin-top: 1.5rem;
+            padding: 1rem;
+        }
     }
 
     label {
@@ -162,6 +186,7 @@
         font-weight: 800;
         padding: 0rem 1.1rem;
         transform: translate(20px, 17px);
+        z-index: 9;
     }
 
     select {
