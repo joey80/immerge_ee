@@ -44,11 +44,36 @@
         color: #fff;
         display: flex;
         font-weight: 800;
-        justify-content: space-around;
         padding: 0.5rem 1.1rem;
 
         &:hover {
             background-color: #362469;
+        }
+
+        &__next {
+            padding-left: 1.6rem;
+
+            &:after {
+                content: '\f105';
+                font-size: 1rem;
+                font-family: 'Font Awesome 5 Free';
+                margin: 0 0.3rem;
+                padding-left: 0.2rem;
+                transform: translateY(-1px);
+            }
+        }
+
+        &__previous {
+            padding-left: 0.8rem;
+
+            &:before {
+                content: '\f104';
+                font-size: 1rem;
+                font-family: 'Font Awesome 5 Free';
+                margin: 0 0.3rem;
+                padding-right: 0.2rem;
+                transform: translateY(-1px);
+            }
         }
 
         &__submit {
@@ -89,12 +114,6 @@
 
     &__form {
         overflow: hidden;
-    }
-
-    &__icon {
-        font-size: 1rem;
-        transform: translateY(-1px);
-        margin: 0 0.3rem;
     }
 
     &__nav {

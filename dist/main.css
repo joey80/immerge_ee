@@ -1528,15 +1528,33 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
       justify-content: center;
       margin: 1rem 0; }
   .multiform__button {
+    align-items: center;
     background-color: #868e96;
     border-radius: 5px;
     color: #fff;
     display: flex;
-    align-items: center;
     font-weight: 800;
-    padding: 0.5rem 1.5rem; }
+    padding: 0.5rem 1.1rem; }
     .multiform__button:hover {
       background-color: #362469; }
+    .multiform__button__next {
+      padding-left: 1.6rem; }
+      .multiform__button__next:after {
+        content: '\F105';
+        font-size: 1rem;
+        font-family: 'Font Awesome 5 Free';
+        margin: 0 0.3rem;
+        padding-left: 0.2rem;
+        transform: translateY(-1px); }
+    .multiform__button__previous {
+      padding-left: 0.8rem; }
+      .multiform__button__previous:before {
+        content: '\F104';
+        font-size: 1rem;
+        font-family: 'Font Awesome 5 Free';
+        margin: 0 0.3rem;
+        padding-right: 0.2rem;
+        transform: translateY(-1px); }
     .multiform__button__submit {
       background-color: #69db7c;
       color: #fff; }
@@ -1548,17 +1566,18 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     width: 100%; }
   .multiform__error {
     border: 1px solid #ffa8a8 !important;
-    color: #970A08; }
+    color: #ff4040; }
   .multiform__error-group {
     animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both; }
+  .multiform__error-message {
+    color: #ff4040;
+    font-size: 0.7rem;
+    margin-left: 1rem; }
   .multiform__field {
     display: block;
     width: 100%; }
   .multiform__form {
     overflow: hidden; }
-  .multiform__icon {
-    font-size: 1rem;
-    margin: 0 0.3rem; }
   .multiform__nav {
     display: flex;
     justify-content: space-between;
@@ -1602,8 +1621,18 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   .multiform input {
     background-color: #f7f7f7;
     border: 1px solid rgba(172, 170, 170, 0.4);
-    margin-bottom: 1.5rem;
+    filter: none !important;
+    margin-top: 1.5rem;
     padding: 1rem; }
+    .multiform input:first-of-type {
+      margin-top: 0; }
+    .multiform input::placeholder {
+      color: #a6a6a6; }
+    .multiform input:-webkit-autofill {
+      background-color: #f7f7f7;
+      border: 1px solid rgba(172, 170, 170, 0.4);
+      margin-top: 1.5rem;
+      padding: 1rem; }
   .multiform label {
     background-color: #f7f7f7;
     color: #444444;
@@ -1611,7 +1640,8 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     font-size: 0.8rem;
     font-weight: 800;
     padding: 0rem 1.1rem;
-    transform: translate(20px, 17px); }
+    transform: translate(20px, 17px);
+    z-index: 9; }
   .multiform select {
     display: block;
     font-size: 16px;

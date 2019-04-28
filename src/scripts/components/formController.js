@@ -10,8 +10,8 @@ import { isVisible, getUsersTime, checkEmail, checkPhone } from './helpers';
 const formController = (() => {
 
     // Set up some variables
-    const next = document.querySelectorAll('.next');
-    const previous = document.querySelectorAll('.previous');
+    const next = document.querySelectorAll('.multiform__button__next');
+    const previous = document.querySelectorAll('.multiform__button__previous');
     const section = document.querySelectorAll('.multiform__section');
     const ballContainer = document.querySelector('.multiform__ball__container');
     const theForm = document.querySelector('.multiform');
