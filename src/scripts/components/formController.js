@@ -196,19 +196,21 @@ const formController = (() => {
                         i++;
                         
                         // Hide current
-                        section[i - 1].classList.add('multiform__hide');
+                        section[i - 1].classList.remove('multiform__display');
                         setTimeout(() => {
                             section[i - 1].classList.remove('multiform__show');
-                            section[i - 1].classList.remove('multiform__display');
                             section[i - 1].classList.remove('multiform__hide');
                         }, 100);
                         
                         // Show next
                         section[i].classList.add('multiform__show');
+                        section[i].classList.add('multiform__hide');
                         setTimeout(() => {
+                            section[i].classList.remove('multiform__hide');
                             section[i].classList.add('multiform__display');
                         }, 300);
                         
+                        // Move the active ball forward one
                         theBalls[i - 1].classList.remove('multiform__active');
                         theBalls[i].classList.add('multiform__active');
                     }
@@ -226,19 +228,19 @@ const formController = (() => {
                     i--;
 
                     // Hide current
+                    section[i + 1].classList.add('multiform__hide');
                     section[i + 1].classList.remove('multiform__display');
                     setTimeout(() => {
                         section[i + 1].classList.remove('multiform__show');
                         section[i].classList.add('multiform__show');
-                        section[i].classList.add('multiform__hide');
                     }, 100);
                     
                     // Show next
                     setTimeout(() => {
                         section[i].classList.add('multiform__display');
-                        section[i].classList.remove('multiform__hide');
                     }, 200);
                     
+                    // Move the active ball back one
                     theBalls[i + 1].classList.remove('multiform__active');
                     theBalls[i].classList.add('multiform__active');
                 }
