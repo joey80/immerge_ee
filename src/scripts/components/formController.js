@@ -1,4 +1,4 @@
-import { isVisible, getUsersTime, checkEmail, checkPhone } from './helpers';
+import { isVisible, getUsersTime, checkEmail, checkPhone, scrollTo } from './helpers';
 import nouislider from 'nouislider';
 import wnumb from 'wnumb';
 import 'nouislider/distribute/nouislider.css';
@@ -17,6 +17,7 @@ const formController = (() => {
     const previous = document.querySelectorAll('.multiform__button__previous');
     const section = document.querySelectorAll('.multiform__section');
     const ballContainer = document.querySelector('.multiform__ball__container');
+    const formContainer = document.querySelector('.multiform__container');
     const theForm = document.querySelector('.multiform');
     const name = document.querySelectorAll('.multiform__name');
     const project = document.querySelector('.multiform__project');
@@ -30,7 +31,7 @@ const formController = (() => {
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
-    let savedState, theBalls, time;
+    let savedState, theBalls, time, slider1, slider2, slider3, slider4;
     let state = {};
     let i = 0;
     
@@ -133,6 +134,10 @@ const formController = (() => {
         state.name = rawName[0].toUpperCase() + rawName.slice(1).toLowerCase();
         
         state.project = projectInput.value;
+
+        state.digitalMarketingOneLow = document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow');
+        state.digitalMarketingOneHigh = document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow');
+        
         localStorage.setItem('state', JSON.stringify(state));
     };
 
@@ -254,6 +259,8 @@ const formController = (() => {
                         // Move the active ball forward one
                         theBalls[i - 1].classList.remove('multiform__active');
                         theBalls[i].classList.add('multiform__active');
+
+                        scrollTo(formContainer);
                     }
                 }
 
@@ -284,6 +291,8 @@ const formController = (() => {
                     // Move the active ball back one
                     theBalls[i + 1].classList.remove('multiform__active');
                     theBalls[i].classList.add('multiform__active');
+
+                    scrollTo(formContainer);
                 }
             });
         });
