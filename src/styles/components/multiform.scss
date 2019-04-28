@@ -116,6 +116,13 @@
         overflow: hidden;
     }
 
+    &__project {
+
+        &__container {
+            margin-bottom: 7rem;
+        }
+    }
+
     &__nav {
         display: flex;
         justify-content: space-between;
@@ -141,6 +148,10 @@
         }
     }
 
+    &__slider {
+        margin: 1rem 0 5rem 0;
+    }
+
     &__show {
         display: block !important;
     }
@@ -163,6 +174,10 @@
     h2 {
         text-align: center;
         text-transform: initial;
+    }
+
+    h5 {
+        font-weight: 800;
     }
 
     hr {
@@ -249,4 +264,16 @@
             font-weight:normal;
         }
     }
+}
+
+.noUi-connect {
+    background-color: #362469 !important;
+}
+
+.noUi-tooltip {
+    display: none !important;
+}
+
+.noUi-active .noUi-tooltip {
+    display: block !important;
 }

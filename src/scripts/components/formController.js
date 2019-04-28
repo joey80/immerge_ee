@@ -1,4 +1,7 @@
 import { isVisible, getUsersTime, checkEmail, checkPhone } from './helpers';
+import nouislider from 'nouislider';
+import wnumb from 'wnumb';
+import 'nouislider/distribute/nouislider.css';
 
 /**
 * formController.js
@@ -20,6 +23,10 @@ const formController = (() => {
     const timeOfDay = document.querySelector('.multiform__time');
     const digitalMarketing = document.querySelector('.multiform__digital-marketing');
     const webDevelopment = document.querySelector('.multiform__web-development');
+    const digitalMarketingSliderOne = document.querySelector('.multiform__digital-marketing-slider-one');
+    const webDevelopmentSliderOne = document.querySelector('.multiform__web-development-slider-one');
+    const digitalMarketingSliderTwo = document.querySelector('.multiform__digital-marketing-slider-two');
+    const webDevelopmentSliderTwo = document.querySelector('.multiform__web-development-slider-two');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
@@ -174,6 +181,40 @@ const formController = (() => {
     };
 
 
+    // Wrapper to create range sliders for the project budgets
+    const createRangeSlider = (target, min, max, start, step) => {
+        nouislider.create(target, {
+            start: start,
+            tooltips: true,
+            connect: true,
+            step: step,
+            range: {
+                'min': min,
+                'max': max
+            },
+            pips: {
+                mode: 'steps',
+                stepped: true,
+                density: 4,
+                format: wnumb({
+                    decimals: 0,
+                    prefix: '$'
+                })
+            }
+        });
+    };
+
+
+
+    const buildSliders = () => {
+        // Target, min, max, start, step
+        createRangeSlider(digitalMarketingSliderOne, 1000, 5000, [1000, 3000], 500);
+        createRangeSlider(digitalMarketingSliderTwo, 300, 1000, [400, 600], 100);
+        createRangeSlider(webDevelopmentSliderOne, 1000, 3000, [1000, 1500], 200);
+        createRangeSlider(webDevelopmentSliderTwo, 10000, 50000, [3000, 40000], 5000);
+    };
+
+
 
     // This fires every time the 'next' button is clicked
     const processData = () => {
@@ -255,6 +296,7 @@ const formController = (() => {
             if (isVisible(theForm)) {
                 addBalls();
                 getTheTime();
+                buildSliders();
                 setupEventListeners();
             }
         }
