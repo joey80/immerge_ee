@@ -1506,7 +1506,7 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 2rem auto !important;
   opacity: 0.9;
   position: relative;
   width: 50%; }
