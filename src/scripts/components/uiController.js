@@ -18,6 +18,9 @@ const uiController = (function() {
     const searchIcon = document.querySelector('.header__search__icon');
     const searchInput = document.querySelector('.header__search__input');
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
+    const slides = document.querySelectorAll('.the-slide');
+    const theSlides = Array.from(slides);
+    let slider;
     let menuClosed = true;
 
 
@@ -105,6 +108,37 @@ const uiController = (function() {
         if (nav.classList.contains('js__is-visible') ? closeMenu() : openMenu());
     };
 
+    // Creates the slider of logos at the bottom of the screen
+    const createSlider = () => {
+        slider = tns({
+            container: '.my-slider',
+            items: 3,
+            center: true,
+            swipeAngle: false,
+            speed: 1000,
+            autoplay: true,
+            loop: true,
+            controls: false
+        });
+    };
+    // slides are 0-5
+    // currentIndex 0-5
+    const checkSliderPosition = () => {
+        const slideInfo = slider.getInfo();
+        const currentIndex = slideInfo.displayIndex - 1;
+        //console.log('current index: ', currentIndex);
+        //connsole.log('the slides: ', theSlides);
+        console.log(theSlides[currentIndex]);
+
+        // if (theSlides[currentIndex - 2].classList.contains('active')) {
+        //     theSlides[currentIndex - 2].classList.remove('active');
+        // }
+
+        theSlides[currentIndex].classList.add('active');
+        theSlides[currentIndex].setAttribute('aria-hidden', false);
+        theSlides[currentIndex].setAttribute('tabindex', cur);
+    };
+
     const setupEventListeners = () => {
 
         // Header animation on scroll
@@ -144,6 +178,8 @@ const uiController = (function() {
         searchIcon.addEventListener('click', function() {
             if (nav.classList.contains('header__nav--show') ? hideNav() : showNav());
         });
+
+
     
     };
 
@@ -154,6 +190,8 @@ const uiController = (function() {
             if (blogPee.length > 0) {
                 trimBlogPee();
             }
+            createSlider();
+            //setInterval(checkSliderPosition, 2000);
         }
     };
 
