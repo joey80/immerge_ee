@@ -28,10 +28,11 @@ const formController = (() => {
     const webDevelopmentSliderOne = document.querySelector('.multiform__web-development-slider-one');
     const digitalMarketingSliderTwo = document.querySelector('.multiform__digital-marketing-slider-two');
     const webDevelopmentSliderTwo = document.querySelector('.multiform__web-development-slider-two');
+    const summary = document.querySelector('.multiform__summary');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
-    let savedState, theBalls, time, slider1, slider2, slider3, slider4;
+    let savedState, theBalls, slider1, slider2, slider3, slider4;
     let state = {};
     let i = 0;
     
@@ -97,10 +98,7 @@ const formController = (() => {
 
 
     // Gets what time of the day it is ('morning, evening, etc')
-    const getTheTime = () => {
-        time = getUsersTime();
-        createDivContents(timeOfDay, time);
-    };
+    const getTheTime = () => createDivContents(timeOfDay, getUsersTime());
 
 
 
@@ -129,15 +127,85 @@ const formController = (() => {
 
     // Saves the state to LocalStorage
     const saveInformation = () => {
-        // Capitalize the first letter of their name
-        const rawName = nameInput.value;
-        state.name = rawName[0].toUpperCase() + rawName.slice(1).toLowerCase();
-        
+        state.name = nameInput.value[0].toUpperCase() + nameInput.value.slice(1).toLowerCase();
         state.project = projectInput.value;
 
-        state.digitalMarketingOneLow = document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow');
-        state.digitalMarketingOneHigh = document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow');
-        
+        if (state.project == 'Digital Marketing') {
+            state.digitalMarketingOne = {
+                name: 'Digital Marketing One',
+                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+
+            state.digitalMarketingTwo = {
+                name: 'Digital Marketing Two',
+                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+
+            state.webDevelopmentOne = {
+                name: 'Web Design',
+                low: '',
+                high: ''
+            };
+            
+            state.webDevelopmentTwo = {
+                name: 'Web Development',
+                low: '',
+                high: ''
+            };
+
+        } else if (state.project == 'Web Design And Development') {
+            state.digitalMarketingOne = {
+                name: 'Digital Marketing One',
+                low: '',
+                high: ''
+            };
+            
+            state.digitalMarketingTwo = {
+                name: 'Digital Marketing Two',
+                low: '',
+                high: ''
+            };
+            
+            state.webDevelopmentOne = {
+                name: 'Web Design',
+                low: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+            
+            state.webDevelopmentTwo = {
+                name: 'Web Development',
+                low: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+
+        } else {
+            state.digitalMarketingOne = {
+                name: 'Digital Marketing',
+                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+
+            state.digitalMarketingTwo = {
+                name: 'Search Engine Optimization (SEO)',
+                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+
+            state.webDevelopmentOne = {
+                name: 'Web Design',
+                low: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+            
+            state.webDevelopmentTwo = {
+                name: 'Web Development',
+                low: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+            };
+        }
+
         localStorage.setItem('state', JSON.stringify(state));
     };
 
@@ -153,7 +221,40 @@ const formController = (() => {
         });
 
         // Decide on what project to show
-        chooseProject();        
+        chooseProject();
+        
+        // The hidden fields for the slider values
+        document.getElementsByName('digital-marketing-slider-one-low')[0].value = savedState.digitalMarketingOne.low;
+        document.getElementsByName('digital-marketing-slider-one-high')[0].value = savedState.digitalMarketingOne.high;
+        document.getElementsByName('digital-marketing-slider-two-low')[0].value = savedState.digitalMarketingTwo.low;
+        document.getElementsByName('digital-marketing-slider-two-high')[0].value = savedState.digitalMarketingTwo.high;
+
+        document.getElementsByName('web-development-slider-one-low')[0].value = savedState.webDevelopmentOne.low;
+        document.getElementsByName('web-development-slider-one-high')[0].value = savedState.webDevelopmentOne.high;
+        document.getElementsByName('web-development-slider-two-low')[0].value = savedState.webDevelopmentTwo.low;
+        document.getElementsByName('web-development-slider-two-high')[0].value = savedState.webDevelopmentTwo.high;
+
+        buildTheSummary();
+    };
+
+
+
+    const buildTheSummary = () => {
+        const fields = [state.digitalMarketingOne, state.digitalMarketingTwo, state.webDevelopmentOne, state.webDevelopmentTwo];
+        const target = document.querySelector('.multiform__summary');
+        const usedFields = fields.filter((field) => {
+            return field.low != '';
+        });
+
+        // Summary title
+        createDivContents(document.querySelector('.multiform__summary-title'), `Here is what your budget estimates look like Joey. If everything is correct just click submit and we will be in touch with you right away!`);
+
+        // Contents
+        target.innerHTML = '';
+        usedFields.forEach((elm) => {
+            const markup = `<strong>${elm.name}:</strong> $${elm.low}-$${elm.high}<br />`;
+            target.insertAdjacentHTML('beforeend', markup);
+        });
     };
 
 
