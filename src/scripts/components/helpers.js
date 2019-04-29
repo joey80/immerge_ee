@@ -62,6 +62,6 @@ export function scrollTo(elm) {
     window.scroll({
         behavior: 'smooth',
         left: 0,
-        top: elm.offsetTop - 100
+        top: elm.offsetTop -100
     });
 };

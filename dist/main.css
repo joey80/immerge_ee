@@ -1508,6 +1508,7 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   flex-direction: column;
   margin: 0 auto;
   opacity: 0.9;
+  position: relative;
   width: 50%; }
   .multiform__active {
     background-image: url("https://www.immergetech.com/assets/images/base/favicon.png");
@@ -1556,10 +1557,10 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
         padding-right: 0.2rem;
         transform: translateY(-1px); }
     .multiform__button__submit {
-      background-color: #69db7c;
+      background-color: #70aa43;
       color: #fff; }
       .multiform__button__submit:hover {
-        background-color: #2f9e44;
+        background-color: #426923;
         color: #fff; }
   .multiform__container {
     padding: 1rem;
@@ -1578,6 +1579,16 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
     width: 100%; }
   .multiform__form {
     overflow: hidden; }
+  .multiform__leaves {
+    background-image: url("https://www.immergetech.com/assets/images/general/leaves.png");
+    background-size: cover;
+    height: 280px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50px, 50px);
+    width: 180px;
+    z-index: 9; }
   .multiform__project__container {
     margin-bottom: 7rem; }
   .multiform__nav {

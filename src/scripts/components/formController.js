@@ -17,7 +17,7 @@ const formController = (() => {
     const previous = document.querySelectorAll('.multiform__button__previous');
     const section = document.querySelectorAll('.multiform__section');
     const ballContainer = document.querySelector('.multiform__ball__container');
-    const formContainer = document.querySelector('.multiform__container');
+    const formContainer = document.querySelector('.multiform');
     const theForm = document.querySelector('.multiform');
     const name = document.querySelectorAll('.multiform__name');
     const project = document.querySelector('.multiform__project');
@@ -28,7 +28,6 @@ const formController = (() => {
     const webDevelopmentSliderOne = document.querySelector('.multiform__web-development-slider-one');
     const digitalMarketingSliderTwo = document.querySelector('.multiform__digital-marketing-slider-two');
     const webDevelopmentSliderTwo = document.querySelector('.multiform__web-development-slider-two');
-    const summary = document.querySelector('.multiform__summary');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     const count = section.length;
@@ -132,13 +131,13 @@ const formController = (() => {
 
         if (state.project == 'Digital Marketing') {
             state.digitalMarketingOne = {
-                name: 'Digital Marketing One',
+                name: 'Digital Marketing',
                 low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
                 high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
             };
 
             state.digitalMarketingTwo = {
-                name: 'Digital Marketing Two',
+                name: 'Search Engine Optimization (SEO)',
                 low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
                 high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
             };
@@ -157,13 +156,13 @@ const formController = (() => {
 
         } else if (state.project == 'Web Design And Development') {
             state.digitalMarketingOne = {
-                name: 'Digital Marketing One',
+                name: 'Digital Marketing',
                 low: '',
                 high: ''
             };
             
             state.digitalMarketingTwo = {
-                name: 'Digital Marketing Two',
+                name: 'Search Engine Optimization (SEO)',
                 low: '',
                 high: ''
             };

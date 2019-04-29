@@ -10,10 +10,10 @@
     flex-direction: column;
     margin: 0 auto;
     opacity: 0.9;
+    position: relative;
     width: 50%;
 
     &__active {
-        //background-color: #362469;
         background-image: url('https://www.immergetech.com/assets/images/base/favicon.png');
         background-size: cover;
         border: 1px solid transparent !important;
@@ -77,11 +77,11 @@
         }
 
         &__submit {
-            background-color: #69db7c;
+            background-color: #70aa43;
             color: #fff;
 
             &:hover {
-                background-color: #2f9e44;
+                background-color: #426923;
                 color: #fff;
             }
         }
@@ -114,6 +114,18 @@
 
     &__form {
         overflow: hidden;
+    }
+
+    &__leaves {
+        background-image: url('https://www.immergetech.com/assets/images/general/leaves.png');
+        background-size: cover;
+        height: 280px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(50px, 50px);
+        width: 180px;
+        z-index: 9;
     }
 
     &__project {
