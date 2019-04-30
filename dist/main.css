@@ -331,39 +331,6 @@ section {
 .error {
   color: #fa5252; }
 
-.the-slide {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px; }
-
-.slide-one {
-  background-image: url("https://immergetech.com/assets/images/logos/black_sheep.png");
-  background-size: 35%; }
-
-.slide-two {
-  background-image: url("https://immergetech.com/assets/images/logos/heritage.png");
-  background-size: 70%; }
-
-.slide-three {
-  background-image: url("https://immergetech.com/assets/images/logos/pale_fire.png");
-  background-size: 60%; }
-
-.slide-four {
-  background-image: url("https://immergetech.com/assets/images/logos/ritchie.png");
-  background-size: 40%; }
-
-.slide-five {
-  background-image: url("https://immergetech.com/assets/images/logos/skyline.png");
-  background-size: 60%; }
-
-.slide-six {
-  background-image: url("https://immergetech.com/assets/images/logos/turkey_knob.png");
-  background-size: 35%; }
-
-.my-slider {
-  background-color: #f7f7f7; }
-
 a.none:link {
   color: inherit;
   text-decoration: none;
@@ -534,7 +501,7 @@ button, .button--light, .button--green {
   background-color: #fff;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
   transition: 0.2s ease-in-out;
-  z-index: 9; }
+  z-index: 99; }
   @media (min-width: 768px) {
     .header {
       height: 85px; } }
@@ -1731,6 +1698,65 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
 
 .noUi-active .noUi-tooltip {
   display: block !important; }
+
+.the-slide {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px; }
+
+.slide-one {
+  background-image: url("https://immergetech.com/assets/images/logos/black_sheep.png");
+  background-size: 35%; }
+
+.slide-two {
+  background-image: url("https://immergetech.com/assets/images/logos/heritage.png");
+  background-size: 70%; }
+
+.slide-three {
+  background-image: url("https://immergetech.com/assets/images/logos/pale_fire.png");
+  background-size: 60%; }
+
+.slide-four {
+  background-image: url("https://immergetech.com/assets/images/logos/ritchie.png");
+  background-size: 40%; }
+
+.slide-five {
+  background-image: url("https://immergetech.com/assets/images/logos/skyline.png");
+  background-size: 60%; }
+
+.slide-six {
+  background-image: url("https://immergetech.com/assets/images/logos/turkey_knob.png");
+  background-size: 35%; }
+
+.my-slider {
+  border-top: 1px solid rgba(128, 128, 128, 0.1); }
+
+.slider-container {
+  display: flex;
+  flex-direction: column; }
+
+.slider-logo {
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  background-image: url("https://www.immergetech.com/assets/images/logos/icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  border: 20px solid #fff;
+  transform: translateY(20px);
+  z-index: 9; }
+
+.tns-nav {
+  display: none !important; }
+
+.tns-outer button, .tns-outer .button--light, .tns-outer .button--green {
+  display: none !important; }
+
+.tns-outer {
+  background: linear-gradient(to top, white 0%, #f7f7f7 100%); }
 
 /*! nouislider - 13.1.5 - 4/24/2019 */
 /* Functional styling;

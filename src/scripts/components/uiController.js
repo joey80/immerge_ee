@@ -121,23 +121,6 @@ const uiController = (function() {
             controls: false
         });
     };
-    // slides are 0-5
-    // currentIndex 0-5
-    const checkSliderPosition = () => {
-        const slideInfo = slider.getInfo();
-        const currentIndex = slideInfo.displayIndex - 1;
-        //console.log('current index: ', currentIndex);
-        //connsole.log('the slides: ', theSlides);
-        console.log(theSlides[currentIndex]);
-
-        // if (theSlides[currentIndex - 2].classList.contains('active')) {
-        //     theSlides[currentIndex - 2].classList.remove('active');
-        // }
-
-        theSlides[currentIndex].classList.add('active');
-        theSlides[currentIndex].setAttribute('aria-hidden', false);
-        theSlides[currentIndex].setAttribute('tabindex', cur);
-    };
 
     const setupEventListeners = () => {
 
@@ -191,7 +174,6 @@ const uiController = (function() {
                 trimBlogPee();
             }
             createSlider();
-            //setInterval(checkSliderPosition, 2000);
         }
     };
 
