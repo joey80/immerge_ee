@@ -7,6 +7,16 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 200px;
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        filter: grayscale(0);
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
 }
 
 .slide-one {
@@ -40,9 +50,7 @@
 }
 
 .my-slider {
-    //background-color: #f7f7f7;
     border-top: 1px solid rgba(128, 128, 128, 0.1);
-    //border-bottom: 20px solid #fff;
 }
 
 .slider-container {

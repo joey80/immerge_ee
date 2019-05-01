@@ -18,7 +18,6 @@ const uiController = (function() {
     const searchIcon = document.querySelector('.header__search__icon');
     const searchInput = document.querySelector('.header__search__input');
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
-    const slides = document.querySelectorAll('.the-slide');
     let slider;
     let menuClosed = true;
 
