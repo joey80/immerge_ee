@@ -37,6 +37,8 @@
                                 <li><a href="services/item.html" class="menu" aria-label="Print & Promotion" title="Print & Promotion">Print & Promotional</a></li>
                             </ul>
                         </li>
+                        <li><a href="services2.html" class="menu" aria-label="Form SEO" title="Form SEO">Form SEO</a></li>
+                        <li><a href="services3.html" class="menu" aria-label="Form Dev" title="Form Dev">Form Dev</a></li>
                         <li><a href="blog.html" class="menu" aria-label="Blog" title="Blog">Blog</a></li>
                         <li><a href="contact.html" class="menu" aria-label="Contact" title="Contact">Contact</a></li>
                     </ul>
@@ -76,6 +78,7 @@
                             <input type="text" class="multiform__field" name="lastname" data-name="Last Name" data-error="Please Enter Your Last Name">
                             <span class="multiform__error-message"></span>
                         </div>
+                        <input type="hidden" name="project" value="marketing">
                         <div class="multiform__nav">
                             <div class="invisible"></div>
                             <button type="button" class="multiform__button multiform__button__next">Next</button>
@@ -110,7 +113,7 @@
                     </div>
     
                     <!-- third section -->
-                    <div class="multiform__section">
+                    <!-- <div class="multiform__section">
                         <h4>
                             <strong>Thanks <span class="multiform__name"></span>!</strong><br />
                             Now. What Type Of Project Are You Interested In Starting?
@@ -124,34 +127,24 @@
                             <button type="button" class="multiform__button multiform__button__previous">Previous</button>
                             <button type="button" class="multiform__button multiform__button__next">Next</button>
                         </div>
-                    </div>
+                    </div>  -->
 
                     <!-- fourth section -->
                     <div class="multiform__section">
-                        <span class="multiform__project"></span>
-                        <hr>
+                        <!-- <span class="multiform__project"></span>
+                        <hr> -->
                         <p>What budget range do you have in mind for your project(s)?</p>
-                        <div class="multiform__project__container multiform__digital-marketing">
+                        <div class="multiform__project__container multiform__marketing">
                             <h5>Digital Marketing (monthly)</h5>
-                            <div class="multiform__slider multiform__digital-marketing-slider-one"></div>
-                            <input type="hidden" name="digital-marketing-slider-one-low" value="">
-                            <input type="hidden" name="digital-marketing-slider-one-high" value="">
-
-                            <h5>Search Engine Optimization (SEO) (monthly)</h5>
-                            <div class="multiform__slider multiform__digital-marketing-slider-two"></div>
-                            <input type="hidden" name="digital-marketing-slider-two-low" value="">
-                            <input type="hidden" name="digital-marketing-slider-two-high" value="">
+                            <div class="multiform__slider multiform__marketing-slider"></div>
+                            <input type="hidden" id="form-input-digital_marketing_slider_one_low" name="digital-marketing-slider-one-low" value="">
+                            <input type="hidden" id="form-input-digital_marketing_slider_one_high" name="digital-marketing-slider-one-high" value="">
                         </div>
-                        <div class="multiform__project__container multiform__web-development">
-                            <h5>Web Design</h5>
-                            <div class="multiform__slider multiform__web-development-slider-one"></div>
-                            <input type="hidden" name="web-development-slider-one-low" value="">
-                            <input type="hidden" name="web-development-slider-one-high" value="">
-
+                        <div class="multiform__project__container multiform__development">
                             <h5>Web Development</h5>
-                            <div class="multiform__slider multiform__web-development-slider-two"></div>
-                            <input type="hidden" name="web-development-slider-two-low" value="">
-                            <input type="hidden" name="web-development-slider-two-high" value="">
+                            <div class="multiform__slider multiform__development-slider"></div>
+                            <input type="hidden" id="form-input-web_development_slider_one_low" name="web-development-slider-one-low" value="">
+                            <input type="hidden" id="form-input-web_development_slider_one_high" name="web-development-slider-one-high" value="">
                         </div>
                         <div class="multiform__nav">
                             <button type="button" class="multiform__button multiform__button__previous">Previous</button>
@@ -177,6 +170,54 @@
                 </form><!-- .multiform__form end -->
             </div><!-- .multiform__container end -->
         </section><!-- .multiform end -->
+
+        <div class="slider-container">
+            <div class="slider-logo"></div>
+            <div class="my-slider">
+                <a href="http://www.blacksheepcoffeehburg.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/black_sheep.png"
+                        data-size="35">
+                    </div>
+                </a>
+                <a href="https://www.heritagebakes.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/heritage.png"
+                        data-size="70">
+                    </div>
+                </a>
+                <a href="https://www.palefirebrewing.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/pale_fire.png"
+                        data-size="60">
+                    </div>
+                </a>
+                <a href="https://www.ritchielawfirm.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/ritchie.png"
+                        data-size="40">
+                    </div>
+                </a>
+                <a href="https://www.skylineroofingonline.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/skyline.png"
+                        data-size="60">
+                    </div>
+                </a>
+                <a href="https://www.turkeyknobgrowers.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/turkey_knob.png"
+                        data-size="35">
+                    </div>
+                </a>
+                <a href="https://www.visitharrisonburgva.com">
+                	<div class="the-slide"
+                    	data-url="https://immergetech.com/assets/images/logos/visit_harrisonburg.png"
+                        data-size="65">
+                    </div>
+                </a>
+            </div><!-- .my-slider end -->
+        </div><!-- .slider-container end -->
 
         <!-- .footer start -->
         <footer class="footer">
@@ -255,6 +296,8 @@
             <i class="fas fa-angle-up"></i>
         </div>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
         <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3&#038;key=AIzaSyDzTw8Efuu_NVg1RBpTcQa-RyeNZBEehZA&#038;ver=3.19.10'></script>
         <script src="../dist/bundle.js"></script>
         <!-- <script type="module" src="../main.js"></script>

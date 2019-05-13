@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <title>Portfolio | Immerge</title>
+        <title>Services | Immerge</title>
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -22,7 +22,6 @@
                     <input type="text" name="keywords" class="header__search__input" placeholder="Search">
                 </form>
                 <nav class="header__nav" role="navigation" aria-label="Site">
-                    <input type="text" name="nav-search-mobile" class="header__search__input__mobile" placeholder="Search">
                     <ul>
                         <li><a href="about.html" class="menu" aria-label="About" title="About">About</a>
                             <ul>
@@ -38,6 +37,8 @@
                                 <li><a href="services/item.html" class="menu" aria-label="Print & Promotion" title="Print & Promotion">Print & Promotional</a></li>
                             </ul>
                         </li>
+                        <li><a href="services2.html" class="menu" aria-label="Form SEO" title="Form SEO">Form SEO</a></li>
+                        <li><a href="services3.html" class="menu" aria-label="Form Dev" title="Form Dev">Form Dev</a></li>
                         <li><a href="blog.html" class="menu" aria-label="Blog" title="Blog">Blog</a></li>
                         <li><a href="contact.html" class="menu" aria-label="Contact" title="Contact">Contact</a></li>
                     </ul>
@@ -47,173 +48,104 @@
         </header><!-- .header end -->
 
         <!-- .hero start -->
-        <section class="hero hero--portfolio hero--small">
+        <section class="hero hero--services">
             <div class="hero__container">
-                <h1>Portfolio</h1>
             </div><!-- .hero__container end -->
         </section><!-- .hero end -->
         
-        <!-- .container__full start -->
-        <section class="container__full">
-            <div class="container__full__container">
-                <p>Immerge is your organization’s online development partner. From our Harrisonburg VA location,
-                we offer cutting-edge mobile first, responsive <a href="#">website development</a>,
-                <a href="#">website design</a>, <a href="#">search engine optimization</a>, <a href="#">search
-                engine marketing</a> through our Google Adwords certified team
-                members, and custom business solutions to help your business exceed your constituents
-                expectations and provide an intuitive user experience. We continue our relationships with
-                our clients by supporting the products we build with maintenance and hosting packages for
-                businesses large and small.</p>
-            </div>
-        </section><!-- .container__full end -->
+        <!-- .multiform start -->
+        <section class="multiform">
+            <div class="multiform__leaves"></div>
+            <div class="multiform__container">
+                <h2>Tell Us About Your Project</h2>
+                <!--<hr>-->
+                <form class="multiform__form" data-form="development">
+                    <div class="multiform__ball__container"></div>
 
-        <!-- .portfolio__container start -->
-        <section class="portfolio__container">
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/listing_1-290-1554924632.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Ritchie Law Firm</h2>
+                    <!-- first section -->
+                    <div class="multiform__section multiform__show multiform__display">
+                        <h4>
+                            <strong>Good <span class="multiform__time"></span>!</strong><br />
+                            How About We Start With The Basics
+                        </h4>
+                        <div class="multiform__group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="multiform__field" name="firstname" data-name="First Name" data-error="Please Enter Your First Name">
+                            <span class="multiform__error-message"></span>
+                        </div>
+                        <div class="multiform__group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="multiform__field" name="lastname" data-name="Last Name" data-error="Please Enter Your Last Name">
+                            <span class="multiform__error-message"></span>
+                        </div>
+                        <div class="multiform__nav">
+                            <div class="invisible req for flex"></div>
+                            <button type="button" class="multiform__button multiform__button__next">Next</button>
                         </div>
                     </div>
-                </a>
-            </div><!-- .portfolio__item end -->
 
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/listing-261-1553700705.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Skyline Roofing</h2>
+                    <!-- second section -->
+                    <div class="multiform__section">
+                        <h4>
+                            <strong>Nice To Meet You <span class="multiform__name"></span>!</strong><br />
+                            Please Tell Us A Little More About Yourself
+                        </h4>
+                        <div class="multiform__group">
+                            <label for="company">Company Name</label>
+                            <input type="text" class="multiform__field" name="company" data-name="Company Name" data-error="Please Enter Your Company Name">
+                            <span class="multiform__error-message"></span>
+                        </div>
+                        <div class="multiform__group">
+                            <label for="email">Email</label>
+                            <input type="text" class="multiform__field" name="email" data-name="Email" data-error="Please Enter A Valid Email Address ex: name@domain.com">
+                            <span class="multiform__error-message"></span>
+                        </div>
+                        <div class="multiform__group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="multiform__field" name="phone" data-name="Phone" data-error="Please Enter A Phone Number With This Format Including Dashes: 123-456-7890" placeholder="123-456-7890">
+                            <span class="multiform__error-message"></span>
+                        </div>
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button multiform__button__previous">Previous</button>
+                            <button type="button" class="multiform__button multiform__button__next">Next</button>
                         </div>
                     </div>
-                </a>
-            </div><!-- .portfolio__item end -->
 
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/cvsi-listing-267-1554236679.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Firefly Fiber Broadband</h2>
+                    <!-- fourth section -->
+                    <div class="multiform__section">
+                        <span class="multiform__project"></span>
+                        <hr>
+                        <p>What budget range do you have in mind for your project(s)?</p>
+                        <div class="multiform__project__container multiform__web-development">
+                            <h5>Web Development</h5>
+                            <div class="multiform__slider multiform__web-development-slider-two"></div>
+                            <input type="hidden" name="development-slider-low" value="">
+                            <input type="hidden" name="development-slider-high" value="">
+                        </div>
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button multiform__button__previous">Previous</button>
+                            <button type="button" class="multiform__button multiform__button__next">Next</button>
                         </div>
                     </div>
-                </a>
-            </div><!-- .portfolio__item end -->
 
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/shibuya-listing-277-1554236655.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Shibuya Hoppmann</h2>
+                    <!-- fifth section -->
+                    <div class="multiform__section">
+                        <h4>
+                            <strong>Are You Ready? Because <em>we</em> are!</strong><br />
+                            Feel Free To Go Back And Change Anything Before Clicking Submit
+                        </h4>
+                        <hr>
+                        <p class="multiform__summary-title"></p>
+                        <p class="multiform__summary"></p>
+                        <div class="multiform__nav">
+                            <button type="button" class="multiform__button multiform__button__previous">Previous</button>
+                            <button type="button" class="multiform__button multiform__button__submit">Submit</button>
                         </div>
                     </div>
-                </a>
-            </div><!-- .portfolio__item end -->
 
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/Rocktown_Screens-stack-2-78-1554236942.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Rocktown Beer & Music Festival</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/cvec-header-82-1554236901.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Central Virginia Electric Cooperative</h2>
-                        </div>
-                    </div>
-                    
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/pmp-project-header-91-1554236855.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Precision Medical Products</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/cwj-project-header-2-94-1554236820.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Christopher William Jewelers</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/harrisonburg-header-76-1554236970.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Harrisonburg Tourism</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/turkey-knob-header-102-1554236782.jpg">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Turkey Knob Growers</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-
-            <!-- .portfolio__item start -->
-            <div class="portfolio__item">
-                <a href="portfolio/item.html" class="none">
-                    <div
-                        class="portfolio__item__image"
-                        data-src="https://www.immergetech.com/assets/images/gallery/cadence-header-107-1554236749.png">
-                        <div class="portfolio__item__image__overlay">
-                            <h2>Cadence, Inc.</h2>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- .portfolio__item end -->
-        </section><!-- .portfolio__container end -->
+                </form><!-- .multiform__form end -->
+            </div><!-- .multiform__container end -->
+        </section><!-- .multiform end -->
 
         <div class="slider-container">
             <div class="slider-logo"></div>
@@ -262,7 +194,7 @@
                 </a>
             </div><!-- .my-slider end -->
         </div><!-- .slider-container end -->
-
+        
         <!-- .footer start -->
         <footer class="footer">
             <div class="footer__section__container">

@@ -18,27 +18,20 @@ const formController = (() => {
     const section = document.querySelectorAll('.multiform__section');
     const ballContainer = document.querySelector('.multiform__ball__container');
     const formContainer = document.body;
-    //const formContainer = document.querySelector('.multiform');
     const theForm = document.querySelector('.multiform');
     const name = document.querySelectorAll('.multiform__name');
     const project = document.querySelector('.multiform__project');
     const timeOfDay = document.querySelector('.multiform__time');
-    const digitalMarketing = document.querySelector('.multiform__digital-marketing');
-    const webDevelopment = document.querySelector('.multiform__web-development');
-    const digitalMarketingSliderOne = document.querySelector('.multiform__digital-marketing-slider-one');
-    const webDevelopmentSliderOne = document.querySelector('.multiform__web-development-slider-one');
-    const digitalMarketingSliderTwo = document.querySelector('.multiform__digital-marketing-slider-two');
-    const webDevelopmentSliderTwo = document.querySelector('.multiform__web-development-slider-two');
+    const digitalMarketing = document.querySelector('.multiform__marketing');
+    const webDevelopment = document.querySelector('.multiform__development');
+    const marketingSlider = document.querySelector('.multiform__marketing-slider');
+    const developmentSlider = document.querySelector('.multiform__development-slider');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
     let marketingSliderOneLow = document.getElementById('form-input-digital_marketing_slider_one_low');
     let marketingSliderOneHigh = document.getElementById('form-input-digital_marketing_slider_one_high');
-    let marketingSliderTwoLow = document.getElementById('form-input-digital_marketing_slider_two_low');
-    let marketingSliderTwoHigh = document.getElementById('form-input-digital_marketing_slider_two_high');
     let developmentSliderOneLow = document.getElementById('form-input-web_development_slider_one_low');
     let developmentSliderOneHigh = document.getElementById('form-input-web_development_slider_one_high');
-    let developmentSliderTwoLow = document.getElementById('form-input-web_development_slider_two_low');
-    let developmentSliderTwoHigh = document.getElementById('form-input-web_development_slider_two_high');
     const count = section.length;
     let savedState, theBalls, slider1, slider2, slider3, slider4;
     let state = {};
@@ -138,80 +131,32 @@ const formController = (() => {
         state.name = nameInput.value[0].toUpperCase() + nameInput.value.slice(1).toLowerCase();
         state.project = projectInput.value;
 
-        if (state.project == 'Digital Marketing') {
-            state.digitalMarketingOne = {
+        if (state.project == 'marketing') {
+            state.marketing = {
                 name: 'Digital Marketing',
-                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+                low: Math.floor(document.querySelector('.multiform__marketing-slider.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__marketing-slider.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
             };
 
-            state.digitalMarketingTwo = {
-                name: 'Search Engine Optimization (SEO)',
-                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
-
-            state.webDevelopmentOne = {
-                name: 'Web Design',
-                low: '',
-                high: ''
-            };
-            
-            state.webDevelopmentTwo = {
+            state.development = {
                 name: 'Web Development',
                 low: '',
                 high: ''
             };
 
-        } else if (state.project == 'Web Design And Development') {
-            state.digitalMarketingOne = {
+        } else if (state.project == 'development') {
+            state.marketing = {
                 name: 'Digital Marketing',
                 low: '',
                 high: ''
             };
             
-            state.digitalMarketingTwo = {
-                name: 'Search Engine Optimization (SEO)',
-                low: '',
-                high: ''
-            };
-            
-            state.webDevelopmentOne = {
-                name: 'Web Design',
-                low: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
-            
-            state.webDevelopmentTwo = {
+            state.development = {
                 name: 'Web Development',
-                low: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
+                low: Math.floor(document.querySelector('.multiform__development-slider.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
+                high: Math.floor(document.querySelector('.multiform__development-slider.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
             };
 
-        } else {
-            state.digitalMarketingOne = {
-                name: 'Digital Marketing',
-                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
-
-            state.digitalMarketingTwo = {
-                name: 'Search Engine Optimization (SEO)',
-                low: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__digital-marketing-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
-
-            state.webDevelopmentOne = {
-                name: 'Web Design',
-                low: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__web-development-slider-one.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
-            
-            state.webDevelopmentTwo = {
-                name: 'Web Development',
-                low: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-lower').getAttribute('aria-valuenow')),
-                high: Math.floor(document.querySelector('.multiform__web-development-slider-two.noUi-target.noUi-ltr.noUi-horizontal div.noUi-base div.noUi-origin div.noUi-handle.noUi-handle-upper').getAttribute('aria-valuenow'))
-            };
         }
 
         localStorage.setItem('state', JSON.stringify(state));
@@ -232,14 +177,10 @@ const formController = (() => {
         chooseProject();
         
         // The hidden fields for the slider values
-        marketingSliderOneLow.value = savedState.digitalMarketingOne.low;
-        marketingSliderOneHigh.value = savedState.digitalMarketingOne.high;
-        marketingSliderTwoLow.value = savedState.digitalMarketingTwo.low;
-        marketingSliderTwoHigh.value = savedState.digitalMarketingTwo.high;
-        developmentSliderOneLow.value = savedState.webDevelopmentOne.low;
-        developmentSliderOneHigh.value = savedState.webDevelopmentOne.high;
-        developmentSliderTwoLow.value = savedState.webDevelopmentTwo.low;
-        developmentSliderTwoHigh.value = savedState.webDevelopmentTwo.high;
+        marketingSliderOneLow.value = savedState.marketing.low;
+        marketingSliderOneHigh.value = savedState.marketing.high;
+        developmentSliderOneLow.value = savedState.development.low;
+        developmentSliderOneHigh.value = savedState.development.high;
 
         buildTheSummary();
     };
@@ -247,7 +188,7 @@ const formController = (() => {
 
 
     const buildTheSummary = () => {
-        const fields = [state.digitalMarketingOne, state.digitalMarketingTwo, state.webDevelopmentOne, state.webDevelopmentTwo];
+        const fields = [state.marketing, state.development];
         const target = document.querySelector('.multiform__summary');
         const usedFields = fields.filter((field) => {
             return field.low != '';
@@ -273,16 +214,16 @@ const formController = (() => {
         webDevelopment.classList.remove('multiform__remove');
         digitalMarketing.classList.remove('multiform__remove');
 
-        if (savedState.project == 'Digital Marketing') {
+        if (savedState.project == 'marketing') {
             webDevelopment.classList.add('multiform__remove');
         }
 
-        if (savedState.project == 'Web Design And Development') {
+        if (savedState.project == 'development') {
             digitalMarketing.classList.add('multiform__remove');
         }
 
-        const projectMarkup = ((savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
-        createDivContents(project, projectMarkup);
+        // const projectMarkup = ((savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
+        // createDivContents(project, projectMarkup);
     };
 
 
@@ -321,10 +262,8 @@ const formController = (() => {
 
     const buildSliders = () => {
         // Target, min, max, start, step
-        createRangeSlider(digitalMarketingSliderOne, 500, 5000, [500, 3000], 500);
-        createRangeSlider(digitalMarketingSliderTwo, 500, 5000, [500, 1000], 500);
-        createRangeSlider(webDevelopmentSliderOne, 1000, 3000, [1000, 1500], 500);
-        createRangeSlider(webDevelopmentSliderTwo, 10000, 50000, [3000, 40000], 5000);
+        createRangeSlider(marketingSlider, 500, 5000, [500, 3000], 500);
+        createRangeSlider(developmentSlider, 1000, 3000, [1000, 1500], 500);
     };
 
 

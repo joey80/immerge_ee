@@ -1323,16 +1323,19 @@ button, .button--light, .button--green {
 .portfolio__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 80%;
   max-width: 1080px;
   margin: 0 auto; }
 
 .portfolio__item {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 6rem; }
+  @media (min-width: 768px) {
+    .portfolio__item {
+      margin: 0; } }
   @media (min-width: 1025px) {
     .portfolio__item {
-      width: 45%; } }
+      width: 50%; } }
   .portfolio__item__container__button {
     background-color: #31006f;
     color: #fff;
@@ -1349,23 +1352,39 @@ button, .button--light, .button--green {
         font-size: 1.4rem; } }
   .portfolio__item h2 {
     text-align: center;
-    margin: 2rem auto 8rem auto; }
+    transform: translateY(410px);
+    color: #000; }
+    @media (min-width: 768px) {
+      .portfolio__item h2 {
+        transform: translateY(400px);
+        transition: all 0.4s ease-in-out;
+        color: #fff; } }
   .portfolio__item__image {
     margin: 0 auto;
     width: 100%;
     height: 380px;
-    overflow: hidden; }
-    .portfolio__item__image img {
-      object-fit: fill;
-      display: block;
-      margin: 0 auto;
-      transition: all 0.2s ease-in-out;
-      opacity: 1;
-      max-height: 100%;
-      max-width: 100%; }
-      .portfolio__item__image img:hover {
-        opacity: .5;
-        transition: all 0.2s ease-in-out; }
+    background-size: cover; }
+    @media (min-width: 768px) {
+      .portfolio__item__image {
+        overflow: hidden; } }
+    @media (min-width: 768px) {
+      .portfolio__item__image:hover .portfolio__item__image__overlay {
+        opacity: 0.9;
+        transition: all 0.3s ease-in-out; }
+      .portfolio__item__image:hover .portfolio__item__image__overlay h2 {
+        transform: translateY(260px);
+        transition: all 0.4s ease-out; } }
+    .portfolio__item__image__overlay {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-23px);
+      opacity: 1; }
+      @media (min-width: 768px) {
+        .portfolio__item__image__overlay {
+          background-color: #28194d;
+          opacity: 0;
+          box-shadow: inset 0 0 80px #000000; } }
 
 .form {
   position: relative;
@@ -1703,31 +1722,15 @@ div.footer__section:nth-child(2) > form:nth-child(2) {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 200px; }
-
-.slide-one {
-  background-image: url("https://immergetech.com/assets/images/logos/black_sheep.png");
-  background-size: 35%; }
-
-.slide-two {
-  background-image: url("https://immergetech.com/assets/images/logos/heritage.png");
-  background-size: 70%; }
-
-.slide-three {
-  background-image: url("https://immergetech.com/assets/images/logos/pale_fire.png");
-  background-size: 60%; }
-
-.slide-four {
-  background-image: url("https://immergetech.com/assets/images/logos/ritchie.png");
-  background-size: 40%; }
-
-.slide-five {
-  background-image: url("https://immergetech.com/assets/images/logos/skyline.png");
-  background-size: 60%; }
-
-.slide-six {
-  background-image: url("https://immergetech.com/assets/images/logos/turkey_knob.png");
-  background-size: 35%; }
+  height: 200px;
+  filter: grayscale(100%);
+  transform: scale(1);
+  transition: all 0.3s ease-in-out; }
+  .the-slide:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer; }
 
 .my-slider {
   border-top: 1px solid rgba(128, 128, 128, 0.1); }

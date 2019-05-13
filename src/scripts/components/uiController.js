@@ -18,6 +18,9 @@ const uiController = (function() {
     const searchIcon = document.querySelector('.header__search__icon');
     const searchInput = document.querySelector('.header__search__input');
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
+    const slideArray = Array.from(document.querySelectorAll('.the-slide'));
+    const portfolioImages = Array.from(document.querySelectorAll('.portfolio__item__image'));
+    const portfolioContainer = document.querySelector('portfolio__container');
     let slider;
     let menuClosed = true;
 
@@ -108,6 +111,20 @@ const uiController = (function() {
 
     // Creates the slider of logos at the bottom of the screen
     const createSlider = () => {
+        buildSlides();
+        buildSlider();
+    };
+
+    const buildSlides = () => {
+        slideArray.forEach((slide) => {
+            const url = slide.dataset.url;
+            const size = slide.dataset.size;
+            slide.style.backgroundImage = `url(${url})`;
+            slide.style.backgroundSize = `${size}%`;
+        });
+    };
+
+    const buildSlider = () => {
         slider = tns({
             container: '.my-slider',
             items: 3,
@@ -117,6 +134,13 @@ const uiController = (function() {
             autoplay: true,
             loop: true,
             controls: false
+        });
+    };
+
+    const buildPortfolioImages = () => {
+        portfolioImages.forEach((elm) => {
+            const imageSrc = elm.dataset.src;
+            elm.style.backgroundImage = `url(${imageSrc})`;
         });
     };
 
@@ -172,6 +196,7 @@ const uiController = (function() {
                 trimBlogPee();
             }
             createSlider();
+            buildPortfolioImages();
         }
     };
 
