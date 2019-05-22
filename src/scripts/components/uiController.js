@@ -20,7 +20,6 @@ const uiController = (function() {
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
     const slideArray = Array.from(document.querySelectorAll('.the-slide'));
     const portfolioImages = Array.from(document.querySelectorAll('.portfolio__item__image'));
-    const portfolioContainer = document.querySelector('portfolio__container');
     let slider;
     let menuClosed = true;
 

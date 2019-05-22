@@ -28,10 +28,10 @@ const formController = (() => {
     const developmentSlider = document.querySelector('.multiform__development-slider');
     const nameInput = document.getElementsByName('firstname')[0];
     const projectInput = document.getElementsByName('project')[0];
-    let marketingSliderOneLow = document.getElementById('form-input-digital_marketing_slider_one_low');
-    let marketingSliderOneHigh = document.getElementById('form-input-digital_marketing_slider_one_high');
-    let developmentSliderOneLow = document.getElementById('form-input-web_development_slider_one_low');
-    let developmentSliderOneHigh = document.getElementById('form-input-web_development_slider_one_high');
+    let marketingSliderOneLow = document.getElementById('form-input-marketing_slider_low');
+    let marketingSliderOneHigh = document.getElementById('form-input-marketing_slider_high');
+    let developmentSliderOneLow = document.getElementById('form-input-development_slider_low');
+    let developmentSliderOneHigh = document.getElementById('form-input-development_slider_high');
     const count = section.length;
     let savedState, theBalls, slider1, slider2, slider3, slider4;
     let state = {};
@@ -221,9 +221,6 @@ const formController = (() => {
         if (savedState.project == 'development') {
             digitalMarketing.classList.add('multiform__remove');
         }
-
-        // const projectMarkup = ((savedState.project == 'Both' ? `<h4><strong>Now You're Talking!</strong><br />You Would Be Getting The Best Of Both Worlds` : `<h4><strong>Great choice!</strong><br />${savedState.project} Is Something We Excel At</h4>`));
-        // createDivContents(project, projectMarkup);
     };
 
 
@@ -263,7 +260,7 @@ const formController = (() => {
     const buildSliders = () => {
         // Target, min, max, start, step
         createRangeSlider(marketingSlider, 500, 5000, [500, 3000], 500);
-        createRangeSlider(developmentSlider, 1000, 3000, [1000, 1500], 500);
+        createRangeSlider(developmentSlider, 10000, 50000, [3000, 40000], 5000);
     };
 
 
@@ -307,7 +304,7 @@ const formController = (() => {
                         theBalls[i - 1].classList.remove('multiform__active');
                         theBalls[i].classList.add('multiform__active');
 
-                        scrollTo(formContainer);
+                        scrollTo(theForm);
                     }
                 }
 
