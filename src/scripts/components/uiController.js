@@ -19,6 +19,7 @@ const uiController = (function() {
     const searchInput = document.querySelector('.header__search__input');
     const blogPee = document.querySelectorAll('.blog__card__content--list > p');
     const slideArray = Array.from(document.querySelectorAll('.the-slide'));
+    const sliderContainer = document.querySelector('.slider-container');
     const portfolioImages = Array.from(document.querySelectorAll('.portfolio__item__image'));
     let slider;
     let menuClosed = true;
@@ -124,6 +125,8 @@ const uiController = (function() {
     };
 
     const buildSlider = () => {
+        console.log('build slider');
+        console.log('slide array: ', slideArray);
         slider = tns({
             container: '.my-slider',
             items: 3,
@@ -191,10 +194,8 @@ const uiController = (function() {
         init: function() {
             setupEventListeners();
             handleMenuLinks(linkParent);
-            if (blogPee.length > 0) {
-                trimBlogPee();
-            }
-            createSlider();
+            if (blogPee.length > 0 ? trimBlogPee() : '');
+            if (isVisible(sliderContainer) === true ? createSlider() : '');
             buildPortfolioImages();
         }
     };
