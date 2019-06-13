@@ -23,6 +23,8 @@ const uiController = (function() {
     const portfolioImages = Array.from(document.querySelectorAll('.portfolio__item__image'));
     let slider;
     let menuClosed = true;
+    const readButton = document.getElementById('js-read');
+    const cancelButton = document.getElementById('js-read-cancel');
 
 
     // Shrink logo and header height on scroll
@@ -186,8 +188,31 @@ const uiController = (function() {
             if (nav.classList.contains('header__nav--show') ? hideNav() : showNav());
         });
 
-
+        if (readButton != null) {
+            readButton.addEventListener('click', event => {
+                event.preventDefault();
+                const content = document.querySelector('.blog__card__content').innerHTML;
+                const cleanContent = content.replace(/(<([^>]+)>)/ig,"");
+                const msg = new SpeechSynthesisUtterance();
+                const voices = window.speechSynthesis.getVoices();
+                msg.voice = voices[10]; // Note: some voices don't support altering params
+                msg.voiceURI = 'native';
+                msg.volume = 1; // 0 to 1
+                msg.rate = 1.2; // 0.1 to 10
+                msg.pitch = 1; //0 to 2
+                msg.text = cleanContent;
+                msg.lang = 'en-US';
     
+                window.speechSynthesis.speak(msg);
+            });
+        }
+        
+        if (cancelButton != null) {
+            cancelButton.addEventListener('click', event => {
+                event.preventDefault();
+                window.speechSynthesis.cancel();
+            });
+        }
     };
 
     return {

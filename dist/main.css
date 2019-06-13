@@ -1121,7 +1121,9 @@ button, .button--light, .button--green {
           max-height: 100px; } }
   .footer__subfooter {
     background-color: #444;
-    color: #fff; }
+    color: #fff;
+    position: absolute;
+    width: 100%; }
 
 .hero {
   display: flex;
